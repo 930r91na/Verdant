@@ -1,27 +1,32 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var selectedTab = 1
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             Text("Gardens view")
                 .tabItem {
                     Image(systemName: "leaf.fill")
                     Text("Gardens")
                 }
+                .tag(0)
             
             Text("Home view")
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
+                .tag(1)
             
             Text("Profile view")
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
                 }
+                .tag(2)
         }
-        .accentColor(.green)
+        .accentColor(Color.primaryGreen)
     }
 }
 
