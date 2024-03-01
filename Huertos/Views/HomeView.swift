@@ -1,37 +1,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var selectedTab = 1
-    
     var body: some View {
-        TabView(selection: $selectedTab) {
-            Text("Gardens view")
-                .tabItem {
-                    Image(systemName: "leaf.fill")
-                    Text("Gardens")
-                }
-                .tag(0)
-            
-            Text("Home view")
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
-                .tag(1)
-            
-            Text("Profile view")
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Profile")
-                }
-                .tag(2)
-        }
-        .accentColor(Color.primaryGreen)
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+#Preview {
+    HomeView()
 }

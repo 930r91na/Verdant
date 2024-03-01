@@ -27,6 +27,7 @@
 		06D181B22B92378B00352475 /* HuertosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181B12B92378B00352475 /* HuertosTests.swift */; };
 		06D181BC2B92378B00352475 /* HuertosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181BB2B92378B00352475 /* HuertosUITests.swift */; };
 		06D181BE2B92378B00352475 /* HuertosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181BD2B92378B00352475 /* HuertosUITestsLaunchTests.swift */; };
+		AB1D13842B928A9F0025EFFA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D13832B928A9F0025EFFA /* NavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		06D181B72B92378B00352475 /* HuertosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HuertosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D181BB2B92378B00352475 /* HuertosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuertosUITests.swift; sourceTree = "<group>"; };
 		06D181BD2B92378B00352475 /* HuertosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuertosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AB1D13832B928A9F0025EFFA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				061572BB2B924CC8002F6ADD /* Plant */,
 				061572B92B924CAF002F6ADD /* Garden */,
 				061572AC2B9244AF002F6ADD /* LogIn */,
+				AB1D13832B928A9F0025EFFA /* NavigationBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				061572CB2B924E87002F6ADD /* GeneralPlantView.swift in Sources */,
 				061572C12B924DE8002F6ADD /* Garden.swift in Sources */,
 				061572C32B924DF1002F6ADD /* Plant.swift in Sources */,
+				AB1D13842B928A9F0025EFFA /* NavigationBar.swift in Sources */,
 				06D181A32B92378A00352475 /* HomeView.swift in Sources */,
 				061572C52B924E30002F6ADD /* GardenView.swift in Sources */,
 				061572CD2B924ECF002F6ADD /* NewGarden.swift in Sources */,
