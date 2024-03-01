@@ -120,6 +120,7 @@
 		061572B52B9246C8002F6ADD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				061572D02B927EEB002F6ADD /* Profile */,
 				06D181A22B92378A00352475 /* HomeView.swift */,
 				061572BB2B924CC8002F6ADD /* Plant */,
 				061572B92B924CAF002F6ADD /* Garden */,
@@ -155,6 +156,13 @@
 				061572CE2B924EE6002F6ADD /* NewPlant.swift */,
 			);
 			path = Plant;
+			sourceTree = "<group>";
+		};
+		061572D02B927EEB002F6ADD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		06D181942B92378A00352475 = {

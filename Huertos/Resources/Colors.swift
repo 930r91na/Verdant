@@ -1,16 +1,17 @@
 import Foundation
+import SwiftUI
 import UIKit
 
-extension UIColor {
-    public static let primaryGreen = UIColor(hex: "#606C38FF")
-    public static let darkGreen = UIColor(hex: "#283618FF")
-    public static let lightYellow = UIColor(hex: "#FEFAE0FF")
-    public static let orange = UIColor(hex: "#DDA15EFF")
-    public static let brown = UIColor(hex: "#BC6C25FF")
+extension Color {
+    public static let primaryGreen = Color(hex: "#606C38")
+    public static let darkGreen = Color(hex: "#283618")
+    public static let lightYellow = Color(hex: "#FEFAE0")
+    public static let orange = Color(hex: "#DDA15E")
+    public static let brown = Color(hex: "#BC6C2")
 }
 
-extension UIColor {
-    convenience init(hex: String) {
+extension Color {
+    init(hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
 
@@ -21,8 +22,8 @@ extension UIColor {
         let red = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
         let green = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
         let blue = CGFloat(rgb & 0x0000FF) / 255.0
-        let alpha = CGFloat(1.0)
+        
 
-        self.init(red: red, green: green, blue: blue, alpha: alpha)
+        self.init(red: red, green: green, blue: blue)
     }
 }
