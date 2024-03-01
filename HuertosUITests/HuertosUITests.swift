@@ -1,10 +1,3 @@
-//
-//  HuertosUITests.swift
-//  HuertosUITests
-//
-//  Created by iOS Lab on 01/03/24.
-//
-
 import XCTest
 
 final class HuertosUITests: XCTestCase {

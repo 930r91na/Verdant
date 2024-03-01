@@ -1,10 +1,3 @@
-//
-//  HuertosTests.swift
-//  HuertosTests
-//
-//  Created by iOS Lab on 01/03/24.
-//
-
 import XCTest
 @testable import Huertos
 
