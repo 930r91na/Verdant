@@ -11,7 +11,7 @@ import SwiftUI
 struct HuertosApp: App {
     var body: some Scene {
         WindowGroup {
-            ()
+            LaunchView()
         }
     }
 }
