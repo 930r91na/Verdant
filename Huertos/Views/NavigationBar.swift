@@ -5,21 +5,22 @@ struct NavigationBar: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            Text("Gardens view")
+            GeneralGardenView()
                 .tabItem {
                     Image(systemName: "leaf.fill")
                     Text("Gardens")
                 }
                 .tag(0)
             
-            Text("Home view")
+            HomeView()
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
                 .tag(1)
             
-            Text("Profile view")
+            // TODO: Change for the correct profile view
+            LogInView()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
