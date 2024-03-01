@@ -1,0 +1,687 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		061572AE2B9244EB002F6ADD /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572AD2B9244EB002F6ADD /* LaunchView.swift */; };
+		061572B02B92450A002F6ADD /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572AF2B92450A002F6ADD /* LogInView.swift */; };
+		061572B22B92451D002F6ADD /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572B12B92451D002F6ADD /* SignUpView.swift */; };
+		061572B82B924BB2002F6ADD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572B72B924BB2002F6ADD /* Colors.swift */; };
+		061572BF2B924DD7002F6ADD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572BE2B924DD7002F6ADD /* User.swift */; };
+		061572C12B924DE8002F6ADD /* Garden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C02B924DE8002F6ADD /* Garden.swift */; };
+		061572C32B924DF1002F6ADD /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C22B924DF1002F6ADD /* Plant.swift */; };
+		061572C52B924E30002F6ADD /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C42B924E30002F6ADD /* GardenView.swift */; };
+		061572C72B924E50002F6ADD /* GeneralGardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C62B924E50002F6ADD /* GeneralGardenView.swift */; };
+		061572C92B924E75002F6ADD /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C82B924E75002F6ADD /* PlantView.swift */; };
+		061572CB2B924E87002F6ADD /* GeneralPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572CA2B924E87002F6ADD /* GeneralPlantView.swift */; };
+		061572CD2B924ECF002F6ADD /* NewGarden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572CC2B924ECF002F6ADD /* NewGarden.swift */; };
+		061572CF2B924EE6002F6ADD /* NewPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572CE2B924EE6002F6ADD /* NewPlant.swift */; };
+		06D181A12B92378A00352475 /* HuertosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181A02B92378A00352475 /* HuertosApp.swift */; };
+		06D181A32B92378A00352475 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181A22B92378A00352475 /* HomeView.swift */; };
+		06D181A52B92378B00352475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D181A42B92378B00352475 /* Assets.xcassets */; };
+		06D181A82B92378B00352475 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D181A72B92378B00352475 /* Preview Assets.xcassets */; };
+		06D181B22B92378B00352475 /* HuertosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181B12B92378B00352475 /* HuertosTests.swift */; };
+		06D181BC2B92378B00352475 /* HuertosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181BB2B92378B00352475 /* HuertosUITests.swift */; };
+		06D181BE2B92378B00352475 /* HuertosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181BD2B92378B00352475 /* HuertosUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06D181AE2B92378B00352475 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06D181952B92378A00352475 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06D1819C2B92378A00352475;
+			remoteInfo = Huertos;
+		};
+		06D181B82B92378B00352475 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06D181952B92378A00352475 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06D1819C2B92378A00352475;
+			remoteInfo = Huertos;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		061572AD2B9244EB002F6ADD /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		061572AF2B92450A002F6ADD /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		061572B12B92451D002F6ADD /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		061572B72B924BB2002F6ADD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		061572BE2B924DD7002F6ADD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		061572C02B924DE8002F6ADD /* Garden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garden.swift; sourceTree = "<group>"; };
+		061572C22B924DF1002F6ADD /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		061572C42B924E30002F6ADD /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
+		061572C62B924E50002F6ADD /* GeneralGardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralGardenView.swift; sourceTree = "<group>"; };
+		061572C82B924E75002F6ADD /* PlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
+		061572CA2B924E87002F6ADD /* GeneralPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPlantView.swift; sourceTree = "<group>"; };
+		061572CC2B924ECF002F6ADD /* NewGarden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGarden.swift; sourceTree = "<group>"; };
+		061572CE2B924EE6002F6ADD /* NewPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlant.swift; sourceTree = "<group>"; };
+		06D1819D2B92378A00352475 /* Huertos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Huertos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06D181A02B92378A00352475 /* HuertosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuertosApp.swift; sourceTree = "<group>"; };
+		06D181A22B92378A00352475 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		06D181A42B92378B00352475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06D181A72B92378B00352475 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		06D181AD2B92378B00352475 /* HuertosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HuertosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06D181B12B92378B00352475 /* HuertosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuertosTests.swift; sourceTree = "<group>"; };
+		06D181B72B92378B00352475 /* HuertosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HuertosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06D181BB2B92378B00352475 /* HuertosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuertosUITests.swift; sourceTree = "<group>"; };
+		06D181BD2B92378B00352475 /* HuertosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuertosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06D1819A2B92378A00352475 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06D181AA2B92378B00352475 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06D181B42B92378B00352475 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		061572AC2B9244AF002F6ADD /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				061572AD2B9244EB002F6ADD /* LaunchView.swift */,
+				061572AF2B92450A002F6ADD /* LogInView.swift */,
+				061572B12B92451D002F6ADD /* SignUpView.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		061572B42B9246A6002F6ADD /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				061572BE2B924DD7002F6ADD /* User.swift */,
+				061572C02B924DE8002F6ADD /* Garden.swift */,
+				061572C22B924DF1002F6ADD /* Plant.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		061572B52B9246C8002F6ADD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06D181A22B92378A00352475 /* HomeView.swift */,
+				061572BB2B924CC8002F6ADD /* Plant */,
+				061572B92B924CAF002F6ADD /* Garden */,
+				061572AC2B9244AF002F6ADD /* LogIn */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		061572B62B924B90002F6ADD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				06D181A42B92378B00352475 /* Assets.xcassets */,
+				061572B72B924BB2002F6ADD /* Colors.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		061572B92B924CAF002F6ADD /* Garden */ = {
+			isa = PBXGroup;
+			children = (
+				061572C42B924E30002F6ADD /* GardenView.swift */,
+				061572C62B924E50002F6ADD /* GeneralGardenView.swift */,
+				061572CC2B924ECF002F6ADD /* NewGarden.swift */,
+			);
+			path = Garden;
+			sourceTree = "<group>";
+		};
+		061572BB2B924CC8002F6ADD /* Plant */ = {
+			isa = PBXGroup;
+			children = (
+				061572C82B924E75002F6ADD /* PlantView.swift */,
+				061572CA2B924E87002F6ADD /* GeneralPlantView.swift */,
+				061572CE2B924EE6002F6ADD /* NewPlant.swift */,
+			);
+			path = Plant;
+			sourceTree = "<group>";
+		};
+		06D181942B92378A00352475 = {
+			isa = PBXGroup;
+			children = (
+				06D1819F2B92378A00352475 /* Huertos */,
+				06D181B02B92378B00352475 /* HuertosTests */,
+				06D181BA2B92378B00352475 /* HuertosUITests */,
+				06D1819E2B92378A00352475 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		06D1819E2B92378A00352475 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06D1819D2B92378A00352475 /* Huertos.app */,
+				06D181AD2B92378B00352475 /* HuertosTests.xctest */,
+				06D181B72B92378B00352475 /* HuertosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06D1819F2B92378A00352475 /* Huertos */ = {
+			isa = PBXGroup;
+			children = (
+				061572B62B924B90002F6ADD /* Resources */,
+				061572B52B9246C8002F6ADD /* Views */,
+				061572B42B9246A6002F6ADD /* DataModels */,
+				06D181A02B92378A00352475 /* HuertosApp.swift */,
+				06D181A62B92378B00352475 /* Preview Content */,
+			);
+			path = Huertos;
+			sourceTree = "<group>";
+		};
+		06D181A62B92378B00352475 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				06D181A72B92378B00352475 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		06D181B02B92378B00352475 /* HuertosTests */ = {
+			isa = PBXGroup;
+			children = (
+				06D181B12B92378B00352475 /* HuertosTests.swift */,
+			);
+			path = HuertosTests;
+			sourceTree = "<group>";
+		};
+		06D181BA2B92378B00352475 /* HuertosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				06D181BB2B92378B00352475 /* HuertosUITests.swift */,
+				06D181BD2B92378B00352475 /* HuertosUITestsLaunchTests.swift */,
+			);
+			path = HuertosUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06D1819C2B92378A00352475 /* Huertos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06D181C12B92378B00352475 /* Build configuration list for PBXNativeTarget "Huertos" */;
+			buildPhases = (
+				06D181992B92378A00352475 /* Sources */,
+				06D1819A2B92378A00352475 /* Frameworks */,
+				06D1819B2B92378A00352475 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Huertos;
+			productName = Huertos;
+			productReference = 06D1819D2B92378A00352475 /* Huertos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		06D181AC2B92378B00352475 /* HuertosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06D181C42B92378B00352475 /* Build configuration list for PBXNativeTarget "HuertosTests" */;
+			buildPhases = (
+				06D181A92B92378B00352475 /* Sources */,
+				06D181AA2B92378B00352475 /* Frameworks */,
+				06D181AB2B92378B00352475 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06D181AF2B92378B00352475 /* PBXTargetDependency */,
+			);
+			name = HuertosTests;
+			productName = HuertosTests;
+			productReference = 06D181AD2B92378B00352475 /* HuertosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		06D181B62B92378B00352475 /* HuertosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06D181C72B92378B00352475 /* Build configuration list for PBXNativeTarget "HuertosUITests" */;
+			buildPhases = (
+				06D181B32B92378B00352475 /* Sources */,
+				06D181B42B92378B00352475 /* Frameworks */,
+				06D181B52B92378B00352475 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06D181B92B92378B00352475 /* PBXTargetDependency */,
+			);
+			name = HuertosUITests;
+			productName = HuertosUITests;
+			productReference = 06D181B72B92378B00352475 /* HuertosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06D181952B92378A00352475 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					06D1819C2B92378A00352475 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					06D181AC2B92378B00352475 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 06D1819C2B92378A00352475;
+					};
+					06D181B62B92378B00352475 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 06D1819C2B92378A00352475;
+					};
+				};
+			};
+			buildConfigurationList = 06D181982B92378A00352475 /* Build configuration list for PBXProject "Huertos" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06D181942B92378A00352475;
+			productRefGroup = 06D1819E2B92378A00352475 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06D1819C2B92378A00352475 /* Huertos */,
+				06D181AC2B92378B00352475 /* HuertosTests */,
+				06D181B62B92378B00352475 /* HuertosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06D1819B2B92378A00352475 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06D181A82B92378B00352475 /* Preview Assets.xcassets in Resources */,
+				06D181A52B92378B00352475 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06D181AB2B92378B00352475 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06D181B52B92378B00352475 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06D181992B92378A00352475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				061572CB2B924E87002F6ADD /* GeneralPlantView.swift in Sources */,
+				061572C12B924DE8002F6ADD /* Garden.swift in Sources */,
+				061572C32B924DF1002F6ADD /* Plant.swift in Sources */,
+				06D181A32B92378A00352475 /* HomeView.swift in Sources */,
+				061572C52B924E30002F6ADD /* GardenView.swift in Sources */,
+				061572CD2B924ECF002F6ADD /* NewGarden.swift in Sources */,
+				061572CF2B924EE6002F6ADD /* NewPlant.swift in Sources */,
+				061572B82B924BB2002F6ADD /* Colors.swift in Sources */,
+				061572B22B92451D002F6ADD /* SignUpView.swift in Sources */,
+				061572AE2B9244EB002F6ADD /* LaunchView.swift in Sources */,
+				061572B02B92450A002F6ADD /* LogInView.swift in Sources */,
+				061572C92B924E75002F6ADD /* PlantView.swift in Sources */,
+				061572C72B924E50002F6ADD /* GeneralGardenView.swift in Sources */,
+				06D181A12B92378A00352475 /* HuertosApp.swift in Sources */,
+				061572BF2B924DD7002F6ADD /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06D181A92B92378B00352475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06D181B22B92378B00352475 /* HuertosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06D181B32B92378B00352475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06D181BC2B92378B00352475 /* HuertosUITests.swift in Sources */,
+				06D181BE2B92378B00352475 /* HuertosUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06D181AF2B92378B00352475 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06D1819C2B92378A00352475 /* Huertos */;
+			targetProxy = 06D181AE2B92378B00352475 /* PBXContainerItemProxy */;
+		};
+		06D181B92B92378B00352475 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06D1819C2B92378A00352475 /* Huertos */;
+			targetProxy = 06D181B82B92378B00352475 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		06D181BF2B92378B00352475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		06D181C02B92378B00352475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06D181C22B92378B00352475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Huertos/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ICapys.Huertos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		06D181C32B92378B00352475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Huertos/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ICapys.Huertos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		06D181C52B92378B00352475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ICapys.HuertosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Huertos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Huertos";
+			};
+			name = Debug;
+		};
+		06D181C62B92378B00352475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ICapys.HuertosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Huertos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Huertos";
+			};
+			name = Release;
+		};
+		06D181C82B92378B00352475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ICapys.HuertosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Huertos;
+			};
+			name = Debug;
+		};
+		06D181C92B92378B00352475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ICapys.HuertosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Huertos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06D181982B92378A00352475 /* Build configuration list for PBXProject "Huertos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06D181BF2B92378B00352475 /* Debug */,
+				06D181C02B92378B00352475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06D181C12B92378B00352475 /* Build configuration list for PBXNativeTarget "Huertos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06D181C22B92378B00352475 /* Debug */,
+				06D181C32B92378B00352475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06D181C42B92378B00352475 /* Build configuration list for PBXNativeTarget "HuertosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06D181C52B92378B00352475 /* Debug */,
+				06D181C62B92378B00352475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06D181C72B92378B00352475 /* Build configuration list for PBXNativeTarget "HuertosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06D181C82B92378B00352475 /* Debug */,
+				06D181C92B92378B00352475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06D181952B92378A00352475 /* Project object */;
+}
