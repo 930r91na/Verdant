@@ -38,11 +38,11 @@ struct AddGardenButtonView: View {
                 Spacer()
                 VStack(alignment: .trailing, spacing: 0) {
                     Text("Add")
-                        .font(Font.custom("SF Pro Display", size: 28).weight(.bold))
+                        .font(Font.custom("SF Pro Display", size: 25).weight(.bold))
                         .foregroundColor(Color.primaryGreen)
                     
                     Text("New garden")
-                        .font(Font.custom("SF Pro Display", size: 22).weight(.bold))
+                        .font(Font.custom("SF Pro Display", size: 18).weight(.bold))
                         .foregroundColor(.black)
                 }
                 .padding(.leading, 10)

@@ -19,8 +19,7 @@ struct NavigationBar: View {
                 }
                 .tag(1)
             
-            // TODO: Change for the correct profile view
-            LogInView()
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")

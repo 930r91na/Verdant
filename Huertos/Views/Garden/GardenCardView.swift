@@ -40,7 +40,7 @@ struct GardenCardView: View {
                 
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Garden Name")
-                        .font(Font.custom("SF Pro Display", size: 22).weight(.bold))
+                        .font(Font.custom("SF Pro Display", size: 20).weight(.bold))
                         .foregroundColor(Color.primaryGreen)
                     
                     HStack{
@@ -50,6 +50,7 @@ struct GardenCardView: View {
                         
                         Text("Location")
                             .font(Font.custom("SF Pro Display", size: 16))
+                            .foregroundColor(Color.black)
                     }
                     
                     HStack {
@@ -59,6 +60,7 @@ struct GardenCardView: View {
                         
                         Text("18 total plants")
                             .font(Font.custom("SF Pro Display", size: 16))
+                            .foregroundColor(Color.black)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
