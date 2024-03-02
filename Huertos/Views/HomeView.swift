@@ -6,11 +6,10 @@ struct HomeView: View {
             Text("Home view")
                 .navigationTitle("Home")
         }
-        .accentColor(Color.primaryGreen)
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
