@@ -2,7 +2,6 @@ import SwiftUI
 
 struct GeneralGardenView: View {
     @State private var isShowingNewGardenView = false
-    // @State private var showAddGardenButtonView = false // No es necesario si siempre se muestra AddGardenButtonView
 
     var body: some View {
         NavigationView {
@@ -22,24 +21,32 @@ struct GeneralGardenView: View {
 }
 
 struct AddGardenButtonView: View {
+    @State private var navigateToNewGardenView = false
+    
     var body: some View {
-        HStack {
-            Image(systemName: "plus.app")
-                .font(Font.custom("SF Pro Display", size: 40).weight(.bold))
-                .foregroundColor(Color.primaryGreen)
-                .padding(.leading, 10)
-            
-            Spacer()
-            VStack(alignment: .trailing, spacing: 0) {
-                Text("Add")
-                    .font(Font.custom("SF Pro Display", size: 28).weight(.bold))
+        NavigationLink(destination: NewGardenView(), isActive: $navigateToNewGardenView) { EmptyView() }
+        
+        Button(action: {
+            navigateToNewGardenView = true
+        }) {
+            HStack {
+                Image(systemName: "plus.app")
+                    .font(Font.custom("SF Pro Display", size: 40).weight(.bold))
                     .foregroundColor(Color.primaryGreen)
+                    .padding(.leading, 10)
                 
-                Text("New garden")
-                    .font(Font.custom("SF Pro Display", size: 22).weight(.bold))
-                    .foregroundColor(.black)
+                Spacer()
+                VStack(alignment: .trailing, spacing: 0) {
+                    Text("Add")
+                        .font(Font.custom("SF Pro Display", size: 28).weight(.bold))
+                        .foregroundColor(Color.primaryGreen)
+                    
+                    Text("New garden")
+                        .font(Font.custom("SF Pro Display", size: 22).weight(.bold))
+                        .foregroundColor(.black)
+                }
+                .padding(.leading, 10)
             }
-            .padding(.leading, 10)
         }
         .padding()
         .background(Color.white)
@@ -49,7 +56,6 @@ struct AddGardenButtonView: View {
         Spacer()
     }
 }
-
 
 struct GeneralGardenView_Previews: PreviewProvider {
     static var previews: some View {
