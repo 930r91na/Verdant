@@ -2,7 +2,6 @@ import SwiftUI
 
 struct GeneralGardenView: View {
     @State private var isShowingNewGardenView = false
-
     var body: some View {
         NavigationView {
             ScrollView {
@@ -15,6 +14,7 @@ struct GeneralGardenView: View {
                 }
             }
             .navigationTitle("Gardens")
+            
         }
         .accentColor(Color.primaryGreen)
     }

@@ -15,7 +15,7 @@ struct GardenView: View {
                     }
                 }
             }
-            .navigationTitle("Gardens")
+            
         }
         .accentColor(.primaryGreen)
     }

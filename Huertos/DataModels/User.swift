@@ -1,8 +1,14 @@
-//
-//  User.swift
-//  Huertos
-//
-//  Created by iOS Lab on 01/03/24.
-//
-
 import Foundation
+import SwiftUI
+
+struct User {
+    var id: UUID
+    var username: String
+    var age: Int
+    var profilePicture: Image
+    var fullName: String
+    var email: String
+    var bio: String
+    var location: String
+    var gardens: [Garden]
+}

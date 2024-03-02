@@ -32,6 +32,7 @@
 		AB1D138C2B9395030025EFFA /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D138B2B9395030025EFFA /* PlantCardView.swift */; };
 		AB1D138E2B93998A0025EFFA /* NewPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D138D2B93998A0025EFFA /* NewPlantView.swift */; };
 		AB1D13902B939CEA0025EFFA /* NewGardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D138F2B939CEA0025EFFA /* NewGardenView.swift */; };
+		AB1D13922B93B6620025EFFA /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D13912B93B6620025EFFA /* General.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		AB1D138B2B9395030025EFFA /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		AB1D138D2B93998A0025EFFA /* NewPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlantView.swift; sourceTree = "<group>"; };
 		AB1D138F2B939CEA0025EFFA /* NewGardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGardenView.swift; sourceTree = "<group>"; };
+		AB1D13912B93B6620025EFFA /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				061572BE2B924DD7002F6ADD /* User.swift */,
 				061572C02B924DE8002F6ADD /* Garden.swift */,
 				061572C22B924DF1002F6ADD /* Plant.swift */,
+				AB1D13912B93B6620025EFFA /* General.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				061572B82B924BB2002F6ADD /* Colors.swift in Sources */,
 				AB1D13882B9384140025EFFA /* ProfileView.swift in Sources */,
 				061572B22B92451D002F6ADD /* SignUpView.swift in Sources */,
+				AB1D13922B93B6620025EFFA /* General.swift in Sources */,
 				061572AE2B9244EB002F6ADD /* LaunchView.swift in Sources */,
 				AB1D138A2B9384740025EFFA /* GardenCardView.swift in Sources */,
 				061572B02B92450A002F6ADD /* LogInView.swift in Sources */,
