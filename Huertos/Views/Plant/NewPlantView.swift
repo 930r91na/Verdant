@@ -2,7 +2,10 @@ import SwiftUI
 
 struct NewPlantView: View {
     var body: some View {
-        Text("New plant view")
+        ScrollView{
+            Text("New plant view")
+        }
+        .navigationTitle("New plant")
     }
 }
 
