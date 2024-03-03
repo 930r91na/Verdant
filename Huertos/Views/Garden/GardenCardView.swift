@@ -3,13 +3,15 @@ import SwiftUI
 struct GardenCardView: View {
     @State private var navigateToGardenView = false
     var garden: Garden // Parámetro para los datos del jardín
+    @State private var selectedGarden: Garden? // Asume que tienes esto disponible
 
     var body: some View {
         ZStack {
-            NavigationLink(destination: GardenView(), isActive: $navigateToGardenView) {
-                EmptyView()
-            }
+            NavigationLink(destination: GardenView(garden: selectedGarden ?? garden), isActive: $navigateToGardenView) {
+                        EmptyView()
+                    }
             Button(action: {
+                self.selectedGarden = garden// Asigna el jardín que quieres pasar
                 navigateToGardenView = true
             }) {
                 HStack {

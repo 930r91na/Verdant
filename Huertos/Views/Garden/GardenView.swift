@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GardenView: View {
-    let plantNames = ["Sophia", "Julia", "John", "Peter"]
+    var garden: Garden
 
     var body: some View {
         ScrollView {
@@ -9,16 +9,21 @@ struct GardenView: View {
             
             LazyVGrid(columns: gridItems, spacing: 20) {
                 AddPlantButtonView()
-                ForEach(plantNames, id: \.self) { name in
-                    PlantCardView(name: name)
+                
+                ForEach(garden.plants, id: \.commonName) { plant in
+                    PlantCardView(name: plant.commonName)
                 }
+                // Puedes agregar aquí más vistas según sea necesario
             }
             .padding()
         }
-        .navigationTitle("Plants")
+        .navigationTitle("Plants in \(garden.name)")
         .accentColor(.primaryGreen)
     }
 }
+
+
+
 
 
 struct AddPlantButtonView: View {
@@ -55,8 +60,16 @@ struct AddPlantButtonView: View {
     }
 }
 
-#Preview {
-    GardenView()
+struct GardenView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Generar usuarios y seleccionar un jardín de ejemplo
+        let exampleGarden = generateExampleUsers().first?.gardens.first!
+        
+        // Pasar el jardín de ejemplo a GardenView
+        GardenView(garden: exampleGarden!)
+    }
 }
-
-
+/*
+ 
+ 
+ */
