@@ -3,9 +3,11 @@ import SwiftUI
 struct NavigationBar: View {
     @State private var selectedTab = 1
     
+    let users = generateExampleUsers()
+    
     var body: some View {
         TabView(selection: $selectedTab) {
-            GeneralGardenView()
+            GeneralGardenView(gardens: users.first?.gardens ?? [])
                 .tabItem {
                     Image(systemName: "leaf.fill")
                     Text("Gardens")

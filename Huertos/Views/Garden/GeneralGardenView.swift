@@ -1,24 +1,24 @@
 import SwiftUI
 
 struct GeneralGardenView: View {
-    @State private var isShowingNewGardenView = false
+    var gardens: [Garden] // Asume que tienes los jardines del usuario 1 aquí
+
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
                     AddGardenButtonView()
-                    GardenCardView()
-                    GardenCardView()
-                    GardenCardView()
-                    GardenCardView()
+                    ForEach(gardens, id: \.id) { garden in
+                        GardenCardView(garden: garden)
+                    }
                 }
             }
             .navigationTitle("Gardens")
-            
         }
         .accentColor(Color.primaryGreen)
     }
 }
+
 
 struct AddGardenButtonView: View {
     @State private var navigateToNewGardenView = false
@@ -58,6 +58,9 @@ struct AddGardenButtonView: View {
 
 struct GeneralGardenView_Previews: PreviewProvider {
     static var previews: some View {
-        GeneralGardenView()
+        // Generar usuarios de ejemplo y extraer jardines del primer usuario
+        let exampleGardens = generateExampleUsers().first?.gardens ?? []
+        GeneralGardenView(gardens: exampleGardens)
     }
 }
+

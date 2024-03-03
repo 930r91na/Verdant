@@ -62,7 +62,7 @@ func generateExampleUsers() -> [User] {
     for userIndex in 1...3 {
         var gardens: [Garden] = []
 
-        for gardenIndex in 1...5 {
+        for gardenIndex in 1...4 {
             gardens.append(
                 Garden(
                     id: UUID(),
