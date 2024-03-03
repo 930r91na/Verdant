@@ -67,7 +67,7 @@ func generateExampleUsers() -> [User] {
                 Garden(
                     id: UUID(),
                     name: "Garden \(gardenIndex)",
-                    gardenpic: Image("garden1"),
+                    gardenpic: Image("garden\(gardenIndex)"),
                     description: "This is a lush garden located in User \(userIndex)'s backyard, showcasing a variety of plants and trees.",
                     location: "User \(userIndex)'s backyard",
                     numberOfPlants: plants.count + trees.count,

@@ -1,19 +1,5 @@
 import SwiftUI
 
-/*
- struct AddGardenButtonView: View {
-     @State private var navigateToNewGardenView = false
-     
-     var body: some View {
-         NavigationLink(destination: NewGardenView(), isActive: $navigateToNewGardenView) { EmptyView() }
-         
-         Button(action: {
-             navigateToNewGardenView = true
-         }) {
-             HStack {
- 
- */
-
 struct GardenCardView: View {
     @State private var navigateToGardenView = false
     
@@ -24,7 +10,7 @@ struct GardenCardView: View {
             navigateToGardenView = true
         }) {
             HStack {
-                Image("PATH_TO_IMAGE") // Replace "PATH_TO_IMAGE" with your actual image path
+                Image("garden1") // Replace "PATH_TO_IMAGE" with your actual image path
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 137.5, height: 145)
