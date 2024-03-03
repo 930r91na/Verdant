@@ -10,10 +10,9 @@ struct GardenView: View {
             LazyVGrid(columns: gridItems, spacing: 20) {
                 AddPlantButtonView()
                 
-                ForEach(garden.plants, id: \.commonName) { plant in
-                    PlantCardView(name: plant.commonName)
+                ForEach(garden.plants, id: \.alias) { plant in
+                    PlantCardView(alias: plant.alias, name: plant.commonName)
                 }
-                // Puedes agregar aquí más vistas según sea necesario
             }
             .padding()
         }
@@ -46,7 +45,7 @@ struct AddPlantButtonView: View {
                     .foregroundColor(.primaryGreen)
                 
                 Text("New plant")
-                    .font(.system(size: 14, weight: .bold))
+                    .font(.system(size: 14))
                     .foregroundColor(.black)
                     .padding(.bottom)
             }

@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct PlantCardView: View {
-    var name: String // Añadido parámetro 'name' para personalizar el nombre de la planta
+    var alias: String
+    var name: String
 
     @State private var navigateToPlantView = false
     
@@ -18,8 +19,12 @@ struct PlantCardView: View {
                     .foregroundColor(.primaryGreen)
                     .padding(.top)
 
-                Text(name) // Usando el nombre de la planta pasado como parámetro
+                Text(alias)
                     .font(.system(size: 15, weight: .bold))
+                    .foregroundColor(.black)
+                
+                Text(name)
+                    .font(.system(size: 12))
                     .foregroundColor(.black)
                     .padding(.bottom)
             }
@@ -34,7 +39,7 @@ struct PlantCardView: View {
 
 struct PlantCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantCardView(name: "Juan")
+        PlantCardView(alias: "Juan", name: "Frijol")
             .previewLayout(.sizeThatFits)
             .padding()
     }
