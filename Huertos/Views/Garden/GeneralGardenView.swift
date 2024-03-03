@@ -53,7 +53,6 @@ struct AddGardenButtonView: View {
         .cornerRadius(25)
         .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 2)
         .padding(15)
-        Spacer()
     }
 }
 

@@ -6,7 +6,7 @@ struct HuertosApp: App {
     init(){
         let appearance = UINavigationBarAppearance()
                 appearance.configureWithOpaqueBackground()
-                appearance.titleTextAttributes = [.foregroundColor: UIColor(Color.primaryGreen)]
+                appearance.titleTextAttributes = [.foregroundColor: UIColor(Color.black)]
                 appearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color.primaryGreen)]
 
                 UINavigationBar.appearance().standardAppearance = appearance

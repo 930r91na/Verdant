@@ -4,22 +4,22 @@ struct GardenView: View {
     let plantNames = ["Sophia", "Julia", "John", "Peter"]
 
     var body: some View {
-        NavigationView {
-            ScrollView {
-                let gridItems = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
-                
-                LazyVGrid(columns: gridItems, spacing: 20) {
-                    AddPlantButtonView()
-                    ForEach(plantNames, id: \.self) { name in
-                        PlantCardView(name: name)
-                    }
+        ScrollView {
+            let gridItems = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
+            
+            LazyVGrid(columns: gridItems, spacing: 20) {
+                AddPlantButtonView()
+                ForEach(plantNames, id: \.self) { name in
+                    PlantCardView(name: name)
                 }
             }
-            
+            .padding()
         }
+        .navigationTitle("Plants")
         .accentColor(.primaryGreen)
     }
 }
+
 
 struct AddPlantButtonView: View {
     @State private var navigateToNewPlantView = false
@@ -58,3 +58,5 @@ struct AddPlantButtonView: View {
 #Preview {
     GardenView()
 }
+
+
