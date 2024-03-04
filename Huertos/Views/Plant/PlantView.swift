@@ -2,50 +2,48 @@ import SwiftUI
 
 struct PlantView: View {
     @State private var showingDetail = false
+    @State private var selectedDate = Date()
     var plant: Plant
 
     var body: some View {
         VStack {
-            HStack{
+            HStack {
                 Image(systemName: "leaf")
                     .font(Font.custom("SF Pro Display", size: 80).weight(.bold))
                     .foregroundColor(Color.primaryGreen)
             }
             .frame(maxWidth: .infinity, maxHeight: 200)
             
-            Button("Show plant information") {
+            Button("Show plant general information") {
                 showingDetail = true
             }
             .sheet(isPresented: $showingDetail) {
                 PlantInformationView(plant: plant)
             }
-            
-            GeometryReader { geometry in
+
+            ScrollView {
                 VStack {
-                    ScrollView {
-                        VStack {
-                            Text("Scroll HStack")
-                                .frame(maxWidth: .infinity, minHeight: geometry.size.height)
-                        }
-                    }
-                    .background(Color.cream)
-                    .clipShape(RoundedTopCorners(radius: 20))
-                    .overlay(
-                        RoundedTopCorners(radius: 20)
-                            .stroke(Color.primaryGreen, lineWidth: 3)
-                    )
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    DatePicker("Seleccionar fecha", selection: $selectedDate, displayedComponents: .date)
+                        .datePickerStyle(GraphicalDatePickerStyle())
+                        .padding(.horizontal, 20)
                 }
-                .padding(.horizontal)
             }
+            .background(Color.cream)
+            .clipShape(RoundedTopCorners(radius: 20))
+            .overlay(
+                RoundedTopCorners(radius: 20)
+                    .stroke(Color.primaryGreen, lineWidth: 3)
+            )
+            .padding(.horizontal)
             .edgesIgnoringSafeArea(.all)
-            
         }
         .navigationTitle(plant.alias)
         .accentColor(.primaryGreen)
         .background(Color.white)
     }
 }
+
+
 
 struct RoundedTopCorners: Shape {
     var radius: CGFloat
