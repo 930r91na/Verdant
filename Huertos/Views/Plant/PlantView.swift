@@ -7,43 +7,48 @@ struct PlantView: View {
 
     var body: some View {
         VStack {
-            HStack {
+            HStack{
                 Image(systemName: "leaf")
                     .font(Font.custom("SF Pro Display", size: 80).weight(.bold))
                     .foregroundColor(Color.primaryGreen)
             }
             .frame(maxWidth: .infinity, maxHeight: 200)
             
-            Button("Show plant general information") {
+            Button("Show plant information") {
                 showingDetail = true
             }
             .sheet(isPresented: $showingDetail) {
                 PlantInformationView(plant: plant)
             }
-
-            ScrollView {
+            
+            GeometryReader { geometry in
                 VStack {
-                    DatePicker("Seleccionar fecha", selection: $selectedDate, displayedComponents: .date)
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                        .padding(.horizontal, 20)
+                    ScrollView {
+                        VStack {
+                            DatePicker("Seleccionar fecha", selection: $selectedDate, displayedComponents: .date)
+                                            .datePickerStyle(GraphicalDatePickerStyle()) // Estilo gráfico para el selector de fecha
+                                            .padding()
+                            // .frame(maxWidth: .infinity, minHeight: geometry.size.height)
+                        }
+                    }
+                    .background(Color.cream)
+                    .clipShape(RoundedTopCorners(radius: 20))
+                    .overlay(
+                        RoundedTopCorners(radius: 20)
+                            .stroke(Color.primaryGreen, lineWidth: 3)
+                    )
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+                .padding(.horizontal)
             }
-            .background(Color.cream)
-            .clipShape(RoundedTopCorners(radius: 20))
-            .overlay(
-                RoundedTopCorners(radius: 20)
-                    .stroke(Color.primaryGreen, lineWidth: 3)
-            )
-            .padding(.horizontal)
             .edgesIgnoringSafeArea(.all)
+            
         }
         .navigationTitle(plant.alias)
         .accentColor(.primaryGreen)
         .background(Color.white)
     }
 }
-
-
 
 struct RoundedTopCorners: Shape {
     var radius: CGFloat
