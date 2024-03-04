@@ -39,7 +39,7 @@ struct AddPlantButtonView: View {
                 Image(systemName: "plus.app")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 35, height: 35)
+                    .frame(width: 30, height: 30)
                     .foregroundColor(.primaryGreen)
                     .padding(.top)
                 

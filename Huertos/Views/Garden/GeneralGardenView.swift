@@ -31,7 +31,7 @@ struct AddGardenButtonView: View {
         }) {
             HStack {
                 Image(systemName: "plus.app")
-                    .font(Font.custom("SF Pro Display", size: 40).weight(.bold))
+                    .font(Font.custom("SF Pro Display", size: 35).weight(.bold))
                     .foregroundColor(Color.primaryGreen)
                     .padding(.leading, 10)
                 
