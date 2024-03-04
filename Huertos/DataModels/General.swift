@@ -40,20 +40,20 @@ enum Inout{
 func generateExampleUsers() -> [User] {
     // Detailed plant and tree information
     let plants = [
-        Plant(scientificName: "Phaseolus vulgaris", commonName: "Frijol", alias: "Bean Stalker", recommendedSoil: .normal(percentage: 50), waterLevel: .low, sunlightLevel: .fullSun, difficulty: .easy, needsSupport: true),
-        Plant(scientificName: "Solanum tuberosum", commonName: "Papa", alias: "Spud Buddy", recommendedSoil: .compost(percentage: 50), waterLevel: .medium, sunlightLevel: .partialShade, difficulty: .moderate, needsSupport: false),
-        Plant(scientificName: "Solanum lycopersicum", commonName: "Jitomate", alias: "Red Gem", recommendedSoil: .compost(percentage: 40), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate, needsSupport: true),
-        Plant(scientificName: "Allium fistulosum", commonName: "Cebollita Cambray", alias: "Green Spear", recommendedSoil: .wormHummus(percentage: 60), waterLevel: .low, sunlightLevel: .partialShade, difficulty: .easy, needsSupport: false),
-        Plant(scientificName: "Opuntia ficus-indica", commonName: "Nopal", alias: "Desert's Pride", recommendedSoil: .normal(percentage: 30), waterLevel: .low, sunlightLevel: .fullSun, difficulty: .easy, needsSupport: false),
-        Plant(scientificName: "Daucus carota subsp. sativus", commonName: "Zanahoria", alias: "Orange Crunch", recommendedSoil: .compost(percentage: 50), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate, needsSupport: false),
-        Plant(scientificName: "Beta vulgaris", commonName: "Betabel", alias: "Ground Ruby", recommendedSoil: .wormHummus(percentage: 50), waterLevel: .medium, sunlightLevel: .partialShade, difficulty: .hard, needsSupport: false)
+        Plant(scientificName: "Phaseolus vulgaris", commonName: "Bean", alias: "Bean Stalker", recommendedSoil: .normal(percentage: 50), waterLevel: .low, sunlightLevel: .fullSun, difficulty: .easy, needsSupport: true),
+        Plant(scientificName: "Solanum tuberosum", commonName: "potato", alias: "Spud Buddy", recommendedSoil: .compost(percentage: 50), waterLevel: .medium, sunlightLevel: .partialShade, difficulty: .moderate, needsSupport: false),
+        Plant(scientificName: "Solanum lycopersicum", commonName: "Tomato", alias: "Red Gem", recommendedSoil: .compost(percentage: 40), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate, needsSupport: true),
+        Plant(scientificName: "Allium fistulosum", commonName: "Cambray onion", alias: "Green Spear", recommendedSoil: .wormHummus(percentage: 60), waterLevel: .low, sunlightLevel: .partialShade, difficulty: .easy, needsSupport: false),
+        Plant(scientificName: "Opuntia ficus-indica", commonName: "Prickly pear", alias: "Desert's Pride", recommendedSoil: .normal(percentage: 30), waterLevel: .low, sunlightLevel: .fullSun, difficulty: .easy, needsSupport: false),
+        Plant(scientificName: "Daucus carota subsp. sativus", commonName: "Carrot", alias: "Orange Crunch", recommendedSoil: .compost(percentage: 50), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate, needsSupport: false),
+        Plant(scientificName: "Beta vulgaris", commonName: "Betabel", alias: "Beetroot", recommendedSoil: .wormHummus(percentage: 50), waterLevel: .medium, sunlightLevel: .partialShade, difficulty: .hard, needsSupport: false)
     ]
 
     let trees = [
-        Tree(commonName: "Aguacate", scientificName: "Persea americana", recommendedSoil: .wormHummus(percentage: 75), waterLevel: .high, sunlightLevel: .fullSun, difficulty: .hard),
-           Tree(commonName: "Limón", scientificName: "Citrus × limon", recommendedSoil: .normal(percentage: 50), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .easy),
-           Tree(commonName: "Naranja", scientificName: "Citrus × sinensis", recommendedSoil: .normal(percentage: 60), waterLevel: .high, sunlightLevel: .fullSun, difficulty: .moderate),
-           Tree(commonName: "Mandarina", scientificName: "Citrus reticulata", recommendedSoil: .compost(percentage: 40), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate)
+        Tree(commonName: "Aguacate", scientificName: "Persea americana", alias: "Cate de mi cora", recommendedSoil: .wormHummus(percentage: 75), waterLevel: .high, sunlightLevel: .fullSun, difficulty: .hard),
+           Tree(commonName: "Limón", scientificName: "Citrus × limon", alias: "Mr Lemon",  recommendedSoil: .normal(percentage: 50), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .easy),
+           Tree(commonName: "Naranja", scientificName: "Citrus × sinensis", alias: "Nara Manja",  recommendedSoil: .normal(percentage: 60), waterLevel: .high, sunlightLevel: .fullSun, difficulty: .moderate),
+           Tree(commonName: "Mandarina", scientificName: "Citrus reticulata", alias: "Manda la nana",  recommendedSoil: .compost(percentage: 40), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate)
     ]
 
     var users: [User] = []

@@ -17,6 +17,7 @@ struct Plant {
 struct Tree {
     var commonName: String
     var scientificName: String
+    var alias: String
     var recommendedSoil: SoilType
     var waterLevel: WaterLevel
     var sunlightLevel: SunlightLevel

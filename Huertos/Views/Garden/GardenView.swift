@@ -2,10 +2,11 @@ import SwiftUI
 
 struct GardenView: View {
     var garden: Garden
-
+    
     var body: some View {
         ScrollView {
             let gridItems = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
+            
             
             LazyVGrid(columns: gridItems, spacing: 20) {
                 AddPlantButtonView()
@@ -13,33 +14,35 @@ struct GardenView: View {
                 ForEach(garden.plants, id: \.alias) { plant in
                     PlantCardView(plant: plant)
                 }
+                
+                // Mostrando Árboles
+                ForEach(garden.trees, id: \.commonName) { tree in
+                    TreeCardView(tree: tree)
+                }
             }
+            .navigationTitle("Plants in \(garden.name)")
+            .accentColor(.primaryGreen)
             .padding()
         }
-        .navigationTitle("Plants in \(garden.name)")
-        .accentColor(.primaryGreen)
+        
     }
 }
-
-
-
-
-
+    
 struct AddPlantButtonView: View {
     @State private var navigateToNewPlantView = false
-    
+        
     var body: some View {
         Button(action: {
             navigateToNewPlantView = true
         }) {
             VStack {
-                Image(systemName: "plus.app.fill")
+                Image(systemName: "plus.app")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 35, height: 35)
                     .foregroundColor(.primaryGreen)
                     .padding(.top)
-
+                
                 Text("Add")
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(.primaryGreen)

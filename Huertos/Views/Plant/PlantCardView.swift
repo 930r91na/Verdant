@@ -20,12 +20,49 @@ struct PlantCardView: View {
 
                 Text(plant.alias)
                     .font(.system(size: 15, weight: .bold))
-                    .foregroundColor(.black)
+                    .foregroundColor(.primaryGreen)
                 
                 Text(plant.commonName)
                     .font(.system(size: 12))
                     .foregroundColor(.black)
                     .padding(.bottom)
+            }
+            .frame(width: 100, height: 100)
+            .background(Color.white)
+            .cornerRadius(20)
+            .shadow(radius: 6)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+}
+
+struct TreeCardView: View {
+    var tree: Tree
+
+    @State private var navigateToTreeView = false
+    
+    var body: some View {
+        Button(action: {
+            navigateToTreeView = true
+        }) {
+            VStack {
+                NavigationLink(destination: TreeView(tree: tree), isActive: $navigateToTreeView) { EmptyView() }
+                Image(systemName: "tree.circle.fill") // Ícono sugerido para árboles, siéntete libre de cambiarlo
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.primaryGreen)
+                    .padding(.top)
+
+                Text(tree.alias)
+                    .font(.system(size: 15, weight: .bold))
+                    .foregroundColor(.primaryGreen)
+                
+                Text(tree.commonName)
+                    .font(.system(size: 12))
+                    .foregroundColor(.black)
+                    .padding(.bottom)
+                
             }
             .frame(width: 100, height: 100)
             .background(Color.white)
