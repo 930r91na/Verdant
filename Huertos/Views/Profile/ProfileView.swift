@@ -8,7 +8,7 @@ struct ProfileView: View {
         NavigationView{
             ScrollView {
                 VStack(spacing: 10) {
-                    NavigationLink(destination: settingsView(), isActive: $isShowingSettings) { EmptyView() }
+                    NavigationLink(destination: SettingsView(), isActive: $isShowingSettings) { EmptyView() }
                     
                     user.profilePicture
                         .resizable()
