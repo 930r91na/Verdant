@@ -55,11 +55,17 @@ func generateExampleUsers() -> [User] {
            Tree(commonName: "Naranja", scientificName: "Citrus × sinensis", alias: "Nara Manja",  recommendedSoil: .normal(percentage: 60), waterLevel: .high, sunlightLevel: .fullSun, difficulty: .moderate),
            Tree(commonName: "Mandarina", scientificName: "Citrus reticulata", alias: "Manda la nana",  recommendedSoil: .compost(percentage: 40), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate)
     ]
+    
+    let names = [ "Megan", "Ana Lau", "Ivan" ]
+    let fullNames = [ "Megan Montiel", "Ana Mandujano", "Ivan Nicolas"]
+    let bios = ["I love chicken and tulips",
+                "I love making bread and cooking",
+                "I love making music, sometimes"]
 
     var users: [User] = []
 
     // Generating users, gardens, and assigning plants and trees
-        for userIndex in 1...3 {
+        for userIndex in 0...2 {
             var gardens: [Garden] = []
 
             let numberOfGardens = Int.random(in: 2...4)
@@ -73,8 +79,8 @@ func generateExampleUsers() -> [User] {
                         id: UUID(),
                         name: "Garden \(gardenIndex)",
                         gardenpic: Image("garden\(gardenIndex)"), // Assuming you have these images
-                        description: "This is a lush garden located in User \(userIndex)'s backyard, showcasing a variety of plants and trees.",
-                        location: "User \(userIndex)'s backyard",
+                        description: "This is a lush garden located in \(names[userIndex])'s backyard, showcasing a variety of plants and trees.",
+                        location: "\(names[userIndex])'s backyard",
                         numberOfPlants: selectedPlants.count + selectedTrees.count,
                         plants: Array(selectedPlants),
                         trees: Array(selectedTrees),
@@ -85,7 +91,7 @@ func generateExampleUsers() -> [User] {
                 )
             }
 
-            users.append(User(id: UUID(), username: "user\(userIndex)", age: 20 + userIndex, profilePicture: Image(systemName: "person.fill"), fullName: "User \(userIndex) Full Name", email: "email\(userIndex)@example.com", bio: "I love gardening and spending time outdoors.", location: "City \(userIndex)", gardens: gardens))
+            users.append(User(id: UUID(), username: names[userIndex], age: 20 + userIndex, profilePicture: Image("profilePic\(userIndex)"), fullName: fullNames[userIndex], email: "\(names[userIndex])@example.com", bio: bios[userIndex], location: "Puebla", gardens: gardens))
         }
 
     return users

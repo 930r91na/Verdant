@@ -42,6 +42,7 @@ struct GardenCardView: View {
                             Text(garden.location) // Muestra la ubicación del jardín
                                 .font(Font.custom("SF Pro Display", size: 16))
                                 .foregroundColor(Color.black)
+                                .padding(.trailing)
                         }
                         
                         HStack {
