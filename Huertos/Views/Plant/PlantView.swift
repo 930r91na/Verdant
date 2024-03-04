@@ -41,7 +41,6 @@ struct PlantView: View {
                 }
                 .padding(.horizontal)
             }
-            .edgesIgnoringSafeArea(.all)
             
         }
         .navigationTitle(plant.alias)
