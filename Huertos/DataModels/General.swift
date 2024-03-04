@@ -59,29 +59,34 @@ func generateExampleUsers() -> [User] {
     var users: [User] = []
 
     // Generating users, gardens, and assigning plants and trees
-    for userIndex in 1...3 {
-        var gardens: [Garden] = []
+        for userIndex in 1...3 {
+            var gardens: [Garden] = []
 
-        for gardenIndex in 1...4 {
-            gardens.append(
-                Garden(
-                    id: UUID(),
-                    name: "Garden \(gardenIndex)",
-                    gardenpic: Image("garden\(gardenIndex)"),
-                    description: "This is a lush garden located in User \(userIndex)'s backyard, showcasing a variety of plants and trees.",
-                    location: "User \(userIndex)'s backyard",
-                    numberOfPlants: plants.count + trees.count,
-                    plants: plants,
-                    trees: trees,
-                    soilType: .compost(percentage: 50),
-                    sunlightLevel: .fullSun,
-                    setting: .pot
+            let numberOfGardens = Int.random(in: 2...4)
+            for gardenIndex in 1...numberOfGardens {
+                // Select a random subset of plants and trees for each garden
+                let selectedPlants = plants.shuffled().prefix(Int.random(in: 3...5))
+                let selectedTrees = trees.shuffled().prefix(Int.random(in: 2...4))
+
+                gardens.append(
+                    Garden(
+                        id: UUID(),
+                        name: "Garden \(gardenIndex)",
+                        gardenpic: Image("garden\(gardenIndex)"), // Assuming you have these images
+                        description: "This is a lush garden located in User \(userIndex)'s backyard, showcasing a variety of plants and trees.",
+                        location: "User \(userIndex)'s backyard",
+                        numberOfPlants: selectedPlants.count + selectedTrees.count,
+                        plants: Array(selectedPlants),
+                        trees: Array(selectedTrees),
+                        soilType: .compost(percentage: 50),
+                        sunlightLevel: .fullSun,
+                        setting: .pot
+                    )
                 )
-            )
-        }
+            }
 
-        users.append(User(id: UUID(), username: "user\(userIndex)", age: 20 + userIndex, profilePicture: Image(systemName: "person.fill") , fullName: "User \(userIndex) Full Name", email: "email\(userIndex)@example.com", bio: "I love gardening and spending time outdoors.", location: "City \(userIndex)", gardens: gardens))
-    }
+            users.append(User(id: UUID(), username: "user\(userIndex)", age: 20 + userIndex, profilePicture: Image(systemName: "person.fill"), fullName: "User \(userIndex) Full Name", email: "email\(userIndex)@example.com", bio: "I love gardening and spending time outdoors.", location: "City \(userIndex)", gardens: gardens))
+        }
 
     return users
 }
