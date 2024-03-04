@@ -2,17 +2,26 @@ import SwiftUI
 
 struct PlantView: View {
     @State private var showingDetail = false
+    @State private var isShowingEdit = false
     @State private var selectedDate = Date()
     var plant: Plant
 
     var body: some View {
         VStack {
-            HStack{
-                Image(systemName: "leaf")
-                    .font(Font.custom("SF Pro Display", size: 80).weight(.bold))
-                    .foregroundColor(Color.primaryGreen)
+            NavigationLink(destination: EditPlantView(), isActive: $isShowingEdit) { EmptyView() }
+            GeometryReader { geometry in
+                ScrollView {
+                    VStack {
+                        Image(systemName: "leaf")
+                            .font(Font.custom("SF Pro Display", size: 80).weight(.bold))
+                            .foregroundColor(Color.primaryGreen)
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .contentShape(Rectangle())
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: 200)
+            
             
             Button("Show plant information") {
                 showingDetail = true
@@ -41,11 +50,14 @@ struct PlantView: View {
                 }
                 .padding(.horizontal)
             }
-            
         }
-        .navigationTitle(plant.alias)
+        .navigationBarItems(trailing: Button(action: {
+            isShowingEdit = true
+        }) {
+            Image(systemName: "pencil")
+        })
+        .navigationBarTitle(plant.alias, displayMode: .inline)
         .accentColor(.primaryGreen)
-        .background(Color.white)
     }
 }
 

@@ -35,6 +35,7 @@
 		AB1D13922B93B6620025EFFA /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D13912B93B6620025EFFA /* General.swift */; };
 		AB1D13942B9560130025EFFA /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D13932B9560130025EFFA /* TreeView.swift */; };
 		AB1D139D2B9582690025EFFA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D139C2B9582690025EFFA /* SettingsView.swift */; };
+		AB1D139F2B95A2F30025EFFA /* EditPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D139E2B95A2F30025EFFA /* EditPlantView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		AB1D13912B93B6620025EFFA /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		AB1D13932B9560130025EFFA /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
 		AB1D139C2B9582690025EFFA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AB1D139E2B95A2F30025EFFA /* EditPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				AB1D138B2B9395030025EFFA /* PlantCardView.swift */,
 				AB1D138D2B93998A0025EFFA /* NewPlantView.swift */,
 				AB1D13932B9560130025EFFA /* TreeView.swift */,
+				AB1D139E2B95A2F30025EFFA /* EditPlantView.swift */,
 			);
 			path = Plant;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				061572C12B924DE8002F6ADD /* Garden.swift in Sources */,
 				061572C32B924DF1002F6ADD /* Plant.swift in Sources */,
 				AB1D13842B928A9F0025EFFA /* NavigationBar.swift in Sources */,
+				AB1D139F2B95A2F30025EFFA /* EditPlantView.swift in Sources */,
 				06D181A32B92378A00352475 /* HomeView.swift in Sources */,
 				061572C52B924E30002F6ADD /* GardenView.swift in Sources */,
 				AB1D138C2B9395030025EFFA /* PlantCardView.swift in Sources */,
