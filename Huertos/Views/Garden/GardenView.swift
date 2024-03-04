@@ -5,8 +5,12 @@ struct GardenView: View {
     
     var body: some View {
         ScrollView {
-            let gridItems = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
+            Text(garden.description)
+                .font(.system(size: 17))
+                .padding(.top, 20)
+
             
+            let gridItems = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
             
             LazyVGrid(columns: gridItems, spacing: 20) {
                 AddPlantButtonView()
