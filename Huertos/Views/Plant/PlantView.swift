@@ -6,6 +6,13 @@ struct PlantView: View {
 
     var body: some View {
         VStack {
+            HStack{
+                Image(systemName: "leaf")
+                    .font(Font.custom("SF Pro Display", size: 80).weight(.bold))
+                    .foregroundColor(Color.primaryGreen)
+            }
+            .frame(maxWidth: .infinity, maxHeight: 200)
+            
             Button("Show plant information") {
                 showingDetail = true
             }
@@ -13,18 +20,26 @@ struct PlantView: View {
                 PlantInformationView(plant: plant)
             }
             
-            HStack{
-                Text("[Plant image]")
-            }
-            .frame(maxWidth: .infinity, maxHeight: 220)
-            
-            ScrollView{
-                HStack{
-                    Text("Scroll HStack")
+            GeometryReader { geometry in
+                VStack {
+                    ScrollView {
+                        VStack {
+                            Text("Scroll HStack")
+                                .frame(maxWidth: .infinity, minHeight: geometry.size.height)
+                        }
+                    }
+                    .background(Color.cream)
+                    .clipShape(RoundedTopCorners(radius: 20))
+                    .overlay(
+                        RoundedTopCorners(radius: 20)
+                            .stroke(Color.primaryGreen, lineWidth: 3)
+                    )
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                .frame(maxWidth: .infinity, maxHeight: 230)
+                .padding(.horizontal)
             }
-            .background(Color.green)
+            .edgesIgnoringSafeArea(.all)
+            
         }
         .navigationTitle(plant.alias)
         .accentColor(.primaryGreen)
@@ -32,12 +47,11 @@ struct PlantView: View {
     }
 }
 
-struct RoundedCorner: Shape {
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
+struct RoundedTopCorners: Shape {
+    var radius: CGFloat
 
     func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: radius, height: radius))
         return Path(path.cgPath)
     }
 }
