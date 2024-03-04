@@ -16,7 +16,7 @@ struct HuertosApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LaunchView()
+            NavigationBar()
         }
     }
 }
