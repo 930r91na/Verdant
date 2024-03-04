@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct PlantCardView: View {
-    var alias: String
-    var name: String
+    var plant: Plant
 
     @State private var navigateToPlantView = false
     
@@ -11,7 +10,7 @@ struct PlantCardView: View {
             navigateToPlantView = true
         }) {
             VStack {
-                NavigationLink(destination: PlantView(), isActive: $navigateToPlantView) { EmptyView() }
+                NavigationLink(destination: PlantView(plant: plant), isActive: $navigateToPlantView) { EmptyView() }
                 Image(systemName: "leaf.circle.fill")
                     .resizable()
                     .scaledToFit()
@@ -19,11 +18,11 @@ struct PlantCardView: View {
                     .foregroundColor(.primaryGreen)
                     .padding(.top)
 
-                Text(alias)
+                Text(plant.alias)
                     .font(.system(size: 15, weight: .bold))
                     .foregroundColor(.black)
                 
-                Text(name)
+                Text(plant.commonName)
                     .font(.system(size: 12))
                     .foregroundColor(.black)
                     .padding(.bottom)
@@ -31,16 +30,20 @@ struct PlantCardView: View {
             .frame(width: 100, height: 100)
             .background(Color.white)
             .cornerRadius(20)
-            .shadow(radius: 8)
+            .shadow(radius: 6)
         }
         .buttonStyle(PlainButtonStyle())
     }
 }
 
+/*
 struct PlantCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantCardView(alias: "Juan", name: "Frijol")
+        let plantExample: Plant
+        
+        PlantCardView(plant: plantExample)
             .previewLayout(.sizeThatFits)
             .padding()
     }
 }
+*/

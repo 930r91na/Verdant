@@ -11,7 +11,7 @@ struct GardenView: View {
                 AddPlantButtonView()
                 
                 ForEach(garden.plants, id: \.alias) { plant in
-                    PlantCardView(alias: plant.alias, name: plant.commonName)
+                    PlantCardView(plant: plant)
                 }
             }
             .padding()
@@ -68,7 +68,3 @@ struct GardenView_Previews: PreviewProvider {
         GardenView(garden: exampleGarden!)
     }
 }
-/*
- 
- 
- */
