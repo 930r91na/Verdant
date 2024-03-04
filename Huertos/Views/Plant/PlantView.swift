@@ -5,39 +5,67 @@ struct PlantView: View {
     var plant: Plant
 
     var body: some View {
-        ScrollView {
-            Button("Show Plant Details") {
+        VStack {
+            Button("Show plant information") {
                 showingDetail = true
             }
             .sheet(isPresented: $showingDetail) {
-                PlantDetailView(plant: plant)
+                PlantInformationView(plant: plant)
             }
+            
+            HStack{
+                Text("[Plant image]")
+            }
+            .frame(maxWidth: .infinity, maxHeight: 220)
+            
+            ScrollView{
+                HStack{
+                    Text("Scroll HStack")
+                }
+                .frame(maxWidth: .infinity, maxHeight: 230)
+            }
+            .background(Color.green)
         }
         .navigationTitle(plant.alias)
+        .accentColor(.primaryGreen)
+        .background(Color.white)
     }
 }
 
-struct PlantDetailView: View {
+struct RoundedCorner: Shape {
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
+
+struct PlantInformationView: View {
     var plant: Plant
 
     var body: some View {
         VStack {
-            Image(systemName: "leaf.circle") // Suponiendo que usas un SF Symbol como icono
+            Image(systemName: "leaf.circle")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
-                .padding()
+                .foregroundColor(.primaryGreen)
             
             Text(plant.commonName)
                 .font(.title)
             
-            ScrollView {
-                Text("Description")
-                    .padding()
-            }
+            Text("General description")
+            // TODO: Call the info description of the plant view
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.cream.edgesIgnoringSafeArea(.all)) // Usa Color.cream para el fondo
+        .accentColor(.primaryGreen)
     }
 }
+
+
 
 
 

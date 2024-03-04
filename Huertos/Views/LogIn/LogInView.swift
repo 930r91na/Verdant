@@ -24,12 +24,12 @@ struct LogInView: View {
             VStack(spacing: 20) {
                 TextField("Username", text: $username)
                     .padding()
-                    .background(Color.lightYellow)
+                    .background(Color.cream)
                     .cornerRadius(8.0)
                 
                 SecureField("Password", text: $password)
                     .padding()
-                    .background(Color.lightYellow)
+                    .background(Color.cream)
                     .cornerRadius(8.0)
             }
             .padding(.horizontal)

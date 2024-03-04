@@ -5,7 +5,7 @@ import UIKit
 extension Color {
     public static let primaryGreen = Color(hex: "#606C38")
     public static let darkGreen = Color(hex: "#283618")
-    public static let lightYellow = Color(hex: "#FEFAE0")
+    public static let cream = Color(hex: "#FEFAE0")
     public static let orange = Color(hex: "#DDA15E")
     public static let brown = Color(hex: "#BC6C2")
 }
