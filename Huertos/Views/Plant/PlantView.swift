@@ -1,41 +1,69 @@
 import SwiftUI
 
-struct PlantActivity: Identifiable {
-    var id = UUID()
-    var date: Date
-    var watered: Bool
-    var sunExposure: Bool
-    var dayImage: Image
-}
-
-struct DayBubble: View {
-    var activity: PlantActivity?
-    private let calendar = Calendar.current
+struct ActivityDetailView: View {
+    var activity: PlantActivity
 
     var body: some View {
+        // Customize this view to display the details of the activity
         VStack {
-            // Use optional chaining with a default value for the date
-            Text(dayAbbreviation(activity?.date ?? Date()))
+            Text("Activity Details")
+                .font(.title)
+
+            Divider()
+
+            Text("Date: \(activity.date, formatter: itemFormatter)")
+            Text("Watered: \(activity.watered ? "Yes" : "No")")
+            Text("Sun Exposure: \(activity.sunExposure ? "Yes" : "No")")
+            // Include image if available
+            if let image = activity.dayImage {
+                image
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                Text("No Image Available")
+            }
+        }
+        .padding()
+    }
+}
+
+// Helper to format the date
+private let itemFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .long
+    formatter.timeStyle = .none
+    return formatter
+}()
+
+
+struct DayBubble: View {
+    @State private var showingDayDetail = false
+    var date: Date
+    var activities: [PlantActivity]
+
+    var body: some View {
+        let dailyActivity = activities.first { $0.date == date }
+
+        VStack {
+            Text(dayAbbreviation(date))
                 .font(.caption)
-                .padding(.top, 2) // Adjust spacing as needed
+                .padding(.top, 2)
 
             ZStack {
-                // Adjust the color based on the activity being nil or having specific values
-                RoundedRectangle(cornerRadius: 40) // This makes it more of an oval shape
-                    .foregroundColor((activity?.watered == true || activity?.sunExposure == true) ? .clear : Color.gray.opacity(0.2))
-                    .frame(width: 70, height: 129) // Adjust size as needed
+                RoundedRectangle(cornerRadius: 40)
+                    .foregroundColor((dailyActivity?.watered == true || dailyActivity?.sunExposure == true) ? .clear : Color.gray.opacity(0.2))
+                    .frame(width: 50, height: 100)
 
                 HStack(spacing: 0) {
-                    // Check each condition with optional chaining
-                    if activity?.watered == true {
+                    if dailyActivity?.watered == true {
                         Circle()
                             .foregroundColor(.blue)
-                            .frame(width: activity?.sunExposure == true ? 15 : 30, height: 30) // Half width if also sun exposed
+                            .frame(width: dailyActivity?.sunExposure == true ? 15 : 30, height: 30)
                     }
-                    if activity?.sunExposure == true {
+                    if dailyActivity?.sunExposure == true {
                         Circle()
                             .foregroundColor(.yellow)
-                            .frame(width: activity?.watered == true ? 15 : 30, height: 30) // Half width if also watered
+                            .frame(width: dailyActivity?.watered == true ? 15 : 30, height: 30)
                     }
                 }
             }
@@ -45,25 +73,40 @@ struct DayBubble: View {
             )
         }
         .onTapGesture {
-            // Code to select this date and show details
+            showingDayDetail = true
         }
+        .sheet(isPresented: $showingDayDetail) {
+                    if let activity = dailyActivity {
+                        ActivityDetailView(activity: activity)
+                    } else {
+                        Text("No activity for this day")
+                    }
+                }
     }
     
     private func dayAbbreviation(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE" // Adjust if you want another format
+        dateFormatter.dateFormat = "EEEEE"
         return dateFormatter.string(from: date)
     }
 }
+
 
 
 struct PlantView: View {
     @State private var showingDetail = false
     @State private var isShowingEdit = false
     @State private var selectedDate = Date()
-    @State private var activities: [PlantActivity] = []
+    
+    var myPlant = MyPlant(
+        myPlant: Tomato,
+        dayOfCreation:  Date() - 30 * 24 * 60 * 60,
+        myPlantActivity: generateTomatoActivities(start: Date() - 30 * 24 * 60 * 60)
+    )
+    
            
-           private let calendar = Calendar.current
+    private let calendar = Calendar.current
+    
     var plant: Plant
     private var daysInMonth: [Date] {
             guard let monthInterval = calendar.dateInterval(of: .month, for: selectedDate) else {
@@ -71,6 +114,7 @@ struct PlantView: View {
             }
             return calendar.generateDays(for: monthInterval)
         }
+    
 
     var body: some View {
         VStack {
@@ -99,15 +143,12 @@ struct PlantView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(daysInMonth, id: \.self) { date in
-                        // Fetching the activity for the given date or providing a default
-                        let activity = activities.first { calendar.isDate($0.date, inSameDayAs: date) }
-                        
-                        DayBubble(activity: activity)
+                        DayBubble(date: date,  activities: myPlant.myPlantActivity)
                     }
                 }
                 .padding()
             }
-            
+            /*
             GeometryReader { geometry in
                 VStack {
                     ScrollView {
@@ -129,6 +170,7 @@ struct PlantView: View {
                 }
                 .padding(.horizontal)
             }
+             */
         }
         .navigationBarItems(trailing: Button(action: {
             isShowingEdit = true
