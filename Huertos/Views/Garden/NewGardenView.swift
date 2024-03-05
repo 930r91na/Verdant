@@ -11,6 +11,7 @@ struct NewGardenView: View {
     @State private var isUsingCurrentLocation: Bool = false
     @State private var expositionLevels: String = ""
     @State private var showingLocationPicker = false
+    var color = Color.primaryGreen.opacity(0.15)
 
     let types = ["Pot", "Raised Bed", "Hydroponic System"]
     let locations = ["Indoors", "Outdoors"]
@@ -21,7 +22,7 @@ struct NewGardenView: View {
                 .foregroundColor(.primaryGreen)
                 .font(Font.custom("SF Pro Display", size: 13))){
                 TextField("Name", text: $gardenName)
-                    .listRowBackground(Color.primaryGreen.opacity(0.15))
+                    .listRowBackground(color)
             }
             
             Section(header: Text("It will be a...")
@@ -33,7 +34,7 @@ struct NewGardenView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .listRowBackground(Color.primaryGreen.opacity(0.15))
+                .listRowBackground(color)
             }
             
             Section(header: Text("It will be located...")
@@ -53,31 +54,32 @@ struct NewGardenView: View {
                 .font(Font.custom("SF Pro Display", size: 13))){
                 TextField("Length (cm)", text: $length)
                     .keyboardType(.numberPad)
-                    .listRowBackground(Color.primaryGreen.opacity(0.15))
+                    .listRowBackground(color)
                 TextField("Width (cm)", text: $width)
                     .keyboardType(.numberPad)
-                    .listRowBackground(Color.primaryGreen.opacity(0.15))
+                    .listRowBackground(color)
                 TextField("Depth (cm)", text: $depth)
                     .keyboardType(.numberPad)
-                    .listRowBackground(Color.primaryGreen.opacity(0.15))
+                    .listRowBackground(color)
             }
             
             Section(header: Text("Its physical location will be at...")) {
-                                Button(action: {
-                                    self.showingLocationPicker = true
-                                }) {
-                                    Text("Select Location")
-                                }
-                                .foregroundColor(.primary) // Usa el color que prefieras aquí
-                            }
+                Button(action: {
+                    self.showingLocationPicker = true
+                    }) {
+                        Text("Select Location")
+                    }
+                    .foregroundColor(.primary) // Usa el color que prefieras aquí
+                }
             
             Section(header: Text("Its daily exposition levels are...")
                 .foregroundColor(.primaryGreen)
                 .font(Font.custom("SF Pro Display", size: 13))){
                 TextField("Exposition Levels", text: $expositionLevels)
-                    .listRowBackground(Color.primaryGreen.opacity(0.15))
+                    .listRowBackground(color)
             }
         }
+        .scrollContentBackground(.hidden)
         .sheet(isPresented: $showingLocationPicker) {
             LocationPickerView()
         }

@@ -64,7 +64,7 @@ struct GardenCardView: View {
             .padding(21)
             .background(Color.white)
             .cornerRadius(12)
-            .shadow(radius: 10)
+            .shadow(color: .gray.opacity(0.4), radius: 8, x: 0, y: 2)
             .padding(15)
         }
     }

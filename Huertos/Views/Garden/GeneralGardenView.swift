@@ -6,12 +6,13 @@ struct GeneralGardenView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack {
+                VStack (spacing: -10) {
                     AddGardenButtonView()
                     ForEach(gardens, id: \.id) { garden in
                         GardenCardView(garden: garden)
                     }
                 }
+                .padding(.top, 15)
             }
             .navigationTitle("Gardens")
         }
@@ -50,9 +51,9 @@ struct AddGardenButtonView: View {
         }
         .padding()
         .background(Color.white)
-        .cornerRadius(25)
-        .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 2)
-        .padding(15)
+        .cornerRadius(12)
+        .shadow(color: .gray.opacity(0.3), radius: 8, x: 0, y: 2)
+        .padding(16)
     }
 }
 

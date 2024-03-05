@@ -24,7 +24,7 @@ struct GardenView: View {
                     TreeCardView(tree: tree)
                 }
             }
-            .navigationTitle("Plants in \(garden.name)")
+            .navigationTitle("\(garden.name)")
             .accentColor(.primaryGreen)
             .padding()
         }
