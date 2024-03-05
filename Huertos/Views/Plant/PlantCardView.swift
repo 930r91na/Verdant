@@ -10,27 +10,29 @@ struct PlantCardView: View {
             navigateToPlantView = true
         }) {
             VStack {
+                Spacer()
                 NavigationLink(destination: PlantView(plant: plant), isActive: $navigateToPlantView) { EmptyView() }
                 Image(systemName: "leaf.circle.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40)
                     .foregroundColor(.primaryGreen)
-                    .padding(.top)
-
-                Text(plant.alias)
-                    .font(.system(size: 15, weight: .bold))
-                    .foregroundColor(.primaryGreen)
                 
-                Text(plant.commonName)
-                    .font(.system(size: 12))
+                Spacer()
+                
+                Text(plant.alias)
+                    .font(.system(size: 12, weight: .bold))
                     .foregroundColor(.black)
-                    .padding(.bottom)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(alignment: .center)
+                
+                Spacer()
             }
+            .padding(10)
             .frame(width: 100, height: 100)
             .background(Color.white)
-            .cornerRadius(20)
-            .shadow(radius: 6)
+            .cornerRadius(12)
+            .shadow(color: .gray.opacity(0.4), radius: 8, x: 0, y: 2)
         }
         .buttonStyle(PlainButtonStyle())
     }
@@ -45,29 +47,31 @@ struct TreeCardView: View {
         Button(action: {
             navigateToTreeView = true
         }) {
-            VStack {
+            VStack (alignment: .center) {
+                Spacer()
+                
                 NavigationLink(destination: TreeView(tree: tree), isActive: $navigateToTreeView) { EmptyView() }
                 Image(systemName: "tree.circle.fill") // Ícono sugerido para árboles, siéntete libre de cambiarlo
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40)
                     .foregroundColor(.primaryGreen)
-                    .padding(.top)
+                
+                Spacer()
 
                 Text(tree.alias)
-                    .font(.system(size: 15, weight: .bold))
-                    .foregroundColor(.primaryGreen)
-                
-                Text(tree.commonName)
-                    .font(.system(size: 12))
+                    .font(.system(size: 12, weight: .bold))
                     .foregroundColor(.black)
-                    .padding(.bottom)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(alignment: .center)
                 
+                Spacer()
             }
+            .padding(10)
             .frame(width: 100, height: 100)
             .background(Color.white)
-            .cornerRadius(20)
-            .shadow(radius: 6)
+            .cornerRadius(12)
+            .shadow(color: .gray.opacity(0.4), radius: 8, x: 0, y: 2)
         }
         .buttonStyle(PlainButtonStyle())
     }

@@ -63,7 +63,8 @@ struct NewGardenView: View {
                     .listRowBackground(color)
             }
             
-            Section(header: Text("Its physical location will be at...")) {
+            Section(header: Text("Its physical location will be at...")
+                .foregroundColor(.primaryGreen)){
                 Button(action: {
                     self.showingLocationPicker = true
                     }) {

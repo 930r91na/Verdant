@@ -19,7 +19,6 @@ struct GardenView: View {
                     PlantCardView(plant: plant)
                 }
                 
-                // Mostrando Árboles
                 ForEach(garden.trees, id: \.commonName) { tree in
                     TreeCardView(tree: tree)
                 }
@@ -52,14 +51,14 @@ struct AddPlantButtonView: View {
                     .foregroundColor(.primaryGreen)
                 
                 Text("New plant")
-                    .font(.system(size: 14))
+                    .font(.system(size: 12, weight: .bold))
                     .foregroundColor(.black)
                     .padding(.bottom)
             }
             .frame(width: 100, height: 100)
             .background(Color.white)
-            .cornerRadius(20)
-            .shadow(radius: 8)
+            .cornerRadius(12)
+            .shadow(color: .gray.opacity(0.4), radius: 8, x: 0, y: 2)
         }
         .buttonStyle(PlainButtonStyle())
         .background(NavigationLink(destination: NewPlantView(), isActive: $navigateToNewPlantView) { EmptyView() })
