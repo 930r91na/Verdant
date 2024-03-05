@@ -19,118 +19,120 @@ struct NewGardenView: View {
     let filtrations = ["Yes", "No"]
 
     var body: some View {
-        Form {
-                Section(header: Text("My new garden's name will be...")
-                    .foregroundColor(.primaryGreen)
-                    .font(Font.custom("SF Pro Display", size: 13))){
-                    TextField("Name", text: $gardenName)
-                        .listRowBackground(color)
-                }
-                
-                Section(header: Text("It will be a...")
-                    .foregroundColor(.primaryGreen)
-                    .font(Font.custom("SF Pro Display", size: 13))){
-                    Picker("Type", selection: $selectedType) {
-                        ForEach(types, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .listRowBackground(color)
-                }
-                
-                Section(header: Text("It will be located...")
-                    .foregroundColor(.primaryGreen)
-                    .font(Font.custom("SF Pro Display", size: 13))){
-                    Picker("Location", selection: $location) {
-                        ForEach(locations, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .listRowBackground(Color.primaryGreen.opacity(0.15))
-                }
-                
-                Section(header: Text("It has the following dimensions...")
-                    .foregroundColor(.primaryGreen)
-                    .font(Font.custom("SF Pro Display", size: 13))){
-                    TextField("Length (cm)", text: $length)
-                        .keyboardType(.numberPad)
-                        .listRowBackground(color)
-                    TextField("Width (cm)", text: $width)
-                        .keyboardType(.numberPad)
-                        .listRowBackground(color)
-                    TextField("Depth (cm)", text: $depth)
-                        .keyboardType(.numberPad)
-                        .listRowBackground(color)
-                }
-                
-                Section(header: Text("Its physical location will be at...")
-                    .foregroundColor(.primaryGreen)){
-                    Button(action: {
-                        self.showingLocationPicker = true
-                        }) {
-                            Text("Select Location")
-                        }
-                        .foregroundColor(.primary)
-                }
-                
-                Section(header: Text("Its daily exposition levels are...")
-                    .foregroundColor(.primaryGreen)
-                    .font(Font.custom("SF Pro Display", size: 13))){
-                        TextField("Hours per day", text: $length)
-                            .keyboardType(.numberPad)
+        NavigationView{
+            Form {
+                    Section(header: Text("My new garden's name will be...")
+                        .foregroundColor(.primaryGreen)
+                        .font(Font.custom("SF Pro Display", size: 13))){
+                        TextField("Name", text: $gardenName)
                             .listRowBackground(color)
-                }
-                
-                // The sum of this has to be 100%
-                Section(header: Text("Its soil composition (100% total)...")
-                    .foregroundColor(.primaryGreen)
-                    .font(Font.custom("SF Pro Display", size: 13))){
-                    TextField("% Normal soil", text: $length)
-                        .keyboardType(.numberPad)
-                        .listRowBackground(color)
-                    TextField("% Compost", text: $width)
-                        .keyboardType(.numberPad)
-                        .listRowBackground(color)
-                    TextField("% Hummus", text: $depth)
-                        .keyboardType(.numberPad)
-                        .listRowBackground(color)
-                }
+                    }
                     
-                Section(header: Text("Filtration system...")
-                    .foregroundColor(.primaryGreen)
-                    .font(Font.custom("SF Pro Display", size: 13))){
-                        Picker("Filtration system", selection: $filtration) {
-                            ForEach(filtrations, id: \.self) {
+                    Section(header: Text("It will be a...")
+                        .foregroundColor(.primaryGreen)
+                        .font(Font.custom("SF Pro Display", size: 13))){
+                        Picker("Type", selection: $selectedType) {
+                            ForEach(types, id: \.self) {
+                                Text($0)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .listRowBackground(color)
+                    }
+                    
+                    Section(header: Text("It will be located...")
+                        .foregroundColor(.primaryGreen)
+                        .font(Font.custom("SF Pro Display", size: 13))){
+                        Picker("Location", selection: $location) {
+                            ForEach(locations, id: \.self) {
                                 Text($0)
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
                         .listRowBackground(Color.primaryGreen.opacity(0.15))
-                }
-                
-                Section {
-                    HStack {
-                        Spacer()
-                        Button("Add Garden") {
-                            // Aquí puedes agregar la lógica para guardar el jardín
-                            print("Garden added successfully")
-                        }
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.primaryGreen)
-                        .cornerRadius(10)
-                        Spacer()
                     }
+                    
+                    Section(header: Text("It has the following dimensions...")
+                        .foregroundColor(.primaryGreen)
+                        .font(Font.custom("SF Pro Display", size: 13))){
+                        TextField("Length (cm)", text: $length)
+                            .keyboardType(.numberPad)
+                            .listRowBackground(color)
+                        TextField("Width (cm)", text: $width)
+                            .keyboardType(.numberPad)
+                            .listRowBackground(color)
+                        TextField("Depth (cm)", text: $depth)
+                            .keyboardType(.numberPad)
+                            .listRowBackground(color)
+                    }
+                    
+                    Section(header: Text("Its physical location will be at...")
+                        .foregroundColor(.primaryGreen)){
+                        Button(action: {
+                            self.showingLocationPicker = true
+                            }) {
+                                Text("Select Location")
+                            }
+                            .foregroundColor(.primary)
+                    }
+                    
+                    Section(header: Text("Its daily exposition levels are...")
+                        .foregroundColor(.primaryGreen)
+                        .font(Font.custom("SF Pro Display", size: 13))){
+                            TextField("Hours per day", text: $length)
+                                .keyboardType(.numberPad)
+                                .listRowBackground(color)
+                    }
+                    
+                    // The sum of this has to be 100%
+                    Section(header: Text("Its soil composition (100% total)...")
+                        .foregroundColor(.primaryGreen)
+                        .font(Font.custom("SF Pro Display", size: 13))){
+                        TextField("% Normal soil", text: $length)
+                            .keyboardType(.numberPad)
+                            .listRowBackground(color)
+                        TextField("% Compost", text: $width)
+                            .keyboardType(.numberPad)
+                            .listRowBackground(color)
+                        TextField("% Hummus", text: $depth)
+                            .keyboardType(.numberPad)
+                            .listRowBackground(color)
+                    }
+                        
+                    Section(header: Text("Filtration system...")
+                        .foregroundColor(.primaryGreen)
+                        .font(Font.custom("SF Pro Display", size: 13))){
+                            Picker("Filtration system", selection: $filtration) {
+                                ForEach(filtrations, id: \.self) {
+                                    Text($0)
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            .listRowBackground(Color.primaryGreen.opacity(0.15))
+                    }
+                    
+                    Section {
+                        HStack {
+                            Spacer()
+                            Button("Add Garden") {
+                                // Aquí puedes agregar la lógica para guardar el jardín
+                                print("Garden added successfully")
+                            }
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.primaryGreen)
+                            .cornerRadius(10)
+                            Spacer()
+                        }
+                    }
+                    
                 }
-                
+                .scrollContentBackground(.hidden)
+                .sheet(isPresented: $showingLocationPicker) {
+                LocationPickerView()
             }
-            .scrollContentBackground(.hidden)
-            .sheet(isPresented: $showingLocationPicker) {
-            LocationPickerView()
+            .navigationTitle("Add new garden")
         }
-        .navigationTitle("Add new garden")
     }
 }
 
