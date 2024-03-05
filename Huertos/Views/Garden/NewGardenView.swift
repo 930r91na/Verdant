@@ -5,6 +5,7 @@ struct NewGardenView: View {
     @State private var gardenName: String = ""
     @State private var selectedType: String = "Pot"
     @State private var location: String = "Indoors"
+    @State private var filtration: String = "Yes"
     @State private var length: String = ""
     @State private var width: String = ""
     @State private var depth: String = ""
@@ -15,6 +16,7 @@ struct NewGardenView: View {
 
     let types = ["Pot", "Raised Bed", "Hydroponic System"]
     let locations = ["Indoors", "Outdoors"]
+    let filtrations = ["Yes", "No"]
 
     var body: some View {
         Form {
@@ -70,18 +72,47 @@ struct NewGardenView: View {
                     }) {
                         Text("Select Location")
                     }
-                    .foregroundColor(.primary) // Usa el color que prefieras aquí
+                    .foregroundColor(.primary)
                 }
             
             Section(header: Text("Its daily exposition levels are...")
                 .foregroundColor(.primaryGreen)
                 .font(Font.custom("SF Pro Display", size: 13))){
-                TextField("Exposition Levels", text: $expositionLevels)
+                    TextField("Hours per day", text: $length)
+                        .keyboardType(.numberPad)
+                        .listRowBackground(color)
+                }
+            
+            // The sum of this has to be 100%
+            Section(header: Text("Its soil composition (100% total)...")
+                .foregroundColor(.primaryGreen)
+                .font(Font.custom("SF Pro Display", size: 13))){
+                TextField("% Normal soil", text: $length)
+                    .keyboardType(.numberPad)
                     .listRowBackground(color)
+                TextField("% Compost", text: $width)
+                    .keyboardType(.numberPad)
+                    .listRowBackground(color)
+                TextField("% Hummus", text: $depth)
+                    .keyboardType(.numberPad)
+                    .listRowBackground(color)
+                }
+                
+            Section(header: Text("Filtration system...")
+                .foregroundColor(.primaryGreen)
+                .font(Font.custom("SF Pro Display", size: 13))){
+                    Picker("Filtration system", selection: $filtration) {
+                        ForEach(filtrations, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .listRowBackground(Color.primaryGreen.opacity(0.15))
+                }
+                
             }
-        }
-        .scrollContentBackground(.hidden)
-        .sheet(isPresented: $showingLocationPicker) {
+            .scrollContentBackground(.hidden)
+            .sheet(isPresented: $showingLocationPicker) {
             LocationPickerView()
         }
         .navigationTitle("Add new garden")
