@@ -14,4 +14,19 @@ struct Garden {
     var soilType: SoilType
     var sunlightLevel: SunlightLevel
     var setting: GardenSetting
+    
+    var myLog: [GardenActivityLog]?
+    
 }
+
+struct GardenActivityLog: Identifiable{
+    var id: UUID
+    var title: String
+    var description: String
+    var date: Date
+    var daysFromCreation: Int {
+            return Calendar.current.dateComponents([.day], from: date, to: Date()).day ?? 0
+        }
+}
+
+
