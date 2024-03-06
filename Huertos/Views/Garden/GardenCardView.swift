@@ -7,7 +7,7 @@ struct GardenCardView: View {
 
     var body: some View {
         ZStack {
-            NavigationLink(destination: GardenView(garden: selectedGarden ?? garden), isActive: $navigateToGardenView) {
+            NavigationLink(destination: GeneralGardenView(garden: selectedGarden ?? garden), isActive: $navigateToGardenView) {
                         EmptyView()
                     }
             Button(action: {

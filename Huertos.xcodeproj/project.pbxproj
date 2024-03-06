@@ -15,7 +15,7 @@
 		061572C12B924DE8002F6ADD /* Garden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C02B924DE8002F6ADD /* Garden.swift */; };
 		061572C32B924DF1002F6ADD /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C22B924DF1002F6ADD /* Plant.swift */; };
 		061572C52B924E30002F6ADD /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C42B924E30002F6ADD /* GardenView.swift */; };
-		061572C72B924E50002F6ADD /* GeneralGardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C62B924E50002F6ADD /* GeneralGardenView.swift */; };
+		061572C72B924E50002F6ADD /* CollectionGardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C62B924E50002F6ADD /* CollectionGardenView.swift */; };
 		061572C92B924E75002F6ADD /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C82B924E75002F6ADD /* PlantView.swift */; };
 		061572CB2B924E87002F6ADD /* GeneralPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572CA2B924E87002F6ADD /* GeneralPlantView.swift */; };
 		06D181A12B92378A00352475 /* HuertosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181A02B92378A00352475 /* HuertosApp.swift */; };
@@ -36,6 +36,7 @@
 		AB1D13942B9560130025EFFA /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D13932B9560130025EFFA /* TreeView.swift */; };
 		AB1D139D2B9582690025EFFA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D139C2B9582690025EFFA /* SettingsView.swift */; };
 		AB1D139F2B95A2F30025EFFA /* EditPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D139E2B95A2F30025EFFA /* EditPlantView.swift */; };
+		AB200DD72B98EC7D002DE93A /* GeneralGardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200DD62B98EC7D002DE93A /* GeneralGardenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +65,7 @@
 		061572C02B924DE8002F6ADD /* Garden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garden.swift; sourceTree = "<group>"; };
 		061572C22B924DF1002F6ADD /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		061572C42B924E30002F6ADD /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
-		061572C62B924E50002F6ADD /* GeneralGardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralGardenView.swift; sourceTree = "<group>"; };
+		061572C62B924E50002F6ADD /* CollectionGardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionGardenView.swift; sourceTree = "<group>"; };
 		061572C82B924E75002F6ADD /* PlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
 		061572CA2B924E87002F6ADD /* GeneralPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPlantView.swift; sourceTree = "<group>"; };
 		06D1819D2B92378A00352475 /* Huertos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Huertos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +89,7 @@
 		AB1D13932B9560130025EFFA /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
 		AB1D139C2B9582690025EFFA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AB1D139E2B95A2F30025EFFA /* EditPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantView.swift; sourceTree = "<group>"; };
+		AB200DD62B98EC7D002DE93A /* GeneralGardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralGardenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				061572C42B924E30002F6ADD /* GardenView.swift */,
-				061572C62B924E50002F6ADD /* GeneralGardenView.swift */,
+				061572C62B924E50002F6ADD /* CollectionGardenView.swift */,
+				AB200DD62B98EC7D002DE93A /* GeneralGardenView.swift */,
 				AB1D13892B9384740025EFFA /* GardenCardView.swift */,
 				AB1D138F2B939CEA0025EFFA /* NewGardenView.swift */,
 			);
@@ -398,7 +401,8 @@
 				AB1D138A2B9384740025EFFA /* GardenCardView.swift in Sources */,
 				061572B02B92450A002F6ADD /* LogInView.swift in Sources */,
 				061572C92B924E75002F6ADD /* PlantView.swift in Sources */,
-				061572C72B924E50002F6ADD /* GeneralGardenView.swift in Sources */,
+				AB200DD72B98EC7D002DE93A /* GeneralGardenView.swift in Sources */,
+				061572C72B924E50002F6ADD /* CollectionGardenView.swift in Sources */,
 				AB1D138E2B93998A0025EFFA /* NewPlantView.swift in Sources */,
 				06D181A12B92378A00352475 /* HuertosApp.swift in Sources */,
 				AB1D13942B9560130025EFFA /* TreeView.swift in Sources */,
