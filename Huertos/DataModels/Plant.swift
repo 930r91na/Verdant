@@ -66,7 +66,8 @@ struct Tree {
     var difficulty: Difficulty
 }
 
-struct MyPlant{
+struct MyPlant: Identifiable{
+    var id = UUID()
     var myPlant : Plant
     var dayOfCreation: Date
     var myPlantActivity: [PlantActivity]
