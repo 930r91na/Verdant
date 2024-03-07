@@ -1,8 +1,14 @@
-//
-//  VRView.swift
-//  Huertos
-//
-//  Created by iOS Lab on 07/03/24.
-//
+import UIKit
+import RealityKit
+import ARKit
 
-import Foundation
+class YourARViewController: UIViewController {
+    @IBOutlet var arView: ARView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        //let anchor = try! Experience.loadBox()
+        //arView.scene.anchors.append(anchor)
+    }
+}

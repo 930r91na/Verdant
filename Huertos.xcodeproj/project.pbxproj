@@ -18,7 +18,8 @@
 		061572C72B924E50002F6ADD /* CollectionGardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C62B924E50002F6ADD /* CollectionGardenView.swift */; };
 		061572C92B924E75002F6ADD /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572C82B924E75002F6ADD /* PlantView.swift */; };
 		061572CB2B924E87002F6ADD /* GeneralPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572CA2B924E87002F6ADD /* GeneralPlantView.swift */; };
-		0640D14A2B9A322C003726B1 /* New Project.reality in Resources */ = {isa = PBXBuildFile; fileRef = 0640D1492B9A322C003726B1 /* New Project.reality */; };
+		0640D14C2B9A365E003726B1 /* TomatoPot1.reality in Resources */ = {isa = PBXBuildFile; fileRef = 0640D14B2B9A365E003726B1 /* TomatoPot1.reality */; };
+		0640D14E2B9A36F5003726B1 /* VRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0640D14D2B9A36F5003726B1 /* VRView.swift */; };
 		06D181A12B92378A00352475 /* HuertosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181A02B92378A00352475 /* HuertosApp.swift */; };
 		06D181A32B92378A00352475 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181A22B92378A00352475 /* HomeView.swift */; };
 		06D181A52B92378B00352475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D181A42B92378B00352475 /* Assets.xcassets */; };
@@ -70,7 +71,8 @@
 		061572C62B924E50002F6ADD /* CollectionGardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionGardenView.swift; sourceTree = "<group>"; };
 		061572C82B924E75002F6ADD /* PlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
 		061572CA2B924E87002F6ADD /* GeneralPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPlantView.swift; sourceTree = "<group>"; };
-		0640D1492B9A322C003726B1 /* New Project.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = "New Project.reality"; path = "../../../../Downloads/New Project.reality"; sourceTree = "<group>"; };
+		0640D14B2B9A365E003726B1 /* TomatoPot1.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = TomatoPot1.reality; sourceTree = "<group>"; };
+		0640D14D2B9A36F5003726B1 /* VRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRView.swift; sourceTree = "<group>"; };
 		06D1819D2B92378A00352475 /* Huertos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Huertos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D181A02B92378A00352475 /* HuertosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuertosApp.swift; sourceTree = "<group>"; };
 		06D181A22B92378A00352475 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -194,7 +196,8 @@
 		0640D1482B9A31D8003726B1 /* VirtualReality */ = {
 			isa = PBXGroup;
 			children = (
-				0640D1492B9A322C003726B1 /* New Project.reality */,
+				0640D14B2B9A365E003726B1 /* TomatoPot1.reality */,
+				0640D14D2B9A36F5003726B1 /* VRView.swift */,
 			);
 			path = VirtualReality;
 			sourceTree = "<group>";
@@ -370,7 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0640D14A2B9A322C003726B1 /* New Project.reality in Resources */,
+				0640D14C2B9A365E003726B1 /* TomatoPot1.reality in Resources */,
 				06D181A82B92378B00352475 /* Preview Assets.xcassets in Resources */,
 				06D181A52B92378B00352475 /* Assets.xcassets in Resources */,
 			);
@@ -403,6 +406,7 @@
 				061572C12B924DE8002F6ADD /* Garden.swift in Sources */,
 				061572C32B924DF1002F6ADD /* Plant.swift in Sources */,
 				AB1D13842B928A9F0025EFFA /* NavigationBar.swift in Sources */,
+				0640D14E2B9A36F5003726B1 /* VRView.swift in Sources */,
 				AB1D139F2B95A2F30025EFFA /* EditPlantView.swift in Sources */,
 				06D181A32B92378A00352475 /* HomeView.swift in Sources */,
 				061572C52B924E30002F6ADD /* GardenView.swift in Sources */,
