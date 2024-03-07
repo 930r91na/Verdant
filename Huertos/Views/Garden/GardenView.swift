@@ -15,9 +15,10 @@ struct GardenView: View {
             LazyVGrid(columns: gridItems, spacing: 20) {
                 AddPlantButtonView()
                 
-                ForEach(garden.plants, id: \.alias) { plant in
-                    PlantMiniCardView(plant: plant)
+                ForEach(garden.plants, id: \.myPlant.alias) { myPlant in
+                    PlantMiniCardView(plant: myPlant)
                 }
+
                 
                 ForEach(garden.trees, id: \.commonName) { tree in
                     TreeCardView(tree: tree)

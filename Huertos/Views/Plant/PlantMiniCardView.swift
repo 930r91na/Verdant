@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PlantMiniCardView: View {
-    var plant: Plant
+    var plant: MyPlant
 
     @State private var navigateToPlantView = false
     
@@ -11,7 +11,7 @@ struct PlantMiniCardView: View {
         }) {
             VStack {
                 Spacer()
-                NavigationLink(destination: PlantView(plant: plant), isActive: $navigateToPlantView) { EmptyView() }
+                NavigationLink(destination: GeneralPlantView(plant: plant), isActive: $navigateToPlantView) { EmptyView() }
                 Image(systemName: "leaf.circle.fill")
                     .resizable()
                     .scaledToFit()
@@ -20,7 +20,7 @@ struct PlantMiniCardView: View {
                 
                 Spacer()
                 
-                Text(plant.alias)
+                Text(plant.myPlant.alias)
                     .font(.system(size: 12, weight: .bold))
                     .foregroundColor(.black)
                     .fixedSize(horizontal: false, vertical: true)
@@ -81,7 +81,7 @@ struct TreeCardView: View {
 
 struct PlantCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantMiniCardView(plant: Tomato)
+        PlantMiniCardView(plant: myTomato)
     }
 }
 

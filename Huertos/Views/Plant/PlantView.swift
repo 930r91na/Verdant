@@ -267,14 +267,16 @@ extension Calendar {
     }
 }
 
+/*
 struct PlantView_Previews: PreviewProvider {
     static var previews: some View {
         let exampleGarden = generateExampleUsers().first?.gardens.first
         
         if let plant = exampleGarden?.plants[0] {
-            PlantView(plant: plant)
+            PlantView(plant: plant.myPlant)
         } else {
             Text("No plant available")
         }
     }
 }
+*/

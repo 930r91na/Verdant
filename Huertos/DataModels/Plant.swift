@@ -2,7 +2,8 @@ import Foundation
 import SwiftUI
 
 
-struct Plant {
+struct Plant: Identifiable{
+    var id = UUID()
     var scientificName: String
     var commonName: String
     var alias: String
