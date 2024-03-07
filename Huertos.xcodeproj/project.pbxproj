@@ -20,6 +20,9 @@
 		061572CB2B924E87002F6ADD /* GeneralPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061572CA2B924E87002F6ADD /* GeneralPlantView.swift */; };
 		0640D14C2B9A365E003726B1 /* TomatoPot1.reality in Resources */ = {isa = PBXBuildFile; fileRef = 0640D14B2B9A365E003726B1 /* TomatoPot1.reality */; };
 		0640D14E2B9A36F5003726B1 /* VRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0640D14D2B9A36F5003726B1 /* VRView.swift */; };
+		0640D1542B9A41DD003726B1 /* Pro.reality in Resources */ = {isa = PBXBuildFile; fileRef = 0640D1532B9A41DD003726B1 /* Pro.reality */; };
+		0640D1552B9A41DD003726B1 /* Pro.reality in Resources */ = {isa = PBXBuildFile; fileRef = 0640D1532B9A41DD003726B1 /* Pro.reality */; };
+		0640D1562B9A41DD003726B1 /* Pro.reality in Resources */ = {isa = PBXBuildFile; fileRef = 0640D1532B9A41DD003726B1 /* Pro.reality */; };
 		06D181A12B92378A00352475 /* HuertosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181A02B92378A00352475 /* HuertosApp.swift */; };
 		06D181A32B92378A00352475 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181A22B92378A00352475 /* HomeView.swift */; };
 		06D181A52B92378B00352475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D181A42B92378B00352475 /* Assets.xcassets */; };
@@ -73,6 +76,7 @@
 		061572CA2B924E87002F6ADD /* GeneralPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPlantView.swift; sourceTree = "<group>"; };
 		0640D14B2B9A365E003726B1 /* TomatoPot1.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = TomatoPot1.reality; sourceTree = "<group>"; };
 		0640D14D2B9A36F5003726B1 /* VRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRView.swift; sourceTree = "<group>"; };
+		0640D1532B9A41DD003726B1 /* Pro.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pro.reality; sourceTree = "<group>"; };
 		06D1819D2B92378A00352475 /* Huertos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Huertos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D181A02B92378A00352475 /* HuertosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuertosApp.swift; sourceTree = "<group>"; };
 		06D181A22B92378A00352475 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 		0640D1482B9A31D8003726B1 /* VirtualReality */ = {
 			isa = PBXGroup;
 			children = (
+				0640D1532B9A41DD003726B1 /* Pro.reality */,
 				0640D14B2B9A365E003726B1 /* TomatoPot1.reality */,
 				0640D14D2B9A36F5003726B1 /* VRView.swift */,
 			);
@@ -373,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0640D1542B9A41DD003726B1 /* Pro.reality in Resources */,
 				0640D14C2B9A365E003726B1 /* TomatoPot1.reality in Resources */,
 				06D181A82B92378B00352475 /* Preview Assets.xcassets in Resources */,
 				06D181A52B92378B00352475 /* Assets.xcassets in Resources */,
@@ -383,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0640D1552B9A41DD003726B1 /* Pro.reality in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0640D1562B9A41DD003726B1 /* Pro.reality in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
