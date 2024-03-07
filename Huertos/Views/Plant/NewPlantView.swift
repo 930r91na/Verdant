@@ -95,9 +95,9 @@ struct PlantTypeCarouselView: View {
                     LazyHStack(spacing: 20) {
                         ForEach(plants, id: \.scientificName) { plant in
                             PlantCardView(plant: plant)
-                                .frame(width: 350, height: 500) // Adjusted for potentially better fit
+                                .frame(width: 350, height: 500) 
                                 .onTapGesture {
-                                    self.plantType = plant.commonName // Sets the tapped plant as the selected type
+                                    self.plantType = plant.commonName
                                 }
                         }
                     }

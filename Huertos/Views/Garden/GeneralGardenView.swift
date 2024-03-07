@@ -48,6 +48,8 @@ struct GeneralGardenView: View {
                         }
                         .padding(.horizontal, 21)
                         
+                        VRView()
+                        
                         LogCardGardenView(garden: garden)
                             .padding(.horizontal, 21)
                     }
@@ -126,6 +128,19 @@ struct GardenPlantsView: View {
         .background(.white.opacity(0.75))
         .cornerRadius(12)
         .padding(21)
+        .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
+    }
+}
+
+struct VRView: View {
+    var body: some View {
+        HStack(alignment: .center, spacing: 20) {
+            Text("Previsualization")
+        }
+        .padding(10)
+        .frame(width: 379, height: 72, alignment: .leading)
+        .background(.white)
+        .cornerRadius(12)
         .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
     }
 }
