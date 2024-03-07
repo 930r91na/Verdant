@@ -9,12 +9,13 @@ struct NewGardenView: View {
     @State private var length: String = ""
     @State private var width: String = ""
     @State private var depth: String = ""
-    @State private var isUsingCurrentLocation: Bool = false
     @State private var expositionLevels: String = ""
     
     // Buttons
     @State private var showingLocationPicker = false
+    @State private var isUsingCurrentLocation: Bool = false
     @State private var showingInfoAlert = Array(repeating: false, count: 8)
+    
     var color = Color.primaryGreen.opacity(0.15)
 
     let types = ["Pot", "Raised Bed", "Hydroponic System"]
@@ -42,7 +43,7 @@ struct NewGardenView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("First question")
+                                Text("Enter a unique name for your garden. This helps you easily identify it among other gardens you may create.")
                             }
                             .textCase(nil)
                         })
@@ -69,7 +70,7 @@ struct NewGardenView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("Second question")
+                                Text("Choose a garden type based on your space and preference. Pots are great for small spaces or indoors, Raised Beds are perfect for outdoor gardens with limited ground space, and Hydroponic Systems are ideal for efficient water usage and indoor gardening.")
                             }
                             .textCase(nil)
 
@@ -102,7 +103,7 @@ struct NewGardenView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("Third question")
+                                Text("Select 'Indoors' if your garden will be inside, such as in a greenhouse or your home. Choose 'Outdoors' for gardens located in your yard or on a balcony.")
                             }
                             .textCase(nil)
 
@@ -135,7 +136,7 @@ struct NewGardenView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("Fourth question")
+                                Text("Provide the length, width, and depth of your garden in centimeters. These dimensions help in planning the layout and understanding how many plants can fit.")
                             }
                             .textCase(nil)
 
@@ -170,7 +171,7 @@ struct NewGardenView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("Fifth question")
+                                Text("Specify the physical location of your garden. This information is crucial for understanding local climate conditions and selecting suitable plants.")
                             }
                             .textCase(nil)
 
@@ -202,7 +203,7 @@ struct NewGardenView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("Sixth question")
+                                Text("Enter the average number of sunlight hours your garden receives daily. Sunlight exposure is key to plant health and growth.")
                             }
                             .textCase(nil)
 
@@ -231,7 +232,7 @@ struct NewGardenView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("Seventh question")
+                                Text("Detail your soil mix by percentage. A balanced mix of normal soil, compost, and humus supports nutrient absorption and plant growth. Ensure the total adds up to 100%.")
                             }
                             .textCase(nil)
 
@@ -266,7 +267,7 @@ struct NewGardenView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("Eight question")
+                                Text("Indicate if your garden has a filtration system. Filtration is important for hydroponic systems or if your outdoor garden requires drainage solutions.")
                             }
                             .textCase(nil)
 
