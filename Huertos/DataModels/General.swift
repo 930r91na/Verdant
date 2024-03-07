@@ -56,56 +56,61 @@ func generateExampleUsers() -> [User] {
            Tree(commonName: "Mandarina", scientificName: "Citrus reticulata", alias: "Manda la nana",  recommendedSoil: .compost(percentage: 40), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate)
     ]
     
-    let names = [ "Megan", "Ana Lau", "Ivan" ]
-    let fullNames = [ "Megan Montiel", "Ana Mandujano", "Ivan Nicolas"]
-    let bios = ["I love chicken and tulips",
-                "I love making bread and cooking",
-                "I love making music, sometimes"]
     let descriptions = [
-        "A serene oasis filled with exotic flowers and a tranquil pond.",
-        "A vibrant vegetable garden boasting a variety of seasonal produce.",
-        "A cottage garden with winding paths, fragrant herbs, and colorful perennials.",
-        "A modern rooftop garden featuring sleek design and urban greenery."
-    ]
-
-
-    var users: [User] = []
-
-    // Generating users, gardens, and assigning plants and trees
-    for userIndex in 0...2 {
-        var gardens: [Garden] = []
-
-        let numberOfGardens = Int.random(in: 2...4)
-        for gardenIndex in 1...numberOfGardens {
-            // Select a random subset of plants and trees for each garden
-            let selectedPlants = plants.shuffled().prefix(Int.random(in: 3...5))
-            let selectedTrees = trees.shuffled().prefix(Int.random(in: 2...4))
-
-            // Aquí usamos el módulo para ciclar a través de las descripciones
-            let descriptionIndex = (gardenIndex - 1) % descriptions.count
-
-            gardens.append(
-                Garden(
-                    id: UUID(),
-                    name: "Garden \(gardenIndex)",
-                    gardenpic: Image("garden\(gardenIndex)"), // Asegúrate de que estas imágenes existen
-                    description: descriptions[descriptionIndex],
-                    location: "\(names[userIndex])'s backyard",
-                    numberOfPlants: selectedPlants.count + selectedTrees.count,
-                    plants: Array(selectedPlants),
-                    trees: Array(selectedTrees),
-                    soilType: .compost(percentage: 50),
-                    sunlightLevel: .fullSun,
-                    setting: .pot
-                )
-            )
-        }
+            "A serene oasis filled with exotic flowers and a tranquil pond.",
+            "A vibrant vegetable garden boasting a variety of seasonal produce.",
+            "A cottage garden with winding paths, fragrant herbs, and colorful perennials.",
+            "A modern rooftop garden featuring sleek design and urban greenery."
+        ]
         
-        users.append(User(id: UUID(), username: names[userIndex], age: 20 + userIndex, profilePicture: Image("profilePic\(userIndex)"), fullName: fullNames[userIndex], email: "\(names[userIndex])@example.com", bio: bios[userIndex], location: "Puebla", gardens: gardens))
-    }
+        let usersInfo = [
+            (name: "Megan Montiel", bio: "I love chicken and tulips", email: "Megan@example.com"),
+            (name: "Ana Mandujano", bio: "I love making bread and cooking", email: "AnaLau@example.com"),
+            (name: "Ivan Nicolas", bio: "I love making music, sometimes", email: "Ivan@example.com")
+        ]
+        
+        var users: [User] = []
 
+        // Predefined sets of plants and trees for each garden
+        let gardenPlants = [
+            [plants[0], plants[1], plants[3]], // Garden 1
+            [plants[2], plants[3], plants[4]], // Garden 2
+            [plants[4], plants[5], plants[6]]  // Garden 3
+        ]
+        
+        let gardenTrees = [
+            [trees[0]], // Garden 1
+            [trees[1]], // Garden 2
+            [trees[2]]  // Garden 3
+        ]
 
-    return users
+        for (index, userInfo) in usersInfo.enumerated() {
+            var gardens: [Garden] = []
+
+            for gardenIndex in 0..<3 {
+                let descriptionIndex = gardenIndex % descriptions.count
+                
+                gardens.append(
+                    Garden(
+                        id: UUID(),
+                        name: "Garden \(gardenIndex + 1)",
+                        gardenpic: Image("garden\(gardenIndex + 1)"), // Ensure these images exist
+                        description: descriptions[descriptionIndex],
+                        location: "\(userInfo.name)'s backyard",
+                        numberOfPlants: gardenPlants[gardenIndex].count + gardenTrees[gardenIndex].count,
+                        plants: gardenPlants[gardenIndex],
+                        trees: gardenTrees[gardenIndex],
+                        soilType: .compost(percentage: 50),
+                        sunlightLevel: .fullSun,
+                        setting: .pot
+                    )
+                )
+            }
+            
+            users.append(User(id: UUID(), username: usersInfo[index].name, age: 20 + index, profilePicture: Image("profilePic\(index)"), fullName: userInfo.name, email: userInfo.email, bio: userInfo.bio, location: "Puebla", gardens: gardens))
+        }
+
+        return users
 }
 
 let exampleUsers = generateExampleUsers()

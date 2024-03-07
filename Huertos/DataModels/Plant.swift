@@ -20,7 +20,6 @@ struct Plant {
     var recommendedVarieties: String?
     var description: String?
     var stagesInfo: [PlantStage]?
-    
 }
 
 enum StageMode: String{
@@ -55,7 +54,6 @@ struct PlantStage: Identifiable {
     var notes: String
     var stageMode: StageMode
 }
-
 
 struct Tree {
     var commonName: String
