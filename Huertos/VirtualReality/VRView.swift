@@ -18,8 +18,8 @@ struct PotViewPlant: UIViewRepresentable{
         session.run(config)
         
         // Load the .reality file's scene asynchronously
-        /*
-        Pro.loadPotAsync { result in
+        
+        Pot.loadSceneAsync() { result in
             switch result {
             case .success(let anchor):
                 // Add the loaded scene to the ARView
@@ -29,7 +29,7 @@ struct PotViewPlant: UIViewRepresentable{
                 print("Error loading scene: \(error.localizedDescription)")
             }
         }
-        */
+        
         return arView
     }
 }

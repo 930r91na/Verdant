@@ -161,8 +161,8 @@ struct StageMiniCardView: View {
         .background(
             LinearGradient(
                 stops: [
-                    Gradient.Stop(color: .white.opacity(0), location: 0.00),
-                    Gradient.Stop(color: Color(red: 0.76, green: 0.77, blue: 0.73).opacity(0.6), location: 1.00),
+                    Gradient.Stop(color: .black.opacity(0.2), location: 0.00),
+                    Gradient.Stop(color: .black.opacity(0.2), location: 1.00),
                 ],
                 startPoint: UnitPoint(x: 0.5, y: 0),
                 endPoint: UnitPoint(x: 0.5, y: 1)
