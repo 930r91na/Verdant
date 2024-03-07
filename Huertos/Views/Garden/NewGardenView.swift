@@ -11,7 +11,10 @@ struct NewGardenView: View {
     @State private var depth: String = ""
     @State private var isUsingCurrentLocation: Bool = false
     @State private var expositionLevels: String = ""
+    
+    // Buttons
     @State private var showingLocationPicker = false
+    @State private var showingInfoAlert = Array(repeating: false, count: 8)
     var color = Color.primaryGreen.opacity(0.15)
 
     let types = ["Pot", "Raised Bed", "Hydroponic System"]
@@ -21,16 +24,57 @@ struct NewGardenView: View {
     var body: some View {
         NavigationView{
             Form {
-                    Section(header: Text("My new garden's name will be...")
-                        .foregroundColor(.primaryGreen)
-                        .font(Font.custom("SF Pro Display", size: 13))){
+                    Section(header:
+                        HStack {
+                        Text("My new garden's name will be...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[0] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Garden's name", isPresented: $showingInfoAlert[0]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("First question")
+                            }
+                            .textCase(nil)
+                        })
+                    {
                         TextField("Name", text: $gardenName)
                             .listRowBackground(color)
                     }
                     
-                    Section(header: Text("It will be a...")
-                        .foregroundColor(.primaryGreen)
-                        .font(Font.custom("SF Pro Display", size: 13))){
+                    Section(header:
+                        HStack {
+                            Text("It will be a...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[1] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Type of plant", isPresented: $showingInfoAlert[1]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("Second question")
+                            }
+                            .textCase(nil)
+
+                        })
+                    {
                         Picker("Type", selection: $selectedType) {
                             ForEach(types, id: \.self) {
                                 Text($0)
@@ -39,10 +83,31 @@ struct NewGardenView: View {
                         .pickerStyle(SegmentedPickerStyle())
                         .listRowBackground(color)
                     }
-                    
-                    Section(header: Text("It will be located...")
-                        .foregroundColor(.primaryGreen)
-                        .font(Font.custom("SF Pro Display", size: 13))){
+                
+                    Section(header:
+                        HStack {
+                        Text("It will be located...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[2] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Location", isPresented: $showingInfoAlert[2]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("Third question")
+                            }
+                            .textCase(nil)
+
+                        })
+                    {
                         Picker("Location", selection: $location) {
                             ForEach(locations, id: \.self) {
                                 Text($0)
@@ -51,10 +116,31 @@ struct NewGardenView: View {
                         .pickerStyle(SegmentedPickerStyle())
                         .listRowBackground(Color.primaryGreen.opacity(0.15))
                     }
-                    
-                    Section(header: Text("It has the following dimensions...")
-                        .foregroundColor(.primaryGreen)
-                        .font(Font.custom("SF Pro Display", size: 13))){
+                
+                    Section(header:
+                        HStack {
+                            Text("It has the following dimensions...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[3] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Dimensions", isPresented: $showingInfoAlert[3]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("Fourth question")
+                            }
+                            .textCase(nil)
+
+                        })
+                    {
                         TextField("Length (cm)", text: $length)
                             .keyboardType(.numberPad)
                             .listRowBackground(color)
@@ -65,9 +151,31 @@ struct NewGardenView: View {
                             .keyboardType(.numberPad)
                             .listRowBackground(color)
                     }
-                    
-                    Section(header: Text("Its physical location will be at...")
-                        .foregroundColor(.primaryGreen)){
+                
+                    Section(header:
+                        HStack {
+                            Text("Its geographical location will be at...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[4] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Geographical location", isPresented: $showingInfoAlert[4]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("Fifth question")
+                            }
+                            .textCase(nil)
+
+                        })
+                    {
                         Button(action: {
                             self.showingLocationPicker = true
                             }) {
@@ -76,18 +184,59 @@ struct NewGardenView: View {
                             .foregroundColor(.primary)
                     }
                     
-                    Section(header: Text("Its daily exposition levels are...")
-                        .foregroundColor(.primaryGreen)
-                        .font(Font.custom("SF Pro Display", size: 13))){
-                            TextField("Hours per day", text: $length)
-                                .keyboardType(.numberPad)
-                                .listRowBackground(color)
+                    Section(header:
+                        HStack {
+                        Text("Its daily exposition levels are...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[5] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Daily exposition levels", isPresented: $showingInfoAlert[5]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("Sixth question")
+                            }
+                            .textCase(nil)
+
+                        })
+                    {
+                        TextField("Hours per day", text: $length)
+                            .keyboardType(.numberPad)
+                            .listRowBackground(color)
                     }
-                    
-                    // The sum of this has to be 100%
-                    Section(header: Text("Its soil composition (100% total)...")
-                        .foregroundColor(.primaryGreen)
-                        .font(Font.custom("SF Pro Display", size: 13))){
+                
+                    Section(header:
+                        HStack {
+                        Text("Its soil composition (100% total)...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[6] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Soil composition", isPresented: $showingInfoAlert[6]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("Seventh question")
+                            }
+                            .textCase(nil)
+
+                        })
+                    {
                         TextField("% Normal soil", text: $length)
                             .keyboardType(.numberPad)
                             .listRowBackground(color)
@@ -99,16 +248,37 @@ struct NewGardenView: View {
                             .listRowBackground(color)
                     }
                         
-                    Section(header: Text("Filtration system...")
-                        .foregroundColor(.primaryGreen)
-                        .font(Font.custom("SF Pro Display", size: 13))){
-                            Picker("Filtration system", selection: $filtration) {
-                                ForEach(filtrations, id: \.self) {
-                                    Text($0)
-                                }
+                    Section(header:
+                        HStack {
+                        Text("Filtration system...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[7] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
                             }
-                            .pickerStyle(SegmentedPickerStyle())
-                            .listRowBackground(Color.primaryGreen.opacity(0.15))
+                            .alert("Filtration system", isPresented: $showingInfoAlert[7]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("Eight question")
+                            }
+                            .textCase(nil)
+
+                        })
+                    {
+                        Picker("Filtration system", selection: $filtration) {
+                            ForEach(filtrations, id: \.self) {
+                                Text($0)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .listRowBackground(Color.primaryGreen.opacity(0.15))
                     }
                     
                     Section {
