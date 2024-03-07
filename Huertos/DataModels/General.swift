@@ -40,13 +40,13 @@ enum Inout{
 func generateExampleUsers() -> [User] {
     // Detailed plant and tree information
     let plants = [
-        Plant(scientificName: "Phaseolus vulgaris", commonName: "Bean", alias: "Bean Stalker", recommendedSoil: .normal(percentage: 50), waterLevel: .low, sunlightLevel: .fullSun, difficulty: .easy, needsSupport: true),
-        Plant(scientificName: "Solanum tuberosum", commonName: "potato", alias: "Spud Buddy", recommendedSoil: .compost(percentage: 50), waterLevel: .medium, sunlightLevel: .partialShade, difficulty: .moderate, needsSupport: false),
-        Plant(scientificName: "Solanum lycopersicum", commonName: "Tomato", alias: "Red Gem", recommendedSoil: .compost(percentage: 40), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate, needsSupport: true),
-        Plant(scientificName: "Allium fistulosum", commonName: "Cambray onion", alias: "Green Spear", recommendedSoil: .wormHummus(percentage: 60), waterLevel: .low, sunlightLevel: .partialShade, difficulty: .easy, needsSupport: false),
-        Plant(scientificName: "Opuntia ficus-indica", commonName: "Prickly pear", alias: "Desert's Pride", recommendedSoil: .normal(percentage: 30), waterLevel: .low, sunlightLevel: .fullSun, difficulty: .easy, needsSupport: false),
-        Plant(scientificName: "Daucus carota subsp. sativus", commonName: "Carrot", alias: "Orange Crunch", recommendedSoil: .compost(percentage: 50), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate, needsSupport: false),
-        Plant(scientificName: "Beta vulgaris", commonName: "Betabel", alias: "Beetroot", recommendedSoil: .wormHummus(percentage: 50), waterLevel: .medium, sunlightLevel: .partialShade, difficulty: .hard, needsSupport: false)
+        Plant(scientificName: "Phaseolus vulgaris", commonName: "Bean", alias: "Bean Stalker", recommendedSoil: .normal(percentage: 50), waterLevel: .low, sunlightLevel: .fullSun, difficulty: .easy, needsSupport: true, image: Image("beanimage")),
+        Plant(scientificName: "Solanum tuberosum", commonName: "potato", alias: "Spud Buddy", recommendedSoil: .compost(percentage: 50), waterLevel: .medium, sunlightLevel: .partialShade, difficulty: .moderate, needsSupport: false, image: Image("potatoimage")),
+        Plant(scientificName: "Solanum lycopersicum", commonName: "Tomato", alias: "Red Gem", recommendedSoil: .compost(percentage: 40), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate, needsSupport: true, image: Image("tomatoimage")),
+        Plant(scientificName: "Allium fistulosum", commonName: "Cambray onion", alias: "Green Spear", recommendedSoil: .wormHummus(percentage: 60), waterLevel: .low, sunlightLevel: .partialShade, difficulty: .easy, needsSupport: false, image: Image("onionimage")),
+        Plant(scientificName: "Opuntia ficus-indica", commonName: "Prickly pear", alias: "Desert's Pride", recommendedSoil: .normal(percentage: 30), waterLevel: .low, sunlightLevel: .fullSun, difficulty: .easy, needsSupport: false, image: Image("pearimage")),
+        Plant(scientificName: "Daucus carota subsp. sativus", commonName: "Carrot", alias: "Orange Crunch", recommendedSoil: .compost(percentage: 50), waterLevel: .medium, sunlightLevel: .fullSun, difficulty: .moderate, needsSupport: false, image: Image("tomatoimage")),
+        Plant(scientificName: "Beta vulgaris", commonName: "Betabel", alias: "Beetroot", recommendedSoil: .wormHummus(percentage: 50), waterLevel: .medium, sunlightLevel: .partialShade, difficulty: .hard, needsSupport: false, image: Image("betabelimage"))
     ]
 
     let trees = [

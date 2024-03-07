@@ -1,45 +1,66 @@
 import SwiftUI
 
 struct GeneralGardenView: View {
+    @State private var showingTipsSheet = false
+    @State private var showingPlantsSheet = false
+    
     var garden: Garden
     
     var body: some View {
-        ScrollView {
-            Rectangle()
-              .foregroundColor(.clear)
-              .frame(width: 393, height: 345)
-              .background(
-                LinearGradient(
-                  stops: [
-                    Gradient.Stop(color: Color(red: 0.38, green: 0.42, blue: 0.22).opacity(0.1), location: 0.00),
-                    Gradient.Stop(color: Color(red: 0.97, green: 0.97, blue: 0.97).opacity(0.1), location: 0.83),
-                    Gradient.Stop(color: .white, location: 1.00),
-                  ],
-                  startPoint: UnitPoint(x: 0.5, y: 0),
-                  endPoint: UnitPoint(x: 0.5, y: 1)
-                )
-              )
-              .background(
-                garden.gardenpic
-                  .resizable()
-                  .aspectRatio(contentMode: .fill)
-                  .frame(width: 393, height: 345)
-                  .clipped()
-              )
+        ZStack(alignment: .top) {
+            garden.gardenpic
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 393, height: 345)
+                .clipped()
             
-            VStack{
-                HStack{
-                    GardenTipsView(garden: garden)
-                    GardenPlantsView(garden: garden)
-                   
+            LinearGradient(
+                stops: [
+                    .init(color: Color(red: 0.38, green: 0.42, blue: 0.22).opacity(0.1), location: 0.00),
+                    .init(color: Color(red: 0.97, green: 0.97, blue: 0.97).opacity(0.1), location: 0.83),
+                    .init(color: .white, location: 1.00)
+                ],
+                startPoint: UnitPoint(x: 0.5, y: 0),
+                endPoint: UnitPoint(x: 0.5, y: 1)
+            )
+            .frame(width: 393, height: 345)
+            ScrollView {
+                
+                VStack {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(height: 345 / 2)
+                    
+                    VStack {
+                        HStack {
+                            Button(action: {
+                                self.showingTipsSheet = true
+                            }) {
+                                GardenTipsView(garden: garden)
+                            }
+                            .sheet(isPresented: $showingTipsSheet) {
+                                // Present your tips view here
+                            }
+                            
+                            NavigationLink(destination: GardenView(garden: garden), isActive: $showingPlantsSheet) {
+                                GardenPlantsView(garden: garden)
+                            }
+                        }
+                        .padding(.horizontal, 21)
+                        
+                        LogCardGardenView(garden: garden)
+                            .padding(.horizontal, 21)
+                    }
+                    .offset(y: 20)
                 }
-                LogCardGardenView(garden : garden)
             }
-            
-            
         }
         .navigationTitle("\(garden.name)")
+        .frame(width: 393, alignment: .top)
         .accentColor(.primaryGreen)
+        .sheet(isPresented: $showingTipsSheet) {
+            //NewTipsView()
+        }
     }
 }
 
@@ -53,7 +74,17 @@ struct GardenTipsView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.black)
             Spacer()
-            // Add more content here using garden data if necessary
+            
+            HStack(alignment: .center, spacing: 0) {
+                Image(systemName: "lightbulb")
+                    .font(.system(size: 30))
+                    .frame(width: 29.86099, height: 26.35941)
+            }
+            .padding(.leading, 102.88396)
+            .padding(.trailing, 0.25504)
+            .padding(.top, 71)
+            .padding(.bottom, 1.64059)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
         }
         .padding(16)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -62,6 +93,8 @@ struct GardenTipsView: View {
         .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
         .padding(21)
     }
+    
+    
 }
 
 struct GardenPlantsView: View {
@@ -74,9 +107,18 @@ struct GardenPlantsView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.black)
             Spacer()
-            // Here you might list the plants, for example:
-                Text("# \(garden.numberOfPlants) ")
-                
+            
+            HStack(alignment: .center, spacing: 0) {
+                Image(systemName: "leaf")
+                    .font(.system(size: 30))
+                    .frame(width: 29.86099, height: 26.35941)
+            }
+            .padding(.leading, 102.88396)
+            .padding(.trailing, 0.25504)
+            .padding(.top, 71)
+            .padding(.bottom, 1.64059)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+            
             
         }
         .padding(16)
@@ -90,16 +132,16 @@ struct GardenPlantsView: View {
 
 struct LogCardGardenView: View {
     var garden: Garden
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Text("Activity")
-                    .font(.custom("SF Pro Display", size: 17).weight(.semibold))
+                    .font(.title2.bold())
                     .foregroundColor(.black)
-
+                
                 Spacer()
-
+                
                 Button("Dismiss") {
                     // Empty log
                 }
@@ -113,9 +155,7 @@ struct LogCardGardenView: View {
             
             // ScrollView should allow scrolling through all the logs
             ScrollView {
-                // Optional unwrapping for myLog
                 if let log = garden.myLog, !log.isEmpty {
-                    // Using ForEach with unwrapped myLog
                     ForEach(log) { log in
                         VStack(alignment: .leading) {
                             HStack {
@@ -125,8 +165,6 @@ struct LogCardGardenView: View {
                                 
                                 Spacer()
                                 
-                                // You should calculate the days from creation
-                                // using the daysFromCreation property
                                 Text("\(log.daysFromCreation) days ago")
                                     .font(.caption)
                                     .foregroundColor(.primaryGreen)

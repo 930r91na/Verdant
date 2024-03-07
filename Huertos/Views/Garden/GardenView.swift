@@ -16,14 +16,14 @@ struct GardenView: View {
                 AddPlantButtonView()
                 
                 ForEach(garden.plants, id: \.alias) { plant in
-                    PlantCardView(plant: plant)
+                    PlantMiniCardView(plant: plant)
                 }
                 
                 ForEach(garden.trees, id: \.commonName) { tree in
                     TreeCardView(tree: tree)
                 }
             }
-            .navigationTitle("\(garden.name)")
+            .navigationTitle("Plants of \(garden.name)")
             .accentColor(.primaryGreen)
             .padding()
         }

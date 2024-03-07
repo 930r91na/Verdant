@@ -12,6 +12,14 @@ struct Plant {
     var difficulty: Difficulty
     var needsSupport: Bool
     var inorout: Inout?
+    var image: Image
+    var benefits: String?
+    var ph: (Double, Double)?
+    var temp: (Double, Double)?
+    var sunHoursPerDay: (Double,Double)?
+    var recommendedVarieties: String?
+    var description: String?
+    
 }
 
 struct Tree {
@@ -48,8 +56,36 @@ var Tomato = Plant(
     sunlightLevel: .fullSun,
     difficulty: .moderate,
     needsSupport: true,
-    inorout: .outdoor
+    inorout: .outdoor,
+    image: Image("tomatoimage"),
+    benefits: "Source of Potassium, Calcium, Sodium, Dietary fibre and Protein",
+    ph: (5,7),
+    temp: (10, 15),
+    sunHoursPerDay: (6, 8),
+    description: "A tomato is a nutrient-dense superfood that offers benefit to a range of bodily systems. Its nutritional content supports healthful skin, weight loss, and heart health"
 )
+
+let Potato = Plant(
+    scientificName: "Solanum tuberosum",
+    commonName: "Potato",
+    alias: "Yukon Gold",
+    recommendedSoil: .normal(percentage: 60),
+    waterLevel: .medium,
+    sunlightLevel: .fullSun,
+    difficulty: .easy,
+    needsSupport: false,
+    inorout: .outdoor,
+    image: Image("potatoimage"), // Ensure you have an image named "potatoimage" in your assets
+    benefits: "Rich in vitamins C and B6, potassium, and fiber.",
+    ph: (4.8, 5.5),
+    temp: (5, 10),
+    sunHoursPerDay: (5, 7),
+    description: "A versatile root vegetable high in starch and fiber."
+)
+
+// Create a library (array) of plants
+var plantLibrary: [Plant] = [Tomato, Potato]
+
 
 func generateTomatoActivities(start: Date) -> [PlantActivity] {
     var activities = [PlantActivity]()
