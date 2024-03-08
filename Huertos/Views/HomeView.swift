@@ -25,6 +25,8 @@ struct HomeView: View {
                 
                 PlantOfTheDayView(plant: Tomato)
                 
+                RecentActivityView()
+                
                 .navigationTitle("Home")
                 .navigationBarItems(trailing: Button(action: {
                     isShowingNotification = true
@@ -48,7 +50,6 @@ struct PlantOfTheDayView: View {
             navigateToPlantView = true
         }) {
             ZStack {
-                // Imagen de fondo de la planta
                 plant.image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -56,7 +57,6 @@ struct PlantOfTheDayView: View {
                     .clipped()
                     .cornerRadius(12)
                 
-                // Gradiente sobre la imagen de fondo
                 LinearGradient(
                     gradient: Gradient(stops: [
                         .init(color: Color(red: 0.38, green: 0.42, blue: 0.22).opacity(0.5), location: 0.00),
@@ -72,8 +72,8 @@ struct PlantOfTheDayView: View {
                     HStack{
                         HStack{
                             Text("Plant of the day")
-                                .fontWeight(.bold)
-                                .font(.custom("SF Pro Display", size: 17))
+                                .fontWeight(.semibold)
+                                .font(.title3)
                                 .foregroundColor(.white)
                         }
                         .padding(.horizontal, 10)
@@ -134,6 +134,70 @@ struct PlantOfTheDayView: View {
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.1), radius: 16, x: 0, y: 0)
         .frame(width: 351, height: 165, alignment: .leading)
+    }
+}
+
+struct ActivityItem: Identifiable {
+    let id = UUID()
+    let plantName: String
+    let activityDescription: String
+    let timeAgo: String
+}
+
+struct RecentActivityView: View {
+    @State var activities: [ActivityItem] = [
+        ActivityItem(plantName: "Sophia", activityDescription: "You watered Sophia!", timeAgo: "1 day ago"),
+        ActivityItem(plantName: "Sprouty", activityDescription: "You captured Sprouty en Wednesday.", timeAgo: "3 days ago")
+    ]
+    
+    var color = Color.primaryGreen.opacity(0.15)
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Recent Activity")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                Spacer()
+            }
+            
+            ForEach(activities) { activity in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(activity.plantName).italic()
+                            .fontWeight(.semibold)
+                            .foregroundColor(.primaryGreen)
+                        Text(activity.activityDescription)
+                            .font(.caption)
+                            .foregroundColor(.black)
+                    }
+                    Spacer()
+                    Text(activity.timeAgo)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                .padding(10)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .background(Color(red: 0.38, green: 0.42, blue: 0.22).opacity(0.15))
+                .cornerRadius(12)
+                .padding(.vertical, 2)
+            }
+            Spacer()
+            
+            Button("See more") {
+                // Agrega la lógica para manejar el botón de See more
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 5)
+            .background(color)
+            .cornerRadius(15)
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(15)
+        .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
+        .frame(width: 351, height: 240, alignment: .leading)
+        .padding()
     }
 }
 
