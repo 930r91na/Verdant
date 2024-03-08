@@ -27,6 +27,8 @@ struct HomeView: View {
                 
                 RecentActivityView()
                 
+                TipOfTheDayView()
+                
                 .navigationTitle("Home")
                 .navigationBarItems(trailing: Button(action: {
                     isShowingNotification = true
@@ -198,6 +200,84 @@ struct RecentActivityView: View {
         .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
         .frame(width: 351, height: 240, alignment: .leading)
         .padding()
+    }
+}
+
+struct TipOfTheDayView: View {
+    var body: some View {
+        ZStack {
+                Image("tip")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .clipped()
+                    .cornerRadius(12)
+                
+                LinearGradient(
+                    gradient: Gradient(stops: [
+                        .init(color: Color(red: 0.38, green: 0.42, blue: 0.22).opacity(0.5), location: 0.00),
+                        .init(color: Color(red: 0.4, green: 0.4, blue: 0.4).opacity(0.5), location: 1.00),
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(width: 351, height: 351)
+                .cornerRadius(12)
+                
+                VStack(alignment: .leading, spacing: 5) {
+                    HStack{
+                        HStack{
+                            Text("Tip of the day")
+                                .fontWeight(.semibold)
+                                .font(.title3)
+                                .foregroundColor(.white)
+                        }
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(.white.opacity(0.15))
+                        .cornerRadius(40)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Image(systemName: "drop.fill")
+                                .foregroundColor(.white)
+                            Text("Watering")
+                                .font(Font.custom("SF Pro Display", size: 15).weight(.bold))
+                                .foregroundColor(.white)
+                        }
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(.white.opacity(0.15))
+                        .cornerRadius(40)
+                    }
+                    
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(height: 95)
+                    
+                    HStack {
+                        HStack(alignment: .center){
+                            Text("Backyard")
+                                .font(Font.custom("SF Pro Display", size: 15).weight(.bold))
+                                .foregroundColor(.white)
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 4)
+                        .frame(width: 319, height: 170)
+                        .background(.white.opacity(0.35))
+                        .cornerRadius(12)
+                    }
+                    
+                    Spacer()
+                }
+                .padding()
+                .frame(width: 351, height: 351)
+                .cornerRadius(12)
+            }
+        
+        .cornerRadius(12)
+        .shadow(color: .black.opacity(0.1), radius: 16, x: 0, y: 0)
+        .frame(width: 351, height: 351, alignment: .leading)
     }
 }
 
