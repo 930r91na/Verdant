@@ -29,12 +29,14 @@ enum StageMode: String{
     case Completed = "Completed"
 }
 
-enum Stages: String{
+enum Stages: String, CaseIterable, Identifiable{
     case sprout = "Sprout"
     case seedling = "Seedling"
     case vegetative = "Vegetative"
     case flowering = "Flowering"
     case ripening = "Ripening"
+    
+    var id: String { self.rawValue }
 }
 
 struct PlantStage: Identifiable {

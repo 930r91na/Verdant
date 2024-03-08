@@ -11,7 +11,9 @@ struct NewPlantView: View {
     @State private var showingInfoAlert = Array(repeating: false, count: 4)
     
     let options = ["Potato", "Tomato", "Bean"]
+    @State private var selectedStage = "Select a stage"
     @State private var selectedOption = "Select a type"
+    let stages = ["Sprout", "Seedling", "Vegetative", "Flowering", "Ripening"]
     
     var color = Color.primaryGreen.opacity(0.15)
 
@@ -19,7 +21,6 @@ struct NewPlantView: View {
     let filtrations = ["Yes", "No"]
 
     var body: some View {
-        NavigationView{
             Form {
                     Section(header:
                         HStack {
@@ -77,7 +78,7 @@ struct NewPlantView: View {
                     
                     Section(header:
                         HStack {
-                            Text("It will be a...")
+                            Text("Its current growth stage is...")
                                 .foregroundColor(.primaryGreen)
                                 .font(Font.custom("SF Pro Display", size: 13))
                         
@@ -89,7 +90,7 @@ struct NewPlantView: View {
                                 Image(systemName: "info.circle")
                                     .foregroundColor(.primaryGreen)
                             }
-                            .alert("Type of plant", isPresented: $showingInfoAlert[2]) {
+                            .alert("Growth state", isPresented: $showingInfoAlert[2]) {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
@@ -100,13 +101,55 @@ struct NewPlantView: View {
                         })
                     {
                         Menu {
-                            ForEach(options, id: \.self) { option in
-                                Button(action: {
-                                    selectedOption = option
-                                }) {
-                                    Text(option)
+                            ForEach(stages, id: \.self) { stage in
+                                    Button(action: {
+                                        selectedStage = stage
+                                    }) {
+                                        Text(stage)
+                                    }
                                 }
+
+                        } label: {
+                            HStack {
+                                Text(selectedStage)
+                                Spacer()
+                                Image(systemName: "chevron.down")
                             }
+                            .padding()
+                            .foregroundColor(selectedStage != "Select a stage" ? .black : .gray.opacity(0.6))
+                            .background(Color.primaryGreen.opacity(0.15))
+                            .cornerRadius(8)
+                            .padding(.horizontal, -20)
+                            .padding(.top, -15)
+                        }
+                    }
+                    
+                    Section(header:
+                        HStack {
+                            Text("It will be a...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[3] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Type of plant", isPresented: $showingInfoAlert[3]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("...")
+                            }
+                            .textCase(nil)
+
+                        })
+                    {
+                        Menu {
+                            // Call PlantTypeCarouselView and keep the option selected
                         } label: {
                             HStack {
                                 Text(selectedOption)
@@ -121,40 +164,7 @@ struct NewPlantView: View {
                             .padding(.top, -15)
                         }
                     }
-                
-                    Section(header:
-                        HStack {
-                        Text("It current growth stage is...")
-                                .foregroundColor(.primaryGreen)
-                                .font(Font.custom("SF Pro Display", size: 13))
-                        
-                            Spacer()
-                        
-                            Button(action: {
-                                showingInfoAlert[3] = true
-                            }) {
-                                Image(systemName: "info.circle")
-                                    .foregroundColor(.primaryGreen)
-                            }
-                            .alert("Growth stage", isPresented: $showingInfoAlert[3]) {
-                                Button("OK", role: .cancel) { }
-                            }
-                            message: {
-                                Text("...")
-                            }
-                            .textCase(nil)
-
-                        })
-                    {
-                        Picker("Growth stage", selection: $growthStage) {
-                            ForEach(growthStages, id: \.self) {
-                                Text($0)
-                            }
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                        .listRowBackground(Color.primaryGreen.opacity(0.15))
-                    }
-
+                    
                     Section {
                         HStack {
                             Spacer()
@@ -176,7 +186,6 @@ struct NewPlantView: View {
             }
             .navigationTitle("Add new plant")
         }
-    }
 }
 
 struct PlantTypeCarouselView: View {
