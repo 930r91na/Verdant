@@ -253,16 +253,22 @@ struct TipOfTheDayView: View {
                     
                     Rectangle()
                         .foregroundColor(.clear)
-                        .frame(height: 95)
+                        .frame(height: 100)
                     
                     HStack {
-                        HStack(alignment: .center){
-                            Text("Backyard")
+                        VStack(alignment: .center){
+                            Text("Rainfall")
+                                .foregroundColor(.white)
+                                .fontWeight(.semibold)
+                                .font(.title3)
+                            Text("Watering plants with a 'rainfall' technique mimics natural weather, providing a gentle, even soak that reaches deep roots and promotes healthy growth. This is essential for the long-term vitality of your plants, as deep watering supports resilience against drought and disease.")
                                 .font(Font.custom("SF Pro Display", size: 15).weight(.bold))
                                 .foregroundColor(.white)
+                            Spacer()
                         }
+                        .padding(0)
+                        .padding(.top, 10)
                         .padding(.horizontal, 16)
-                        .padding(.vertical, 4)
                         .frame(width: 319, height: 170)
                         .background(.white.opacity(0.35))
                         .cornerRadius(12)
