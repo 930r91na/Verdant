@@ -74,18 +74,6 @@ extension DayActivity.ActivityType: Comparable {
     }
 }
 
-let weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-
-let weekActivities: [DayActivity] = [
-    DayActivity(day: weekdays[0], activities: [.water].sorted()),
-    DayActivity(day: weekdays[1], activities: [.fertilizer].sorted()),
-    DayActivity(day: weekdays[2], activities: [.image, .water].sorted()),
-    DayActivity(day: weekdays[3], activities: [.water].sorted()),
-    DayActivity(day: weekdays[4], activities: [.fertilizer, .image, .sunExposure].sorted()),
-    DayActivity(day: weekdays[5], activities: [.image, .water].sorted()),
-    DayActivity(day: weekdays[6], activities: [.water].sorted()),
-]
-
 struct CalendarView: View {
     var activities: [DayActivity]
     
@@ -324,6 +312,38 @@ struct StageMiniCardView: View {
     }
 }
 
+let weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+let weekActivities: [DayActivity] = [
+    DayActivity(day: weekdays[0], activities: [.water].sorted()),
+    DayActivity(day: weekdays[1], activities: [.fertilizer].sorted()),
+    DayActivity(day: weekdays[2], activities: [.image, .water].sorted()),
+    DayActivity(day: weekdays[3], activities: [.water].sorted()),
+    DayActivity(day: weekdays[4], activities: [.fertilizer, .image, .sunExposure].sorted()),
+    DayActivity(day: weekdays[5], activities: [.image, .water].sorted()),
+    DayActivity(day: weekdays[6], activities: [.water].sorted()),
+    DayActivity(day: weekdays[0], activities: [.water].sorted()),
+    DayActivity(day: weekdays[1], activities: [.fertilizer].sorted()),
+    DayActivity(day: weekdays[2], activities: [.image, .water].sorted()),
+    DayActivity(day: weekdays[3], activities: [.water].sorted()),
+    DayActivity(day: weekdays[4], activities: [.fertilizer, .image, .sunExposure].sorted()),
+    DayActivity(day: weekdays[5], activities: [.image, .water].sorted()),
+    DayActivity(day: weekdays[6], activities: [.water].sorted()),
+    DayActivity(day: weekdays[0], activities: [.water].sorted()),
+    DayActivity(day: weekdays[1], activities: [.fertilizer].sorted()),
+    DayActivity(day: weekdays[2], activities: [.image, .water].sorted()),
+    DayActivity(day: weekdays[3], activities: [.water].sorted()),
+    DayActivity(day: weekdays[4], activities: [.fertilizer, .image, .sunExposure].sorted()),
+    DayActivity(day: weekdays[5], activities: [.image, .water].sorted()),
+    DayActivity(day: weekdays[6], activities: [.water].sorted()),
+    DayActivity(day: weekdays[0], activities: [.water].sorted()),
+    DayActivity(day: weekdays[1], activities: [.fertilizer].sorted()),
+    DayActivity(day: weekdays[2], activities: [.image, .water].sorted()),
+    DayActivity(day: weekdays[3], activities: [.water].sorted()),
+    DayActivity(day: weekdays[4], activities: [.fertilizer, .image, .sunExposure].sorted()),
+    DayActivity(day: weekdays[5], activities: [.image, .water].sorted()),
+    DayActivity(day: weekdays[6], activities: [.water].sorted()),
+]
 
 #Preview {
     GeneralPlantView(plant : myTomato)
