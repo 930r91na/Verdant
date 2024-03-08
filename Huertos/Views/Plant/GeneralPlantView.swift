@@ -63,6 +63,12 @@ extension DayActivity.ActivityType: Comparable {
     static func < (lhs: DayActivity.ActivityType, rhs: DayActivity.ActivityType) -> Bool {
         return lhs.orderIndex() < rhs.orderIndex()
     }
+    
+    static func randomActivities() -> [DayActivity.ActivityType] {
+            let allActivities: [DayActivity.ActivityType] = [.water, .fertilizer, .image, .sunExposure]
+            let count = Int.random(in: 0...4) // Random count between 0 and 4
+            return Array(allActivities.shuffled().prefix(count)).sorted() // Shuffle and take 'count' activities
+        }
 
     private func orderIndex() -> Int {
         switch self {
@@ -124,6 +130,8 @@ struct GeneralEvolutionView: View {
     var color = Color.primaryGreen.opacity(0.15)
     
     var body: some View {
+        
+        let activitiesForMonth = generateActivitiesForMonth()
         VStack {
             VStack(alignment: .leading, spacing: 10) {
                 Text("Evolution")
@@ -131,11 +139,10 @@ struct GeneralEvolutionView: View {
                     .foregroundColor(.black)
                 
                 HStack {
-                    CalendarView(activities: weekActivities) // Asumiendo que tienes 'weekActivities' disponible
+                    CalendarView(activities: activitiesForMonth)
                 }
                 .padding(.bottom, 10)
-                
-                // Inserted Form Below
+
                 Form {
                     Section(header: Text("REGISTER ACTIVITY")
                         .foregroundColor(.primaryGreen)
@@ -199,6 +206,19 @@ struct GeneralEvolutionView: View {
         }
         .background(Color.clear)
     }
+    
+    func generateActivitiesForMonth() -> [DayActivity] {
+            let weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+            var monthActivities: [DayActivity] = []
+            
+            for week in 1...4 {
+                for day in weekdays {
+                    let randomActivities = DayActivity.ActivityType.randomActivities()
+                    monthActivities.append(DayActivity(day: day, activities: randomActivities.sorted()))
+                }
+            }
+            return monthActivities
+        }
 }
 
 

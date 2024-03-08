@@ -3,74 +3,67 @@ import SwiftUI
 struct GardenCardView: View {
     @State private var navigateToGardenView = false
     var garden: Garden // Parámetro para los datos del jardín
-    @State private var selectedGarden: Garden? // Asume que tienes esto disponible
+    @State private var selectedGarden: Garden? // Para la navegación
 
     var body: some View {
         ZStack {
-            NavigationLink(destination: GeneralGardenView(garden: selectedGarden ?? garden), isActive: $navigateToGardenView) {
-                        EmptyView()
-                    }
+            // Imagen de fondo del jardín
+            garden.gardenpic
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 351, height: 165)
+                .cornerRadius(12)
+                .clipped()
+
+            // Gradiente sobre la imagen de fondo
+            LinearGradient(
+                stops: [
+                    .init(color: Color(red: 0.38, green: 0.42, blue: 0.22).opacity(0.5), location: 0.00),
+                    .init(color: Color(red: 0.4, green: 0.4, blue: 0.4).opacity(0.5), location: 1.00),
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(width: 351, height: 165)
+            .cornerRadius(12)
+            
+            // Contenido de la tarjeta
             Button(action: {
-                self.selectedGarden = garden// Asigna el jardín que quieres pasar
+                self.selectedGarden = garden
                 navigateToGardenView = true
             }) {
-                HStack {
-                    garden.gardenpic // Utiliza la imagen del jardín específico
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 137.5, height: 145)
-                        .clipped()
-                        .cornerRadius(12)
-                        .shadow(color: .black.opacity(0.1), radius: 16, x: 0, y: 0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 12)
-                                .inset(by: 1)
-                                .stroke(Color.primaryGreen, lineWidth: 2)
-                        )
-                        .padding(.trailing, 21)
+                VStack(alignment: .leading, spacing: 5) {
+                    Spacer()
+                    Text(garden.name) // Nombre del jardín
+                        .font(Font.custom("SF Pro Display", size: 20).weight(.bold))
+                        .foregroundColor(.white)
 
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(garden.name) // Muestra el nombre del jardín
-                            .font(Font.custom("SF Pro Display", size: 20).weight(.bold))
-                            .foregroundColor(Color.primaryGreen)
-
-                        HStack {
-                            Image(systemName: "location.fill")
-                                .font(Font.custom("SF Pro Display", size: 20).weight(.bold))
-                                .foregroundColor(Color.primaryGreen)
-                            
-                            Text(garden.location) // Muestra la ubicación del jardín
-                                .font(Font.custom("SF Pro Display", size: 16))
-                                .foregroundColor(Color.black)
-                                .padding(.trailing)
-                        }
-                        
-                        HStack {
-                            Image(systemName: "leaf.fill")
-                                .font(Font.custom("SF Pro Display", size: 20).weight(.bold))
-                                .foregroundColor(Color.primaryGreen)
-                            
-                            Text("\(garden.numberOfPlants) total plants") // Muestra el número de plantas
-                                .font(Font.custom("SF Pro Display", size: 16))
-                                .foregroundColor(Color.black)
-                        }
+                    HStack {
+                        Image(systemName: "location.fill")
+                            .foregroundColor(.white)
+                        Text(garden.location) // Ubicación del jardín
+                            .foregroundColor(.white)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Image(systemName: "chevron.right")
-                        .foregroundColor(Color.primaryGreen)
+
+                    HStack {
+                        Image(systemName: "leaf.fill")
+                            .foregroundColor(.white)
+                        Text("\(garden.numberOfPlants) total plants") // Número total de plantas
+                            .foregroundColor(.white)
+                    }
                 }
+                .padding()
             }
-            .padding(21)
-            .background(Color.white)
+            .frame(width: 351, height: 165)
             .cornerRadius(12)
-            .shadow(color: .gray.opacity(0.4), radius: 8, x: 0, y: 2)
-            .padding(15)
+            .shadow(color: .black.opacity(0.1), radius: 16, x: 0, y: 0)
         }
+        .frame(width: 351, height: 165, alignment: .leading)
+        .background(NavigationLink(destination: GeneralGardenView(garden: selectedGarden ?? garden), isActive: $navigateToGardenView) {
+            EmptyView()
+        })
     }
 }
-
-
 
 struct GardenCardView_Previews: PreviewProvider {
     static var previews: some View {
