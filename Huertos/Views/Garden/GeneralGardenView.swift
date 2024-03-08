@@ -47,20 +47,8 @@ struct GeneralGardenView: View {
                             Spacer()
                         }
                         .padding(21)
-                        /*
-                        PotViewPlant()
-                                    .onAppear {
-                                        // Handle the AR session start
-                                        PotViewPlant().onAppear()
-                                    }
-                                    .onDisappear {
-                                        // Handle the AR session pause
-                                        PotViewPlant().onDisappear()
-                                    }
-                         */
                          
                         VRView(showingARView: $showingARView)
-                
                         
                         LogCardGardenView(garden: garden)
                             .padding(.horizontal, 21)
@@ -156,12 +144,11 @@ struct VRView: View {
                 Button(action: {
                     self.showingARView = true
                 }) {
-                    Text("Previsualization")
-                        .padding(10)
-                        .frame(width: 379, height: 72, alignment: .leading)
-                        .background(.white)
-                        .cornerRadius(12)
-                        .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
+                    HStack{
+                        Image(systemName: "camera.viewfinder")
+                            .font(.system(size: 50))
+                    }
+                    .background(Color.white)
                 }
             }
         }
