@@ -173,6 +173,93 @@ struct TomatoStagesData {
     ]
 }
 
+let potatoStages: [PlantStage] = [
+    PlantStage(
+        stageName: .sprout,
+        duration: "14 to 28 days",
+        description: "Potato eyes sprout and emerge from soil.",
+        waterRequirement: "Keep soil moist to encourage sprouting.",
+        sunlightRequirement: (0, 0), // Sun not required until sprout appears.
+        soilComposition: "Loamy soil (40%) Compost (30%) Sand (30%)",
+        volume: 0.5,
+        recommendedGardenType: .pot,
+        drainingRequirement: true,
+        temperatureRange: (10, 25),
+        rootDepth: 20,
+        spacing: 30,
+        image: Image("potatoSprout"), // Replace with actual image resource name
+        notes: "Keep covered with soil; avoid sunlight on tubers to prevent greening.",
+        stageMode: .Completed
+    ),
+    PlantStage(
+        stageName: .vegetative,
+        duration: "40 to 70 days",
+        description: "Leaves and stems grow rapidly, roots extend deeply.",
+        waterRequirement: "Water when the top inch of soil feels dry.",
+        sunlightRequirement: (6, 8),
+        soilComposition: "Loamy soil (40%) Compost (30%) Sand (30%)",
+        volume: 20.0,
+        recommendedGardenType: .raisedBed,
+        drainingRequirement: true,
+        temperatureRange: (10, 25),
+        rootDepth: 30,
+        spacing: 30,
+        image: Image("potatoVegetative"),
+        notes: "Hill soil around plants as they grow to cover new tubers.",
+        stageMode: .Current
+    ),
+    PlantStage(
+        stageName: .flowering,
+        duration: "20 to 30 days",
+        description: "Plants produce flowers and begin tuber formation.",
+        waterRequirement: "Maintain consistent moisture, especially during tuber set.",
+        sunlightRequirement: (6, 8),
+        soilComposition: "Loamy soil (40%) Compost (30%) Sand (30%)",
+        volume: 20.0,
+        recommendedGardenType: .raisedBed,
+        drainingRequirement: true,
+        temperatureRange: (15, 25),
+        rootDepth: 40,
+        spacing: 30,
+        image: Image("potatoFlowering"),
+        notes: "Decrease watering after flowering to avoid tuber rot.",
+        stageMode: .UpNext
+    ),
+    PlantStage(
+        stageName: .seedling,
+        duration: "30 to 60 days",
+        description: "Tubers swell and grow beneath the soil.",
+        waterRequirement: "Reduce watering to prevent tuber rot, but don't let soil dry completely.",
+        sunlightRequirement: (6, 8),
+        soilComposition: "Loamy soil (40%) Compost (30%) Sand (30%)",
+        volume: 20.0,
+        recommendedGardenType: .raisedBed,
+        drainingRequirement: true,
+        temperatureRange: (15, 25),
+        rootDepth: 40,
+        spacing: 30,
+        image: Image("potatoSeedling"),
+        notes: "Keep tubers covered with soil to prevent greening.",
+        stageMode: .Completed
+    ),
+    PlantStage(
+        stageName: .ripening,
+        duration: "15 to 30 days",
+        description: "Vines yellow and die back as tubers reach maturity.",
+        waterRequirement: "Cease watering to allow tubers to cure.",
+        sunlightRequirement: (0, 0), // Sunlight no longer required as vines die.
+        soilComposition: "Loamy soil (40%) Compost (30%) Sand (30%)",
+        volume: 0.0, // Watering ceases
+        recommendedGardenType: .raisedBed,
+        drainingRequirement: true,
+        temperatureRange: (10, 25),
+        rootDepth: 40,
+        spacing: 30,
+        image: Image("potatoMature"),
+        notes: "Wait for vines to completely die back before harvesting.",
+        stageMode: .UpNext
+    )
+]
 
 var Tomato = Plant(
     scientificName: "Solanum lycopersicum",
@@ -208,7 +295,8 @@ let Potato = Plant(
     ph: (4.8, 5.5),
     temp: (5, 10),
     sunHoursPerDay: (5, 7),
-    description: "A versatile root vegetable high in starch and fiber."
+    description: "A versatile root vegetable high in starch and fiber.",
+    stagesInfo: potatoStages
 )
 
 // Create a library (array) of plants
@@ -243,4 +331,10 @@ var myTomato = MyPlant(
     myPlant: Tomato,
     dayOfCreation:  Date() - 30 * 24 * 60 * 60,
     myPlantActivity: generateTomatoActivities(start: Date() - 30 * 24 * 60 * 60)
+)
+
+var myPotato = MyPlant(
+    myPlant: Potato,
+    dayOfCreation:  Date() - 10 * 24 * 60 * 60,
+    myPlantActivity: generateTomatoActivities(start: Date() - 10 * 24 * 60 * 60)
 )
