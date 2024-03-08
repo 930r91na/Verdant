@@ -12,7 +12,8 @@ struct NewPlantView: View {
     
     let options = ["Potato", "Tomato", "Bean"]
     @State private var selectedStage = "Select a stage"
-    @State private var selectedOption = "Select a type"
+    @State private var showingPlantTypeCarousel = false
+        @State private var selectedPlantType = "Select a type"
     let stages = ["Sprout", "Seedling", "Vegetative", "Flowering", "Ripening"]
     
     var color = Color.primaryGreen.opacity(0.15)
@@ -148,21 +149,24 @@ struct NewPlantView: View {
 
                         })
                     {
-                        Menu {
-                            // Call PlantTypeCarouselView and keep the option selected
-                        } label: {
+                        Button(action: {
+                            self.showingPlantTypeCarousel.toggle()
+                        }) {
                             HStack {
-                                Text(selectedOption)
+                                Text(selectedPlantType)
                                 Spacer()
                                 Image(systemName: "chevron.down")
                             }
                             .padding()
-                            .foregroundColor(selectedOption != "Select a type" ? .black : .gray.opacity(0.6))
+                            .foregroundColor(selectedPlantType != "Select a type" ? .black : .gray.opacity(0.6))
                             .background(Color.primaryGreen.opacity(0.15))
                             .cornerRadius(8)
                             .padding(.horizontal, -20)
                             .padding(.top, -15)
                         }
+                    }
+                    .sheet(isPresented: $showingPlantTypeCarousel) {
+                        PlantTypeCarouselView(plantType: $selectedPlantType, plants: plantLibrary)
                     }
                     
                     Section {
