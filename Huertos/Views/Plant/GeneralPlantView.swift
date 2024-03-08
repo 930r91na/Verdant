@@ -59,14 +59,31 @@ struct DayActivity: Identifiable {
     }
 }
 
+extension DayActivity.ActivityType: Comparable {
+    static func < (lhs: DayActivity.ActivityType, rhs: DayActivity.ActivityType) -> Bool {
+        return lhs.orderIndex() < rhs.orderIndex()
+    }
+
+    private func orderIndex() -> Int {
+        switch self {
+            case .water: return 1
+            case .fertilizer: return 2
+            case .image: return 3
+            case .sunExposure: return 4
+        }
+    }
+}
+
+let weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
 let weekActivities: [DayActivity] = [
-    DayActivity(day: "Mon", activities: [.water]),
-    DayActivity(day: "Tue", activities: [.fertilizer]),
-    DayActivity(day: "Wed", activities: [.image, .water]),
-    DayActivity(day: "Thu", activities: [.water]),
-    DayActivity(day: "Fri", activities: [.fertilizer, .image, .sunExposure, .water]),
-    DayActivity(day: "Sat", activities: [.image, .water]),
-    DayActivity(day: "Sun", activities: [.water]),
+    DayActivity(day: weekdays[0], activities: [.water].sorted()),
+    DayActivity(day: weekdays[1], activities: [.fertilizer].sorted()),
+    DayActivity(day: weekdays[2], activities: [.image, .water].sorted()),
+    DayActivity(day: weekdays[3], activities: [.water].sorted()),
+    DayActivity(day: weekdays[4], activities: [.fertilizer, .image, .sunExposure].sorted()),
+    DayActivity(day: weekdays[5], activities: [.image, .water].sorted()),
+    DayActivity(day: weekdays[6], activities: [.water].sorted()),
 ]
 
 struct CalendarView: View {
@@ -93,7 +110,7 @@ struct CalendarView: View {
                         }
                         .frame(width: 41, height: 50)
                         .background(Color.primaryGreen.opacity(0.15))
-                        .cornerRadius(12)
+                        .cornerRadius(16)
                     }
                     .padding(.horizontal, -5)
                 }
