@@ -19,16 +19,16 @@ struct GardenView: View {
                     PlantMiniCardView(plant: myPlant)
                 }
 
-                
+                /*
                 ForEach(garden.trees, id: \.commonName) { tree in
                     TreeCardView(tree: tree)
                 }
+                 */
             }
             .navigationTitle("Plants of \(garden.name)")
             .accentColor(.primaryGreen)
             .padding()
         }
-        
     }
 }
     

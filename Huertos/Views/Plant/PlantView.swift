@@ -267,16 +267,25 @@ extension Calendar {
     }
 }
 
-/*
+
 struct PlantView_Previews: PreviewProvider {
     static var previews: some View {
-        let exampleGarden = generateExampleUsers().first?.gardens.first
-        
-        if let plant = exampleGarden?.plants[0] {
-            PlantView(plant: plant.myPlant)
-        } else {
-            Text("No plant available")
+        Group {
+            // Intenta generar una vista de planta si es posible
+            if let exampleGarden = generateExampleUsers().first?.gardens.first, let plant = exampleGarden.plants.first {
+                PlantView(plant: plant.myPlant)
+                    .previewLayout(.sizeThatFits)
+                    .padding()
+                    .previewDisplayName("Plant View")
+            } else {
+                // Muestra un mensaje si no hay plantas disponibles
+                Text("No plant available")
+                    .previewLayout(.sizeThatFits)
+                    .padding()
+                    .previewDisplayName("No Plant")
+            }
         }
     }
 }
-*/
+
+

@@ -77,9 +77,9 @@ func generateExampleUsers() -> [User] {
 
     // Predefined sets of plants and trees for each garden
     let gardenPlants: [[MyPlant]] = [
-            Array(myPlants[0...1]), // Garden 1
-            Array(myPlants[2...3]), // Garden 2
-            Array(myPlants[4...5])  // Garden 3
+            Array(myPlants[0...2]), // Garden 1
+            Array(myPlants[2...5]), // Garden 2
+            Array(myPlants[5...6])  // Garden 3
         ]
     
     let gardenTrees = [

@@ -187,10 +187,7 @@ struct NewPlantView: View {
                     
                 }
                 .scrollContentBackground(.hidden)
-                .sheet(isPresented: $showingLocationPicker) {
-                LocationPickerView()
-            }
-            .navigationTitle("Add new plant")
+                .navigationTitle("Add new plant")
         }
 }
 

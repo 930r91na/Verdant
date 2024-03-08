@@ -30,26 +30,10 @@ struct GeneralPlantView: View {
                         .frame(height: 345 / 2)
                     
                     VStack {
-                        /*
-                         HStack {
-                         Button(action: {
-                         self.showingTipsSheet = true
-                         }) {
-                         GardenTipsView(garden: garden)
-                         }
-                         .sheet(isPresented: $showingTipsSheet) {
-                         // Present your tips view here
-                         }
-                         
-                         NavigationLink(destination: GardenView(garden: garden), isActive: $showingPlantsSheet) {
-                         GardenPlantsView(garden: garden)
-                         }
-                         }
-                         .padding(.horizontal, 21)
-                         
-                         LogCardGardenView(garden: garden)
-                         .padding(.horizontal, 21)
-                         */
+                        GeneralEvolutionView(plant: plant.myPlant)
+                    }
+                    
+                    VStack {
                         GeneralStagesView(plant: plant.myPlant)
                     }
                     .offset(y: 20)
@@ -66,9 +50,96 @@ struct GeneralPlantView: View {
     }
 }
 
+struct GeneralEvolutionView: View {
+    var plant: Plant
+    
+    var color = Color.primaryGreen.opacity(0.15)
+    
+    var body: some View {
+        VStack {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Evolution")
+                    .font(.headline)
+                    .foregroundColor(.black)
+                
+                HStack {
+                    Text("Calendar")
+                }
+                .padding(.bottom, 10)
+                
+                // Inserted Form Below
+                Form {
+                    Section(header: Text("REGISTER ACTIVITY")
+                        .foregroundColor(.primaryGreen)
+                        .font(Font.custom("SF Pro Display", size: 13))
+                    ) {
+                        HStack {
+                            Text("Water")
+                            Spacer()
+                            Button(action: {
+                                // Acciones para registrar la actividad de agua
+                            }) {
+                                Image(systemName: "plus")
+                            }
+                        }
+                        .listRowBackground(color)
+                        
+                        HStack {
+                            Text("Fertilizer")
+                            Spacer()
+                            Button(action: {
+                                // Acciones para registrar la actividad de fertilizante
+                            }) {
+                                Image(systemName: "plus")
+                            }
+                        }
+                        .listRowBackground(color)
+                        
+                        HStack {
+                            Text("Image")
+                            Spacer()
+                            Button(action: {
+                                // Acciones para añadir una imagen
+                            }) {
+                                Image(systemName: "plus")
+                            }
+                        }
+                        .listRowBackground(color)
+                        
+                        HStack {
+                            Text("Sun Exposure")
+                            Spacer()
+                            Button(action: {
+                                // Acciones para registrar la actividad de exposición al sol
+                            }) {
+                                Image(systemName: "plus")
+                            }
+                        }
+                        .listRowBackground(color)
+                        
+                    }
+                }
+                .scrollContentBackground(.hidden)
+                .padding(-15)
+                .frame(minHeight: 200)
+            }
+            .padding(16)
+            .frame(width: 351, alignment: .topLeading)
+            .background(Color.white)
+            .cornerRadius(12)
+            .shadow(color: Color.black.opacity(0.2), radius: 16, x: 0, y: 0)
+            
+            
+        }
+        .background(Color.clear)
+    }
+}
+
+
 struct GeneralStagesView: View{
     var plant: Plant
     var body: some View {
+        
         VStack(alignment: .leading, spacing: 10) {
             Text("Stages")
                 .font(.headline)
@@ -111,11 +182,7 @@ struct GeneralStagesView: View{
                     }
                 }
             }
-
-            
         }
-        
-        
         .padding(16)
         .frame(width: 351, alignment: .topLeading)
         .background(.white)
