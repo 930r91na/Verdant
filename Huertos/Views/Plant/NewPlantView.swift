@@ -1,84 +1,179 @@
 import SwiftUI
 
 struct NewPlantView: View {
-    @State private var plantName: String = ""
-    @State private var showPlantTypeSelector = false
-    @State private var plantType: String = "Select type"
-    @State private var growthStage: String = "Seed"
-    var color = Color.primaryGreen.opacity(0.15)
+    @State private var gardenName: String = ""
+    @State private var gardenDescription: String = ""
+    @State private var selectedType: String = "Germination"
+    @State private var growthStage: String = "Germination"
     
+    // Buttons
+    @State private var showingLocationPicker = false
+    @State private var showingInfoAlert = Array(repeating: false, count: 4)
+    
+    let options = ["Potato", "Tomato", "Bean"]
+    @State private var selectedOption = "Select a type"
+    
+    var color = Color.primaryGreen.opacity(0.15)
+
+    let growthStages = ["Germination", "Seed", "Sprout", "Plant"]
+    let filtrations = ["Yes", "No"]
+
     var body: some View {
-        NavigationView {
+        NavigationView{
             Form {
-                Section(header: Text("My new plant's name will be...")
-                    .foregroundColor(.primaryGreen)
-                    .font(Font.custom("SF Pro Display", size: 13))){
-                        TextField("Name", text: $plantName)
+                    Section(header:
+                        HStack {
+                        Text("My new plant's name will be...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[0] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Plant's name", isPresented: $showingInfoAlert[0]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("...")
+                            }
+                            .textCase(nil)
+                        })
+                    {
+                        TextField("Name", text: $gardenName)
                             .listRowBackground(color)
                     }
-                
-                Section(header: Text("It will be a ...")
-                    .foregroundColor(.primaryGreen)
-                    .font(Font.custom("SF Pro Display", size: 13))){
-                        Button(action: {
-                            self.showPlantTypeSelector = true
-                        }) {
+                    
+                    Section(header:
+                        HStack {
+                        Text("My new plant's description will be...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[1] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Plant's description", isPresented: $showingInfoAlert[1]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("...")
+                            }
+                            .textCase(nil)
+                        })
+                    {
+                        TextField("Description", text: $gardenDescription)
+                            .listRowBackground(color)
+                    }
+                    
+                    Section(header:
+                        HStack {
+                            Text("It will be a...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[2] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Type of plant", isPresented: $showingInfoAlert[2]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("...")
+                            }
+                            .textCase(nil)
+
+                        })
+                    {
+                        Menu {
+                            ForEach(options, id: \.self) { option in
+                                Button(action: {
+                                    selectedOption = option
+                                }) {
+                                    Text(option)
+                                }
+                            }
+                        } label: {
                             HStack {
-                                Text(plantType)
-                                    .foregroundColor(.black)
+                                Text(selectedOption)
                                 Spacer()
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.gray)
+                                Image(systemName: "chevron.down")
                             }
                             .padding()
-                            .background(Color.white)
+                            .foregroundColor(selectedOption != "Select a type" ? .black : .gray.opacity(0.6))
+                            .background(Color.primaryGreen.opacity(0.15))
                             .cornerRadius(8)
-                            .shadow(radius: 1)
+                            .padding(.horizontal, -20)
+                            .padding(.top, -15)
                         }
-                        .padding(.horizontal)
-                        .sheet(isPresented: $showPlantTypeSelector) {
-                            PlantTypeCarouselView(plantType: $plantType, plants: plantLibrary)
-                        }
-                        
-                        TextField("Name", text: $plantName)
-                            .listRowBackground(color)
                     }
                 
-                
-                Section(header: Text("Its current growth stage ...")
-                    .foregroundColor(.primaryGreen)
-                    .font(Font.custom("SF Pro Display", size: 13))){
-                        Picker("Type", selection: $plantType) {
-                            /*
-                             ForEach(types, id: \.self) {
-                             Text($0)
-                             }*/
+                    Section(header:
+                        HStack {
+                        Text("It current growth stage is...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[3] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Growth stage", isPresented: $showingInfoAlert[3]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("...")
+                            }
+                            .textCase(nil)
+
+                        })
+                    {
+                        Picker("Growth stage", selection: $growthStage) {
+                            ForEach(growthStages, id: \.self) {
+                                Text($0)
+                            }
                         }
                         .pickerStyle(SegmentedPickerStyle())
-                        .listRowBackground(color)
+                        .listRowBackground(Color.primaryGreen.opacity(0.15))
                     }
-                
-                
-                
-                Section {
-                    HStack {
-                        Spacer()
-                        Button("Add Plant") {
-                            // Aquí puedes agregar la lógica para guardar el jardín
-                            print("Garden added successfully")
+
+                    Section {
+                        HStack {
+                            Spacer()
+                            Button("Add Plant") {
+                                print("Plant added successfully")
+                            }
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.primaryGreen)
+                            .cornerRadius(10)
+                            Spacer()
                         }
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.primaryGreen)
-                        .cornerRadius(10)
-                        Spacer()
                     }
+                    
                 }
-                
+                .scrollContentBackground(.hidden)
+                .sheet(isPresented: $showingLocationPicker) {
+                LocationPickerView()
             }
-            .scrollContentBackground(.hidden)
-            
-            
             .navigationTitle("Add new plant")
         }
     }

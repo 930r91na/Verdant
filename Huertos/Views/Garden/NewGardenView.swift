@@ -3,6 +3,7 @@ import MapKit
 
 struct NewGardenView: View {
     @State private var gardenName: String = ""
+    @State private var gardenDescription: String = ""
     @State private var selectedType: String = "Pot"
     @State private var location: String = "Indoors"
     @State private var filtration: String = "Yes"
@@ -75,7 +76,7 @@ struct NewGardenView: View {
                             .textCase(nil)
                         })
                     {
-                        TextField("Description", text: $gardenName)
+                        TextField("Description", text: $gardenDescription)
                             .listRowBackground(color)
                     }
                     
@@ -313,7 +314,6 @@ struct NewGardenView: View {
                         HStack {
                             Spacer()
                             Button("Add Garden") {
-                                // Aquí puedes agregar la lógica para guardar el jardín
                                 print("Garden added successfully")
                             }
                             .foregroundColor(.white)
