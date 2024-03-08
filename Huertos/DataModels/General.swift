@@ -100,7 +100,7 @@ func generateExampleUsers() -> [User] {
                     name: "Garden \(gardenIndex + 1)",
                     gardenpic: Image("garden\(gardenIndex + 1)"), // Ensure these images exist
                     description: descriptions[descriptionIndex],
-                    location: "\(userInfo.name)'s backyard",
+                    location: "Backyard",
                     numberOfPlants: gardenPlants[gardenIndex].count + gardenTrees[gardenIndex].count,
                     plants: gardenPlants[gardenIndex],
                     trees: gardenTrees[gardenIndex],

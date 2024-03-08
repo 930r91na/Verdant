@@ -6,13 +6,14 @@ struct CollectionGardenView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack (spacing: -10) {
+                VStack (spacing: 16) {
                     AddGardenButtonView()
                     ForEach(gardens, id: \.id) { garden in
                         GardenCardView(garden: garden)
                     }
                 }
-                .padding(.top, 15)
+                .padding(14)
+                .padding(.top, 0)
             }
             .navigationTitle("Gardens")
         }
@@ -45,14 +46,14 @@ struct AddGardenButtonView: View {
                         .font(Font.custom("SF Pro Display", size: 18).weight(.bold))
                         .foregroundColor(.black)
                 }
-                .padding(.leading, 10)
             }
         }
         .padding()
         .background(Color.white)
         .cornerRadius(12)
         .shadow(color: .gray.opacity(0.3), radius: 8, x: 0, y: 2)
-        .padding(16)
+        .padding(8)
+        .padding(.bottom, -5)
         .sheet(isPresented: $showingNewGardenView) { // Utiliza el modificador .sheet aquí
             NewGardenView()
         }

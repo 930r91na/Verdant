@@ -33,24 +33,46 @@ struct GardenCardView: View {
                 navigateToGardenView = true
             }) {
                 VStack(alignment: .leading, spacing: 5) {
+                    HStack{
+                        HStack{
+                            Text(garden.name)
+                                .fontWeight(.bold)
+                                .font(.custom("SF Pro Display", size: 17))
+                                .foregroundColor(.white)
+                        }
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(.white.opacity(0.15))
+                        .cornerRadius(40)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Image(systemName: "leaf.fill")
+                                .foregroundColor(.white)
+                            Text("\(garden.numberOfPlants) total plants") // Número total de plantas
+                                .font(Font.custom("SF Pro Display", size: 15).weight(.bold))
+                                .foregroundColor(.white)
+                        }
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(.white.opacity(0.15))
+                        .cornerRadius(40)
+                    }
+                    
                     Spacer()
-                    Text(garden.name) // Nombre del jardín
-                        .font(Font.custom("SF Pro Display", size: 20).weight(.bold))
-                        .foregroundColor(.white)
 
                     HStack {
                         Image(systemName: "location.fill")
                             .foregroundColor(.white)
-                        Text(garden.location) // Ubicación del jardín
+                        Text(garden.location)
+                            .font(Font.custom("SF Pro Display", size: 15).weight(.bold))
                             .foregroundColor(.white)
                     }
-
-                    HStack {
-                        Image(systemName: "leaf.fill")
-                            .foregroundColor(.white)
-                        Text("\(garden.numberOfPlants) total plants") // Número total de plantas
-                            .foregroundColor(.white)
-                    }
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 4)
+                    .background(.white.opacity(0.15))
+                    .cornerRadius(40)
                 }
                 .padding()
             }
