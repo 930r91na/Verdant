@@ -25,7 +25,6 @@ struct GeneralGardenView: View {
             )
             .frame(width: 393, height: 345)
             ScrollView {
-                
                 VStack {
                     Rectangle()
                         .foregroundColor(.clear)
@@ -33,6 +32,7 @@ struct GeneralGardenView: View {
                     
                     VStack {
                         HStack {
+                            Spacer()
                             Button(action: {
                                 self.showingTipsSheet = true
                             }) {
@@ -41,12 +41,12 @@ struct GeneralGardenView: View {
                             .sheet(isPresented: $showingTipsSheet) {
                                 // Present your tips view here
                             }
-                            
                             NavigationLink(destination: GardenView(garden: garden), isActive: $showingPlantsSheet) {
                                 GardenPlantsView(garden: garden)
                             }
+                            Spacer()
                         }
-                        .padding(.horizontal, 21)
+                        .padding(21)
                         
                         VRView()
                         
@@ -93,7 +93,6 @@ struct GardenTipsView: View {
         .background(.white.opacity(0.75))
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
-        .padding(21)
     }
     
     
@@ -120,14 +119,11 @@ struct GardenPlantsView: View {
             .padding(.top, 71)
             .padding(.bottom, 1.64059)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
-            
-            
         }
         .padding(16)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .background(.white.opacity(0.75))
+        .background(.white)
         .cornerRadius(12)
-        .padding(21)
         .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
     }
 }
