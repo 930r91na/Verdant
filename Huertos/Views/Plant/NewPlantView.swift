@@ -41,7 +41,7 @@ struct NewPlantView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("...")
+                                Text("Enter the alias of the plant you're adding, such as 'Tomato' or 'Basil'.")
                             }
                             .textCase(nil)
                         })
@@ -68,7 +68,7 @@ struct NewPlantView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("...")
+                                Text("Provide a brief description or any specific details about the plant, like characteristics you want to save")
                             }
                             .textCase(nil)
                         })
@@ -95,7 +95,7 @@ struct NewPlantView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("...")
+                                Text("Select the current growth stage of the plant. This helps in providing appropriate care.")
                             }
                             .textCase(nil)
 
@@ -143,7 +143,7 @@ struct NewPlantView: View {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
-                                Text("...")
+                                Text("Choose the type or species of the plant if known. This can be helpful for tracking and care instructions.")
                             }
                             .textCase(nil)
 

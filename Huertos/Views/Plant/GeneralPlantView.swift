@@ -151,7 +151,7 @@ struct GeneralEvolutionView: View {
                             Text("Water")
                             Spacer()
                             Button(action: {
-                                // Acciones para registrar la actividad de agua
+                                registerActivityButtonView()
                             }) {
                                 Image(systemName: "plus")
                             }
@@ -218,6 +218,12 @@ struct GeneralEvolutionView: View {
             }
             return monthActivities
         }
+}
+
+struct registerActivityButtonView: View {
+    var body: some View {
+        Text("Hello World")
+    }
 }
 
 struct GeneralStagesView: View{
