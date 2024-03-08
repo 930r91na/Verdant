@@ -50,6 +50,66 @@ struct GeneralPlantView: View {
     }
 }
 
+struct DayActivity: Identifiable {
+    let id = UUID()
+    var day: String // Puede ser una fecha o una representación de cadena del día
+    var activities: [ActivityType]
+    
+    enum ActivityType {
+        case water, fertilizer, image, sunExposure
+    }
+}
+
+let weekActivities: [DayActivity] = [
+    DayActivity(day: "Mon", activities: [.water]),
+    DayActivity(day: "Tue", activities: [.fertilizer]),
+    DayActivity(day: "Wed", activities: [.image, .water]),
+    DayActivity(day: "Thu", activities: [.water]),
+    DayActivity(day: "Fri", activities: [.fertilizer, .image]),
+    DayActivity(day: "Sat", activities: [.image, .water]),
+    DayActivity(day: "Sun", activities: [.water]),
+]
+
+struct CalendarView: View {
+    var activities: [DayActivity]
+    
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 15) {
+                ForEach(activities) { dayActivity in
+                    VStack{
+                        Text(dayActivity.day)
+                            .font(.caption)
+                        VStack {
+                            ForEach(dayActivity.activities, id: \.self) { activity in
+                                Circle()
+                                    .fill(colorForActivity(activity))
+                                    .frame(width: 10, height: 10)
+                            }
+                        }
+                        .frame(width: 41, height: 50)
+                        .background(Color.primaryGreen.opacity(0.15))
+                        .cornerRadius(12)
+                    }
+                    .padding(.horizontal, -5)
+                }
+            }
+            .padding(.horizontal)
+        }
+    }
+    
+    // Una función simple para devolver un color basado en el tipo de actividad
+    func colorForActivity(_ activity: DayActivity.ActivityType) -> Color {
+        switch activity {
+            case .water: return Color.blue
+            case .fertilizer: return Color.green
+            case .image: return Color.red
+            case .sunExposure: return Color.yellow
+        }
+    }
+}
+
+
 struct GeneralEvolutionView: View {
     var plant: Plant
     
@@ -63,7 +123,7 @@ struct GeneralEvolutionView: View {
                     .foregroundColor(.black)
                 
                 HStack {
-                    Text("Calendar")
+                    CalendarView(activities: weekActivities) // Asumiendo que tienes 'weekActivities' disponible
                 }
                 .padding(.bottom, 10)
                 
@@ -128,8 +188,6 @@ struct GeneralEvolutionView: View {
             .background(Color.white)
             .cornerRadius(12)
             .shadow(color: Color.black.opacity(0.2), radius: 16, x: 0, y: 0)
-            
-            
         }
         .background(Color.clear)
     }
