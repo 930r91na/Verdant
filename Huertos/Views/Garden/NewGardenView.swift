@@ -14,7 +14,7 @@ struct NewGardenView: View {
     // Buttons
     @State private var showingLocationPicker = false
     @State private var isUsingCurrentLocation: Bool = false
-    @State private var showingInfoAlert = Array(repeating: false, count: 8)
+    @State private var showingInfoAlert = Array(repeating: false, count: 9)
     
     var color = Color.primaryGreen.opacity(0.15)
 
@@ -54,7 +54,7 @@ struct NewGardenView: View {
                     
                     Section(header:
                         HStack {
-                            Text("It will be a...")
+                        Text("My new garden's description will be...")
                                 .foregroundColor(.primaryGreen)
                                 .font(Font.custom("SF Pro Display", size: 13))
                         
@@ -66,7 +66,34 @@ struct NewGardenView: View {
                                 Image(systemName: "info.circle")
                                     .foregroundColor(.primaryGreen)
                             }
-                            .alert("Type of plant", isPresented: $showingInfoAlert[1]) {
+                            .alert("Garden's description", isPresented: $showingInfoAlert[1]) {
+                                Button("OK", role: .cancel) { }
+                            }
+                            message: {
+                                Text("Enter a description for your garden. This helps you have different notes and characteristics that you may have among other gardens you may create.")
+                            }
+                            .textCase(nil)
+                        })
+                    {
+                        TextField("Description", text: $gardenName)
+                            .listRowBackground(color)
+                    }
+                    
+                    Section(header:
+                        HStack {
+                            Text("It will be a...")
+                                .foregroundColor(.primaryGreen)
+                                .font(Font.custom("SF Pro Display", size: 13))
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                showingInfoAlert[2] = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.primaryGreen)
+                            }
+                            .alert("Type of plant", isPresented: $showingInfoAlert[2]) {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
@@ -94,12 +121,12 @@ struct NewGardenView: View {
                             Spacer()
                         
                             Button(action: {
-                                showingInfoAlert[2] = true
+                                showingInfoAlert[3] = true
                             }) {
                                 Image(systemName: "info.circle")
                                     .foregroundColor(.primaryGreen)
                             }
-                            .alert("Location", isPresented: $showingInfoAlert[2]) {
+                            .alert("Location", isPresented: $showingInfoAlert[3]) {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
@@ -127,12 +154,12 @@ struct NewGardenView: View {
                             Spacer()
                         
                             Button(action: {
-                                showingInfoAlert[3] = true
+                                showingInfoAlert[4] = true
                             }) {
                                 Image(systemName: "info.circle")
                                     .foregroundColor(.primaryGreen)
                             }
-                            .alert("Dimensions", isPresented: $showingInfoAlert[3]) {
+                            .alert("Dimensions", isPresented: $showingInfoAlert[4]) {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
@@ -162,12 +189,12 @@ struct NewGardenView: View {
                             Spacer()
                         
                             Button(action: {
-                                showingInfoAlert[4] = true
+                                showingInfoAlert[5] = true
                             }) {
                                 Image(systemName: "info.circle")
                                     .foregroundColor(.primaryGreen)
                             }
-                            .alert("Geographical location", isPresented: $showingInfoAlert[4]) {
+                            .alert("Geographical location", isPresented: $showingInfoAlert[5]) {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
@@ -194,12 +221,12 @@ struct NewGardenView: View {
                             Spacer()
                         
                             Button(action: {
-                                showingInfoAlert[5] = true
+                                showingInfoAlert[6] = true
                             }) {
                                 Image(systemName: "info.circle")
                                     .foregroundColor(.primaryGreen)
                             }
-                            .alert("Daily exposition levels", isPresented: $showingInfoAlert[5]) {
+                            .alert("Daily exposition levels", isPresented: $showingInfoAlert[6]) {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
@@ -223,12 +250,12 @@ struct NewGardenView: View {
                             Spacer()
                         
                             Button(action: {
-                                showingInfoAlert[6] = true
+                                showingInfoAlert[7] = true
                             }) {
                                 Image(systemName: "info.circle")
                                     .foregroundColor(.primaryGreen)
                             }
-                            .alert("Soil composition", isPresented: $showingInfoAlert[6]) {
+                            .alert("Soil composition", isPresented: $showingInfoAlert[7]) {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
@@ -258,12 +285,12 @@ struct NewGardenView: View {
                             Spacer()
                         
                             Button(action: {
-                                showingInfoAlert[7] = true
+                                showingInfoAlert[8] = true
                             }) {
                                 Image(systemName: "info.circle")
                                     .foregroundColor(.primaryGreen)
                             }
-                            .alert("Filtration system", isPresented: $showingInfoAlert[7]) {
+                            .alert("Filtration system", isPresented: $showingInfoAlert[8]) {
                                 Button("OK", role: .cancel) { }
                             }
                             message: {
