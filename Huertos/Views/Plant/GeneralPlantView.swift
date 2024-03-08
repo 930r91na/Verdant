@@ -23,7 +23,6 @@ struct GeneralPlantView: View {
             )
             .frame(width: 393, height: 345)
             ScrollView {
-                
                 VStack {
                     Rectangle()
                         .foregroundColor(.clear)
@@ -65,13 +64,15 @@ let weekActivities: [DayActivity] = [
     DayActivity(day: "Tue", activities: [.fertilizer]),
     DayActivity(day: "Wed", activities: [.image, .water]),
     DayActivity(day: "Thu", activities: [.water]),
-    DayActivity(day: "Fri", activities: [.fertilizer, .image]),
+    DayActivity(day: "Fri", activities: [.fertilizer, .image, .sunExposure, .water]),
     DayActivity(day: "Sat", activities: [.image, .water]),
     DayActivity(day: "Sun", activities: [.water]),
 ]
 
 struct CalendarView: View {
     var activities: [DayActivity]
+    
+    let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 4), count: 2)
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -80,12 +81,15 @@ struct CalendarView: View {
                     VStack{
                         Text(dayActivity.day)
                             .font(.caption)
-                        VStack {
-                            ForEach(dayActivity.activities, id: \.self) { activity in
-                                Circle()
-                                    .fill(colorForActivity(activity))
-                                    .frame(width: 10, height: 10)
+                        HStack(alignment: .center){
+                            LazyVGrid(columns: columns, spacing: 4) {
+                                ForEach(dayActivity.activities, id: \.self) { activity in
+                                    Circle()
+                                        .fill(colorForActivity(activity))
+                                        .frame(width: 10, height: 10)
+                                }
                             }
+                            .padding(10)
                         }
                         .frame(width: 41, height: 50)
                         .background(Color.primaryGreen.opacity(0.15))
@@ -98,13 +102,12 @@ struct CalendarView: View {
         }
     }
     
-    // Una función simple para devolver un color basado en el tipo de actividad
     func colorForActivity(_ activity: DayActivity.ActivityType) -> Color {
         switch activity {
-            case .water: return Color.blue
-            case .fertilizer: return Color.green
-            case .image: return Color.red
-            case .sunExposure: return Color.yellow
+            case .water: return Color.navyBlue
+            case .fertilizer: return Color.lightGreen
+            case .image: return Color.opaqueRed
+            case .sunExposure: return Color.mustardYellow
         }
     }
 }

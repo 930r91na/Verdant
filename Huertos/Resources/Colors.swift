@@ -8,6 +8,10 @@ extension Color {
     public static let cream = Color(hex: "#FEFAE0")
     public static let orange = Color(hex: "#DDA15E")
     public static let brown = Color(hex: "#BC6C2")
+    public static let navyBlue = Color(hex: "#003049")
+    public static let mustardYellow = Color(hex: "#FFB703")
+    public static let opaqueRed = Color(hex: "#C1121F")
+    public static let lightGreen = Color(hex: "#A7C957")
 }
 
 extension Color {
