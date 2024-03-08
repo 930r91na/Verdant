@@ -50,8 +50,10 @@ func generateExampleUsers() -> [User] {
     
     let myPlants = plantsData.map { plant -> MyPlant in
             let activities = [PlantActivity(date: Date(), watered: true, sunExposure: true, dayImage: nil)]
-        return MyPlant(myPlant: plant, dayOfCreation: Date(), myPlantActivity: activities)
+        return MyPlant(myPlant: Tomato, dayOfCreation: Date(), myPlantActivity: activities)
         }
+    
+    
 
     let trees = [
         Tree(commonName: "Aguacate", scientificName: "Persea americana", alias: "Cate de mi cora", recommendedSoil: .wormHummus(percentage: 75), waterLevel: .high, sunlightLevel: .fullSun, difficulty: .hard),
