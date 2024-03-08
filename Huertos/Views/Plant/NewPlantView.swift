@@ -166,7 +166,9 @@ struct NewPlantView: View {
                         }
                     }
                     .sheet(isPresented: $showingPlantTypeCarousel) {
-                        PlantTypeCarouselView(plantType: $selectedPlantType, plants: plantLibrary)
+                        PlantTypeCarouselView(plantType: $selectedPlantType, plants: plantLibrary, onClose: {
+                            self.showingPlantTypeCarousel = false  // Esto cierra la hoja
+                        })
                     }
                     
                     Section {
@@ -195,6 +197,7 @@ struct NewPlantView: View {
 struct PlantTypeCarouselView: View {
     @Binding var plantType: String
     var plants: [Plant]
+    var onClose: () -> Void  // Agrega esto para manejar el cierre
 
     var body: some View {
         NavigationView {
@@ -214,6 +217,7 @@ struct PlantTypeCarouselView: View {
                 
                 Button("Select Plant") {
                     print("Selected plant type: \(plantType)")
+                    onClose()
                 }
                 .foregroundColor(.white)
                 .padding()
