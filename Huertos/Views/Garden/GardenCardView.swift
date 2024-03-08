@@ -77,7 +77,6 @@ struct GardenCardView: View {
                 .padding()
                 .frame(width: 351, height: 165)
                 .cornerRadius(12)
-                .shadow(color: .black.opacity(0.1), radius: 16, x: 0, y: 0)
             }
             .frame(width: 351, height: 165, alignment: .leading)
         }

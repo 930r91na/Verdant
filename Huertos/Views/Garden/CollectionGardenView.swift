@@ -23,11 +23,11 @@ struct CollectionGardenView: View {
 
 
 struct AddGardenButtonView: View {
-    @State private var showingNewGardenView = false // Estado para controlar la presentación del sheet
+    @State private var showingNewGardenView = false
     
     var body: some View {
         Button(action: {
-            showingNewGardenView = true // Muestra NewGardenView cuando se hace clic
+            showingNewGardenView = true
         }) {
             HStack {
                 Image(systemName: "plus.app")
