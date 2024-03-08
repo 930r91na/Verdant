@@ -247,8 +247,7 @@ struct GeneralStagesView: View{
             if let currentStages = plant.stagesInfo?.filter({ $0.stageMode == .Current }), !currentStages.isEmpty {
                     Group {
                         Text("")
-                            .font(Font.custom("SF Pro Display", size: 1))
-                            .foregroundColor(.black)
+                            .padding(.bottom, -20)
                     }
                     .sheet(isPresented: $showingDetail) {
                         TomatoStageDetailView()
