@@ -45,6 +45,7 @@
 		AB1D139F2B95A2F30025EFFA /* EditPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D139E2B95A2F30025EFFA /* EditPlantView.swift */; };
 		AB200DD72B98EC7D002DE93A /* GeneralGardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200DD62B98EC7D002DE93A /* GeneralGardenView.swift */; };
 		AB200DD92B992873002DE93A /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200DD82B992873002DE93A /* PlantCardView.swift */; };
+		AB200DDB2B9B731B002DE93A /* PlantStagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200DDA2B9B731B002DE93A /* PlantStagesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		AB1D139E2B95A2F30025EFFA /* EditPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantView.swift; sourceTree = "<group>"; };
 		AB200DD62B98EC7D002DE93A /* GeneralGardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralGardenView.swift; sourceTree = "<group>"; };
 		AB200DD82B992873002DE93A /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
+		AB200DDA2B9B731B002DE93A /* PlantStagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantStagesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				AB1D138D2B93998A0025EFFA /* NewPlantView.swift */,
 				AB1D13932B9560130025EFFA /* TreeView.swift */,
 				AB1D139E2B95A2F30025EFFA /* EditPlantView.swift */,
+				AB200DDA2B9B731B002DE93A /* PlantStagesView.swift */,
 			);
 			path = Plant;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				061572C52B924E30002F6ADD /* GardenView.swift in Sources */,
 				AB1D138C2B9395030025EFFA /* PlantMiniCardView.swift in Sources */,
 				AB1D13862B9382590025EFFA /* NotificationView.swift in Sources */,
+				AB200DDB2B9B731B002DE93A /* PlantStagesView.swift in Sources */,
 				061572B82B924BB2002F6ADD /* Colors.swift in Sources */,
 				AB1D13882B9384140025EFFA /* ProfileView.swift in Sources */,
 				061572B22B92451D002F6ADD /* SignUpView.swift in Sources */,

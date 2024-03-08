@@ -123,7 +123,6 @@ struct CalendarView: View {
     }
 }
 
-
 struct GeneralEvolutionView: View {
     var plant: Plant
     
@@ -221,9 +220,10 @@ struct GeneralEvolutionView: View {
         }
 }
 
-
 struct GeneralStagesView: View{
     var plant: Plant
+    @State private var showingDetail = false
+    
     var body: some View {
         
         VStack(alignment: .leading, spacing: 10) {
@@ -231,18 +231,29 @@ struct GeneralStagesView: View{
                 .font(.headline)
                 .foregroundColor(.black)
             
+            Text("Current")
+                .font(Font.custom("SF Pro Display", size: 16))
+                .foregroundColor(.black)
             
+            StageMiniCardView(infoStage: (plant.stagesInfo?[0])!)
+                .onTapGesture {
+                    self.showingDetail = true
+                }
+                .sheet(isPresented: $showingDetail) {
+                    TomatoStageDetailView()
+                }
+            
+                        
             if let currentStages = plant.stagesInfo?.filter({ $0.stageMode == .Current }), !currentStages.isEmpty {
-                Group {
-                    Text("Current")
-                        .font(Font.custom("SF Pro Display", size: 16))
-                        .foregroundColor(.black)
-                    
-                    ForEach(currentStages) { stage in
-                        StageMiniCardView(infoStage: stage)
+                    Group {
+                        Text("")
+                            .font(Font.custom("SF Pro Display", size: 1))
+                            .foregroundColor(.black)
+                    }
+                    .sheet(isPresented: $showingDetail) {
+                        TomatoStageDetailView()
                     }
                 }
-            }
 
             if let upNextStages = plant.stagesInfo?.filter({ $0.stageMode == .UpNext }), !upNextStages.isEmpty {
                 Group {
@@ -255,7 +266,6 @@ struct GeneralStagesView: View{
                     }
                 }
             }
-
             
             if let completedStages = plant.stagesInfo?.filter({ $0.stageMode == .Completed }), !completedStages.isEmpty {
                 Group {

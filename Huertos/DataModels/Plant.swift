@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 
-
 struct Plant: Identifiable{
     var id = UUID()
     var scientificName: String
@@ -84,95 +83,95 @@ struct PlantActivity: Identifiable {
     var dayImage: Image?
 }
 
-let tomatoStages: [PlantStage] = [
-    PlantStage(
-        stageName: .sprout,
-        duration: "6 to 8 days",
-        description: "Green sprout appears above soil.",
-        waterRequirement: "Keep soil consistently moist but not waterlogged.",
-        sunlightRequirement: (0, 0), // Sun not required until sprout appears.
-        soilComposition: "Soil (70%) Humus (30%)",
-        volume: 0.5,
-        recommendedGardenType: .pot,
-        drainingRequirement: true,
-        temperatureRange: (18, 30),
-        rootDepth: 25,
-        spacing: 10,
-        image: Image("sprout"),
-        notes: "Indirect gardening; soil should be kept moist.",
-        stageMode: .Current
-    ),
-    PlantStage(
-        stageName: .seedling,
-        duration: "25 to 35 days",
-        description: "Development of true leaves and roots.",
-        waterRequirement: "Water when the soil surface feels dry.",
-        sunlightRequirement: (14, 18),
-        soilComposition: "Soil (70%) Humus (30%)",
-        volume: 0.5,
-        recommendedGardenType: .pot,
-        drainingRequirement: true,
-        temperatureRange: (18, 21), // No max temp provided
-        rootDepth: 25,
-        spacing: 10,
-        image: Image("seedling"),
-        notes: "Begin with more sunlight exposure.",
-        stageMode: .UpNext
-    ),
-    PlantStage(
-        stageName: .vegetative,
-        duration: "20 to 25 days",
-        description: "Vines lengthen, foliage and roots grow, flowers start to emerge.",
-        waterRequirement: "Water when the soil surface feels dry.",
-        sunlightRequirement: (6, 8),
-        soilComposition: "Soil (70%) Humus (30%)",
-        volume: 20.0,
-        recommendedGardenType: .raisedBed,
-        drainingRequirement: true,
-        temperatureRange: (18, 21),
-        rootDepth: 25,
-        spacing: 30,
-        image: Image("vegetative"),
-        notes: "Start staking as vines lengthen.",
-        stageMode: .UpNext
-    ),
-    PlantStage(
-        stageName: .flowering,
-        duration: "20 to 30 days",
-        description: "Yellow flowers appear and open. Support required as the plant will reach 30 to 45 cm in height.",
-        waterRequirement: "Water when the soil surface feels dry.",
-        sunlightRequirement: (6, 8),
-        soilComposition: "Soil (70%) Humus (30%)",
-        volume: 20.0,
-        recommendedGardenType: .raisedBed,
-        drainingRequirement: true,
-        temperatureRange: (12, 30),
-        rootDepth: 100,
-        spacing: 30,
-        image: Image("flowering"),
-        notes: "Install cages or stakes for support.",
-        stageMode: .UpNext
-    ),
-    PlantStage(
-        stageName: .ripening,
-        duration: "35 to 50 days",
-        description: "Small green fruits appear, grow, and red color develops.",
-        waterRequirement: "Water when the soil surface feels dry.",
-        sunlightRequirement: (6, 8),
-        soilComposition: "Soil (70%) Humus (30%)",
-        volume: 20.0,
-        recommendedGardenType: .raisedBed,
-        drainingRequirement: true,
-        temperatureRange: (12, 30),
-        rootDepth: 100,
-        spacing: 30,
-        image: Image("ripening"),
-        notes: "Monitor for ripeness, ready to harvest when fruits are fully colored.",
-        stageMode: .UpNext
-    )
-
-
-]
+struct TomatoStagesData {
+    static let tomatoStages: [PlantStage] = [
+        PlantStage(
+            stageName: .sprout,
+            duration: "6 to 8 days",
+            description: "Green sprout appears above soil.",
+            waterRequirement: "Keep soil consistently moist but not waterlogged.",
+            sunlightRequirement: (0, 0), // Sun not required until sprout appears.
+            soilComposition: "Soil (70%) Humus (30%)",
+            volume: 0.5,
+            recommendedGardenType: .pot,
+            drainingRequirement: true,
+            temperatureRange: (18, 30),
+            rootDepth: 25,
+            spacing: 10,
+            image: Image("sprout"),
+            notes: "Indirect gardening; soil should be kept moist.",
+            stageMode: .Current
+        ),
+        PlantStage(
+            stageName: .seedling,
+            duration: "25 to 35 days",
+            description: "Development of true leaves and roots.",
+            waterRequirement: "Water when the soil surface feels dry.",
+            sunlightRequirement: (14, 18),
+            soilComposition: "Soil (70%) Humus (30%)",
+            volume: 0.5,
+            recommendedGardenType: .pot,
+            drainingRequirement: true,
+            temperatureRange: (18, 21), // No max temp provided
+            rootDepth: 25,
+            spacing: 10,
+            image: Image("seedling"),
+            notes: "Begin with more sunlight exposure.",
+            stageMode: .UpNext
+        ),
+        PlantStage(
+            stageName: .vegetative,
+            duration: "20 to 25 days",
+            description: "Vines lengthen, foliage and roots grow, flowers start to emerge.",
+            waterRequirement: "Water when the soil surface feels dry.",
+            sunlightRequirement: (6, 8),
+            soilComposition: "Soil (70%) Humus (30%)",
+            volume: 20.0,
+            recommendedGardenType: .raisedBed,
+            drainingRequirement: true,
+            temperatureRange: (18, 21),
+            rootDepth: 25,
+            spacing: 30,
+            image: Image("vegetative"),
+            notes: "Start staking as vines lengthen.",
+            stageMode: .UpNext
+        ),
+        PlantStage(
+            stageName: .flowering,
+            duration: "20 to 30 days",
+            description: "Yellow flowers appear and open. Support required as the plant will reach 30 to 45 cm in height.",
+            waterRequirement: "Water when the soil surface feels dry.",
+            sunlightRequirement: (6, 8),
+            soilComposition: "Soil (70%) Humus (30%)",
+            volume: 20.0,
+            recommendedGardenType: .raisedBed,
+            drainingRequirement: true,
+            temperatureRange: (12, 30),
+            rootDepth: 100,
+            spacing: 30,
+            image: Image("flowering"),
+            notes: "Install cages or stakes for support.",
+            stageMode: .UpNext
+        ),
+        PlantStage(
+            stageName: .ripening,
+            duration: "35 to 50 days",
+            description: "Small green fruits appear, grow, and red color develops.",
+            waterRequirement: "Water when the soil surface feels dry.",
+            sunlightRequirement: (6, 8),
+            soilComposition: "Soil (70%) Humus (30%)",
+            volume: 20.0,
+            recommendedGardenType: .raisedBed,
+            drainingRequirement: true,
+            temperatureRange: (12, 30),
+            rootDepth: 100,
+            spacing: 30,
+            image: Image("ripening"),
+            notes: "Monitor for ripeness, ready to harvest when fruits are fully colored.",
+            stageMode: .UpNext
+        )
+    ]
+}
 
 
 var Tomato = Plant(
@@ -191,7 +190,7 @@ var Tomato = Plant(
     temp: (10, 15),
     sunHoursPerDay: (6, 8),
     description: "A tomato is a nutrient-dense superfood that offers benefit to a range of bodily systems. Its nutritional content supports healthful skin, weight loss, and heart health",
-    stagesInfo: tomatoStages
+    stagesInfo: TomatoStagesData.tomatoStages
 )
 
 let Potato = Plant(
