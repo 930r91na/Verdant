@@ -47,10 +47,20 @@ struct GeneralGardenView: View {
                             Spacer()
                         }
                         .padding(21)
-                        VRView(showingARView: $showingARView)
-                                    .sheet(isPresented: $showingARView) {
-                                        PotViewPlant()
+                        /*
+                        PotViewPlant()
+                                    .onAppear {
+                                        // Handle the AR session start
+                                        PotViewPlant().onAppear()
                                     }
+                                    .onDisappear {
+                                        // Handle the AR session pause
+                                        PotViewPlant().onDisappear()
+                                    }
+                         */
+                         
+                        VRView(showingARView: $showingARView)
+                
                         
                         LogCardGardenView(garden: garden)
                             .padding(.horizontal, 21)
@@ -134,20 +144,30 @@ struct VRView: View {
     @Binding var showingARView: Bool
 
     var body: some View {
-        HStack(alignment: .center, spacing: 20) {
-            Button(action: {
-                self.showingARView = true
-            }) {
-                Text("Previsualization")
+        ZStack {
+            NavigationLink(destination: PotViewPlant(), isActive: $showingARView) {
+                EmptyView()
             }
-            .padding(10)
-            .frame(width: 379, height: 72, alignment: .leading)
-            .background(.white)
-            .cornerRadius(12)
-            .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
+            .hidden() // Hide this NavigationLink so it doesn't interfere with UI
+
+            // Your actual clickable HStack
+            HStack(alignment: .center, spacing: 20) {
+                // The entire HStack is inside a Button
+                Button(action: {
+                    self.showingARView = true
+                }) {
+                    Text("Previsualization")
+                        .padding(10)
+                        .frame(width: 379, height: 72, alignment: .leading)
+                        .background(.white)
+                        .cornerRadius(12)
+                        .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
+                }
+            }
         }
     }
 }
+
 
 struct LogCardGardenView: View {
     var garden: Garden
