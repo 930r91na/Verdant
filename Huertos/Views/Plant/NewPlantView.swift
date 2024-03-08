@@ -197,46 +197,32 @@ struct NewPlantView: View {
 struct PlantTypeCarouselView: View {
     @Binding var plantType: String
     var plants: [Plant]
-    var onClose: () -> Void  // Agrega esto para manejar el cierre
+    var onClose: () -> Void
 
     var body: some View {
         NavigationView {
             VStack {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: 20) {
-                        ForEach(plants, id: \.scientificName) { plant in
+                        // Filtrar para incluir solo "Tomato" y "Potato"
+                        ForEach(plants.filter { $0.commonName == "Tomato" || $0.commonName == "Potato" }, id: \.scientificName) { plant in
                             PlantCardView(plant: plant)
-                                .frame(width: 350, height: 500) 
+                                .frame(width: 350, height: 500)
                                 .onTapGesture {
                                     self.plantType = plant.commonName
+                                    onClose() // Cierra la vista al seleccionar
                                 }
                         }
                     }
                     .padding(.horizontal)
                 }
-                
-                Button("Select Plant") {
-                    print("Selected plant type: \(plantType)")
-                    onClose()
-                }
-                .foregroundColor(.white)
-                .padding()
-                .background(Color.primaryGreen)
-                .cornerRadius(10)
-                .padding()
             }
             .navigationTitle("Select Plant Type")
-            .navigationBarItems(leading: Button(action: {
-                            // Logic to present a view or action sheet to add a customized plant
-                        }) {
-                            Text("Add Customized Plant")
-                                .foregroundColor(.primaryGreen) // Text color
-                                .padding()
-                                .cornerRadius(10)
-                        })
         }
     }
 }
+
+
 
 struct NewPlantView_Previews: PreviewProvider {
     static var previews: some View {
