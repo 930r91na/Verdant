@@ -69,26 +69,61 @@ struct PlantOfTheDayView: View {
                 .cornerRadius(12)
                 
                 VStack(alignment: .leading, spacing: 5) {
-                    Spacer()
-                    Text(plant.commonName)
-                        .fontWeight(.bold)
-                        .font(.custom("SF Pro Display", size: 17))
-                        .foregroundColor(.white)
+                    HStack{
+                        HStack{
+                            Text("Plant of the day")
+                                .fontWeight(.bold)
+                                .font(.custom("SF Pro Display", size: 17))
+                                .foregroundColor(.white)
+                        }
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(Color.white.opacity(0.15))
+                        .background(.white.opacity(0.15))
                         .cornerRadius(40)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Image(systemName: "book.pages.fill")
+                                .foregroundColor(.white)
+                            Text(plant.alias)
+                                .font(Font.custom("SF Pro Display", size: 15).weight(.bold))
+                                .foregroundColor(.white)
+                        }
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(.white.opacity(0.15))
+                        .cornerRadius(40)
+                    }
                     
                     Spacer()
                     
-                    Text(plant.scientificName)
-                        .font(.custom("SF Pro Display", size: 15).weight(.bold))
-                        .foregroundColor(.white)
+                    HStack {
+                        HStack{
+                            Image(systemName: "location.fill")
+                                .foregroundColor(.white)
+                            Text("Backyard")
+                                .font(Font.custom("SF Pro Display", size: 15).weight(.bold))
+                                .foregroundColor(.white)
+                        }
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(Color.white.opacity(0.15))
+                        .background(.white.opacity(0.15))
                         .cornerRadius(40)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Image(systemName: "info.circle.fill")
+                                .foregroundColor(.white)
+                        }
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(.white.opacity(0.15))
+                        .cornerRadius(40)
+                    }
                 }
+                .padding()
                 .frame(width: 351, height: 165)
                 .cornerRadius(12)
             }
