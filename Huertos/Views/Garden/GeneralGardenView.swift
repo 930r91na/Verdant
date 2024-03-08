@@ -3,7 +3,7 @@ import SwiftUI
 struct GeneralGardenView: View {
     @State private var showingTipsSheet = false
     @State private var showingPlantsSheet = false
-    
+    @State private var showingARView = false
     var garden: Garden
     
     var body: some View {
@@ -47,8 +47,10 @@ struct GeneralGardenView: View {
                             Spacer()
                         }
                         .padding(21)
-                        
-                        VRView()
+                        VRView(showingARView: $showingARView)
+                                    .sheet(isPresented: $showingARView) {
+                                        PotViewPlant()
+                                    }
                         
                         LogCardGardenView(garden: garden)
                             .padding(.horizontal, 21)
@@ -129,15 +131,21 @@ struct GardenPlantsView: View {
 }
 
 struct VRView: View {
+    @Binding var showingARView: Bool
+
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-            Text("Previsualization")
+            Button(action: {
+                self.showingARView = true
+            }) {
+                Text("Previsualization")
+            }
+            .padding(10)
+            .frame(width: 379, height: 72, alignment: .leading)
+            .background(.white)
+            .cornerRadius(12)
+            .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
         }
-        .padding(10)
-        .frame(width: 379, height: 72, alignment: .leading)
-        .background(.white)
-        .cornerRadius(12)
-        .shadow(color: .black.opacity(0.2), radius: 16, x: 0, y: 0)
     }
 }
 

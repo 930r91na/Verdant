@@ -24,6 +24,7 @@
 		0640D1562B9A41DD003726B1 /* Pro.reality in Resources */ = {isa = PBXBuildFile; fileRef = 0640D1532B9A41DD003726B1 /* Pro.reality */; };
 		0640D19E2B9A8615003726B1 /* Pot.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0640D19D2B9A8615003726B1 /* Pot.rcproject */; };
 		0640D1A02B9A8620003726B1 /* Pot.rcproject 3 in Resources */ = {isa = PBXBuildFile; fileRef = 0640D19F2B9A8620003726B1 /* Pot.rcproject 3 */; };
+		0640D1A22B9B66A9003726B1 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0640D1A12B9B66A9003726B1 /* CameraHandler.swift */; };
 		06D181A12B92378A00352475 /* HuertosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181A02B92378A00352475 /* HuertosApp.swift */; };
 		06D181A32B92378A00352475 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D181A22B92378A00352475 /* HomeView.swift */; };
 		06D181A52B92378B00352475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D181A42B92378B00352475 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		0640D1532B9A41DD003726B1 /* Pro.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pro.reality; sourceTree = "<group>"; };
 		0640D19D2B9A8615003726B1 /* Pot.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Pot.rcproject; sourceTree = "<group>"; };
 		0640D19F2B9A8620003726B1 /* Pot.rcproject 3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Pot.rcproject 3"; sourceTree = "<group>"; };
+		0640D1A12B9B66A9003726B1 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		06D1819D2B92378A00352475 /* Huertos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Huertos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D181A02B92378A00352475 /* HuertosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuertosApp.swift; sourceTree = "<group>"; };
 		06D181A22B92378A00352475 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				0640D19D2B9A8615003726B1 /* Pot.rcproject */,
 				0640D1532B9A41DD003726B1 /* Pro.reality */,
 				0640D14D2B9A36F5003726B1 /* VRView.swift */,
+				0640D1A12B9B66A9003726B1 /* CameraHandler.swift */,
 			);
 			path = VirtualReality;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				AB1D13922B93B6620025EFFA /* General.swift in Sources */,
 				061572AE2B9244EB002F6ADD /* LaunchView.swift in Sources */,
 				AB1D138A2B9384740025EFFA /* GardenCardView.swift in Sources */,
+				0640D1A22B9B66A9003726B1 /* CameraHandler.swift in Sources */,
 				061572B02B92450A002F6ADD /* LogInView.swift in Sources */,
 				AB200DD92B992873002DE93A /* PlantCardView.swift in Sources */,
 				061572C92B924E75002F6ADD /* PlantView.swift in Sources */,
@@ -602,9 +606,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Huertos/Preview Content\"";
-				DEVELOPMENT_TEAM = 24YJWTXPPD;
+				DEVELOPMENT_TEAM = W57T266FUF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"Camera is needed for AR experience\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -615,7 +620,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ICapys.Huertos;
+				PRODUCT_BUNDLE_IDENTIFIER = ICapys.Verdantify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -631,9 +636,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Huertos/Preview Content\"";
-				DEVELOPMENT_TEAM = 24YJWTXPPD;
+				DEVELOPMENT_TEAM = W57T266FUF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"Camera is needed for AR experience\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -644,7 +650,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ICapys.Huertos;
+				PRODUCT_BUNDLE_IDENTIFIER = ICapys.Verdantify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
