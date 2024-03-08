@@ -66,37 +66,6 @@ struct ProfileView: View {
                         BadgeView(text: "Plant Lover")
                     }
                     .padding(.top, 0)
-                    
-                    // Gardens section
-                    Text("Gardens:")
-                        .font(.headline)
-                        .padding(.top, 10)
-                        .foregroundColor(.darkGreen)
-                    
-                    ForEach(user.gardens, id: \.id) { garden in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(garden.name)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.darkGreen.opacity(0.8))
-                                
-                                Text(garden.description)
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                            .padding(.trailing, 10)
-                            
-                            Spacer()
-                            
-                            garden.gardenpic
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 60, height: 60)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .shadow(radius: 5)
-                        }
-                        .padding(.vertical, 5)
-                    }
                 }
                 .padding()
             }

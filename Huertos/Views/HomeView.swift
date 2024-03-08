@@ -10,7 +10,7 @@ struct HomeView: View {
                 NavigationLink(destination: NotificationView(), isActive: $isShowingNotification) { EmptyView() }
                 HStack {
                     VStack(alignment: .leading){
-                        Text("Hello \(name),")
+                        Text("Hi \(name),")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
@@ -80,7 +80,7 @@ struct PlantOfTheDayView: View {
                         }
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(.white.opacity(0.15))
+                        .background(.black.opacity(0.15))
                         .cornerRadius(40)
                         
                         Spacer()
@@ -94,7 +94,7 @@ struct PlantOfTheDayView: View {
                         }
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(.white.opacity(0.15))
+                        .background(.black.opacity(0.15))
                         .cornerRadius(40)
                     }
                     
@@ -110,7 +110,7 @@ struct PlantOfTheDayView: View {
                         }
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(.white.opacity(0.15))
+                        .background(.black.opacity(0.15))
                         .cornerRadius(40)
                         
                         Spacer()
@@ -121,7 +121,7 @@ struct PlantOfTheDayView: View {
                         }
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(.white.opacity(0.15))
+                        .background(.black.opacity(0.15))
                         .cornerRadius(40)
                     }
                 }
@@ -233,7 +233,7 @@ struct TipOfTheDayView: View {
                         }
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(.white.opacity(0.15))
+                        .background(.black.opacity(0.15))
                         .cornerRadius(40)
                         
                         Spacer()
@@ -247,7 +247,7 @@ struct TipOfTheDayView: View {
                         }
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(.white.opacity(0.15))
+                        .background(.black.opacity(0.15))
                         .cornerRadius(40)
                     }
                     
@@ -270,7 +270,7 @@ struct TipOfTheDayView: View {
                         .padding(.top, 10)
                         .padding(.horizontal, 16)
                         .frame(width: 319, height: 170)
-                        .background(.white.opacity(0.35))
+                        .background(.black.opacity(0.35))
                         .cornerRadius(12)
                     }
                     
